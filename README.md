@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/tjtanjin/react-chatbotify-docs/actions"> <img src="https://github.com/tjtanjin/react-chatbotify-docs/actions/workflows/build_and_test.yml/badge.svg" /> </a>
+  <a href="https://github.com/tjtanjin/react-chatbotify-docs/actions"> <img src="https://github.com/tjtanjin/react-chatbotify-docs/actions/workflows/build.yml/badge.svg" /> </a>
 </p>
 
 ## Table of Contents
@@ -26,7 +26,7 @@
 
 React ChatBotify Docs is the user guide for the [React ChatBotify library](https://www.npmjs.com/package/react-chatbotify). The guide itself is built on Docusaurus and this repository contains the code for generating the site.
 
-The goal of React ChatBotify Docs is to provide users with ease of access to the information for using the React ChatBotify library. To achieve this, a great deal of effort has gone into curating the user guide and a sharing can be found at this [article]().
+The goal of React ChatBotify Docs is to provide users with ease of access to the information for using the React ChatBotify library. To achieve this, a great deal of effort has gone into curating the user guide and a sharing can be found at this [article](https://tjtanjin.medium.com/beyond-the-code-reflections-on-crafting-an-effective-user-guide-0480d8af0cd9).
 
 Note that this repository contains the code for the user guide. If you're looking for the repository for the React ChatBotify library itself, you may [look here](https://github.com/tjtanjin/react-chatbotify).
 
