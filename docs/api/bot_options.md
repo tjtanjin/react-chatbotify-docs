@@ -88,6 +88,8 @@ const defaultOptions = {
 	botBubble: {
 		showAvatar: false,
 		avatar: botAvatar,
+		simStream: false,
+		streamSpeed: 30
 	},
 	voice: {
 		disabled: true,
@@ -207,7 +209,7 @@ Properties here handle the playing of audio for messages sent by the bot. When t
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | disabled                   | boolean                         | true                                        | Specifies whether chatbot audio is disabled.                                                                                   |
 | defaultToggledOn           | boolean                         | false                                       | Specifies whether chatbot audio is toggled on by default.                                                                      |
-| language                   | string                          | "en-US"                                     | The language for chatbot audio, set by a string representing a BCP 47 language tag.                                                                                                |
+| language                   | string                          | "en-US"                                     | The language for chatbot audio, set by a string representing a [**BCP 47 language tag**](https://www.techonthenet.com/js/language_tags.php).                                                                                                |
 | voiceNames                  | string[]                          | "Google US English Male"                    | An array of voice names for the chatbot audio. Voices are based off what is provided in [**SpeechSynthesis**](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices) - you can provide as many voices as you wish (**the first voice matched will be used**).                                                                                              |
 | rate                       | number                          | 1                                           | The rate (between 0.1 to 10) at which chatbot audio is played.                                                                                     |
 | volume                       | number                          | 1                                           | The volume (between 0 to 1) at which chatbot audio is played.                                                                                     |
@@ -221,6 +223,8 @@ Properties here handle the chat bubble for messages sent by the bot.
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | showAvatar                 | boolean                         | false                                       | Specifies whether the avatar should be displayed for bot chat bubbles.                                                         |
 | avatar                | string                          | -                                            | Image import or URL for the avatar to be displayed for bot chat bubbles.                                                             |                                                                              |
+| simStream                 | boolean                         | false                                       | Specifies whether to simulate text messages from the bot as a stream.                                                         |
+| streamSpeed                | number                          | 30                                            | Specifies the interval in milliseconds between streaming each character (ignored if `simStream` is false).                                                             |                                                                              |
 
 ### ChatButton
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 sidebar_label: FAQ
 ---
 
@@ -13,8 +13,12 @@ If you notice duplicate messages on start and are on React 18 and above, it coul
 
 **Q2) I would like to integrate this with my own API to answer questions in a loop, how can I create this?**
 
-If you're looking to use your own API, then the [**smart conversation**](https://react-chatbotify.tjtanjin.com/docs/examples/smart_conversation) example is likely what you're looking to use.
+If you're looking to use your own API, then the [**smart conversation**](/docs/examples/smart_conversation) example is likely what you're looking to use. If you are specifically looking to stream your responses, then you may also be interested in the [**real-time stream**](/docs/examples/real_time_stream) example.
 
 **Q3) I am experiencing issues viewing the chatbot on mobile, how can I fix this?**
 
 If you're using a version below 1.2.0 of React ChatBotify, there are known view issues on certain mobile devices and browsers. Check that you are on a later version and should the issue persist, please do not hesitate to raise an issue on [**github**](https://github.com/tjtanjin/react-chatbotify/issues).
+
+**Q4) I would like to stream my responses from the bot instead of sending messages as a whole, how can I do this?**
+
+There are 2 approaches to this. If you are streaming your responses from a backend (e.g. from LLM models), then the [**real-time stream**](/docs/examples/real_time_stream) example will be relevant to you. Otherwise, if you're just looking to simulate streaming of your messages, then you may take a look at the [**simulation stream**]((/docs/examples/simulate_stream)) example.

@@ -27,6 +27,9 @@ const CustomChatBot = () => {
 		audio: {disabled: false},
 		theme: {
 			mobileEnabled: true
+		},
+		botBubble: {
+			simStream: true
 		}
 	}
 
@@ -34,7 +37,7 @@ const CustomChatBot = () => {
 		start: {
 			message: "Hello, I am Tan Jin 👋! Welcome to React ChatBotify, I'm excited that you are using our " +
 				"chatbot 😊!",
-			transition: {duration: 1000},
+			transition: {duration: 0},
 			path: "show_options"
 		},
 		show_options: {

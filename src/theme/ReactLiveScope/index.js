@@ -1,4 +1,5 @@
 import React from "react";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
@@ -29,7 +30,8 @@ const ReactLiveScope = {
 	BotOptionsContext,
 	MessagesContext,
 	PathsContext,
-	getDefaultBotOptions
+	getDefaultBotOptions,
+	GoogleGenerativeAI
 };
   
 export default ReactLiveScope;

@@ -7,7 +7,7 @@ sidebar_position: 5
 The library provides the following type definitions (click to find out more!):
 - [**Block**](/docs/introduction/conversations#block)
 - [**Flow**](/docs/introduction/conversations#flow)
-- [**Message**](/docs/api/params)
+- [**Message**](/docs/introduction/conversations#message)
 - [**Options**](/docs/introduction/bot_options)
 - [**Params**](/docs/introduction/conversations#params)
 

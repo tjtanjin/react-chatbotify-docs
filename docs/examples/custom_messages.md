@@ -11,9 +11,10 @@ const MyChatBot = () => {
     // setup your own messages state 
 	const [messages, setMessages] = React.useState([]);
 
-    // example clear messages
+    // example clear messages (while keeping system message)
+    // note: system message refers to the load history button
     const clearMessages = () => {
-        setMessages([]);
+        setMessages(prev => prev.filter(msg => msg.sender === "system"));
     }
 
     // example insert messages
@@ -21,9 +22,8 @@ const MyChatBot = () => {
         setMessages(prev => {
             const newMessage = {
                 content: "Hello I am new!",
+                sender: "bot",
                 type: "string",
-                timestamp: new Date(),
-                isUser: false
             }
             return [...prev, newMessage]
         })

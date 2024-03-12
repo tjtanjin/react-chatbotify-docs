@@ -6,6 +6,12 @@ sidebar_position: 12
 
 The following is an example of a conversation meant to showcase the possibility of the bot leveraging on backend services to make replies within a loop. Due to resource limitations, I am leveraging on a public API that may not always be available. Nonetheless, I hope that the example is clear and simple enough to assist in your understanding of how conversations can be integrated with backend services.
 
+:::tip
+
+A slightly more advanced example involving stream responses from LLM models can be found [**here**](/docs/examples/real_time_stream.md).
+
+:::
+
 ```jsx live noInline title=MyChatBot.js
 const MyChatBot = () => {
     async function fetchData() {

@@ -22,7 +22,7 @@ const flow = {
 In a conversation, there are 4 important properties to take note of and they are the **Flow** (conversation flow), **Block** (conversation block), **Attributes** and **Params**. Below,
 we observe how these properties interact with each other:
 
-![Locale Dropdown](./img/rcb-conversations-sequence.png)
+![RCB Conversations Sequence](./img/rcb-conversations-sequence.png)
 
 1. Upon initializing the chatbot, the chatbot **immediately pre-processes** the `start` block within a conversation flow (represented by the unique yellow box above).
 Following which, it patiently waits for a user input.
@@ -138,6 +138,7 @@ Parameters contain information/functions that can be passed into **dynamic attri
 - userInput
 - prevPath
 - injectMessage
+- streamMessage
 - openChat
 - files (only available for `file` attribute)
 
@@ -151,6 +152,24 @@ end: {
 ```
 
 For details and usage on each of these parameters, do again consult the [**API documentation for params**](/docs/api/params).
+
+## Message
+
+<div align="center">
+![RCB Message](./img/rcb-message.png)
+</div>
+
+Not to be confused with `message` from the section on [**Attributes**](/docs/introduction/conversations#attributes), the `Message` component here represents the interactions between the user and the bot. Every element in the chat bot body (including custom render components) are considered a Message (as **outlined in red** on the image above). Within a message you will find 3 properties: 
+
+- content (required) - a string or JSX.Element representing the content of the message
+- sender (required) - string representing message sender (can be `user`, `bot` or `system`)
+- type (optional) - either string (for plain text) or object (for JSX elements)
+
+:::tip
+
+If you are using `params.injectMessage`, `params.streamMessage` or the advance [**custom messages**](/docs/examples/custom_messages) feature, you minimally only need to pass in the `content` parameter when inserting your own messages. The `sender` field defaults to `bot` while `type` is not required at all. When in doubt, check out [**examples**](/docs/examples/advanced_form) for details on usage.
+
+:::
 
 ## Summary
 
