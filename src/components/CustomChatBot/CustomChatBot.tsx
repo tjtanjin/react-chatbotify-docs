@@ -82,7 +82,7 @@ const CustomChatBot = () => {
 				params.injectMessage("Sit tight! I'll send you right there!");
 				setTimeout(() => {
 					navigatePage(link, params);
-				}, 1000)
+				}, 2000)
 				return "repeat"
 			},
 		},

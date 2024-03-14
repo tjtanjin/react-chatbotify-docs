@@ -11,63 +11,21 @@ import Loading from '@theme/Loading';
     <BrowserOnly>
       {() => {
         const ChatBot = require("react-chatbotify").default;
-        const helpOptions = ["Quickstart", "API Docs", "Examples", "Github", "Discord"];
         const flow = {
           start: {
-            message: "Hello, I am Tan Jin 👋! Welcome to React ChatBotify, I'm excited that you are using our " +
-              "chatbot 😊!",
+            message: "Hello, I am Tan Jin 👋! Welcome to React ChatBotify! I'm excited that you are checking out our " +
+              "documentation 😊!",
             transition: {duration: 0},
-            path: "show_options"
+            path: "playground"
           },
-          show_options: {
-            message: "I hope you find this documentation helpful 😊, Below are some links you may wish to checkout:",
-            options: helpOptions,
-            path: "process_options"
-          },
-          prompt_again: {
-            message: "Do you need any other help?",
-            options: helpOptions,
-            path: "process_options"
+          playground: {
+            message: "I hope you find the explanations and examples helpful 😊, feel free to experiment on the playground!",
+            path: "unknown_input"
           },
           unknown_input: {
-            message: "Sorry, I do not understand your message 😢! If you require further assistance, you may click on " +
-              "the Github option and open an issue there or visit our discord.",
-            options: helpOptions,
-            path: "process_options"
-          },
-          process_options: {
-            transition: {duration: 0},
-            path: (params) => {
-              let link = "";
-              switch (params.userInput) {
-              case "Quickstart":
-                link = "https://react-chatbotify.tjtanjin.com/docs/introduction/quickstart/";
-                break;
-              case "API Docs":
-                link = "https://react-chatbotify.tjtanjin.com/docs/api/bot_options";
-                break;
-              case "Examples":
-                link = "https://react-chatbotify.tjtanjin.com/docs/examples/basic_form";
-                break;
-              case "Github":
-                link = "https://github.com/tjtanjin/react-chatbotify/";
-                break;
-              case "Discord":
-                link = "https://discord.gg/6R4DK4G5Zh";
-                break;
-              default:
-                return "unknown_input";
-              }
-              params.injectMessage("Sit tight! I'll send you right there!");
-              setTimeout(() => {
-                window.open(link);
-              }, 1000)
-              return "repeat"
-            },
-          },
-          repeat: {
-            transition: {duration: 3000},
-            path: "prompt_again"
+            message: "Sorry, I do not understand your message 😢! If you require further assistance, you may open an issue " +
+              "on GitHub or visit our discord.",
+            path: "unknown_input"
           },
         }
 
