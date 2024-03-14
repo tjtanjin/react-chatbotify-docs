@@ -84,12 +84,14 @@ const defaultOptions = {
 	userBubble: {
 		showAvatar: false,
 		avatar: userAvatar,
+		simStream: false,
+		streamSpeed: 30,
 	},
 	botBubble: {
 		showAvatar: false,
 		avatar: botAvatar,
 		simStream: false,
-		streamSpeed: 30
+		streamSpeed: 30,
 	},
 	voice: {
 		disabled: true,
@@ -259,7 +261,7 @@ Properties here handle the chat input sent by the user. Note that when chatbot i
 | characterLimit             | number                          | -1                                            | The maximum number of characters allowed in the chat input, defaults to -1 (no limit).                                                         |
 | botDelay                   | number                          | 1000                                        | The delay in milliseconds before chatbot responses are displayed (**minimum value of 500**).                                                             |
 | sendButtonIcon            | string                          | -                                            | Image import or URL for the send button to be displayed in the chat input.                                                           |
-| blockSpam                  | boolean                         | true                                        | Specifies whether user input should be blocked while the bot is processing its next action.                                     |
+| blockSpam                  | boolean                         | true                                        | Specifies whether user input should be blocked while the bot is processing its next action (highly recommended to keep this `true` as spamming messages can result in unexpected behaviors).                                     |
 | sendOptionOutput           | boolean                         | true                                        | Specifies whether to send user option as a message to the bot.                                                   |
 | sendCheckboxOutput         | boolean                         | true                                        | Specifies whether to send user selection(s) as a message to the bot.                                                 |
 | sendAttachmentOutput         | boolean                         | true                                        | Specifies whether to send a message with name(s) of file attachments as a message to the bot.                                                |
@@ -350,6 +352,8 @@ Properties here handle the chat bubble for messages sent by the user.
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | showAvatar                 | boolean                         | false                                       | Specifies whether the avatar should be displayed for user chat bubbles.                                                        |
 | avatar                | string                          | -                                            | Image import or URL for the avatar to be displayed for user chat bubbles.                                                            |
+| simStream                 | boolean                         | false                                       | Specifies whether to simulate text messages from the user as a stream.                                                         |
+| streamSpeed                | number                          | 30                                            | Specifies the interval in milliseconds between streaming each character (ignored if `simStream` is false).                                                             |      
 
 ### Voice
 

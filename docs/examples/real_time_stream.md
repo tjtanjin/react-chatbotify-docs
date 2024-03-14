@@ -6,7 +6,7 @@ sidebar_position: 9
 
 The following is a detailed example demonstrating real-time message streaming. Given the current popularity of Large Language Models (LLMs), I've opted to showcase real-time streaming using [**Google's Gemini AI**](https://ai.google.dev/), which generously offers free API usage. This example can easily be extended to interact with other providers or even your own custom endpoints.
 
-However, you will need to acquire your own API key for testing within this editor. It's important to highlight that streaming functionality is exclusively supported through the `params.streamMessage` parameter, as illustrated below. If you are unable to obtain an API key but would still like to visualize the streaming in action, you may wish to check out the [**simulation stream**](/docs/examples/simulation_stream.md) example.
+However, you will need to acquire your own API key for testing within this editor. It's important to highlight that streaming functionality is exclusively supported through the `params.streamMessage` parameter, as illustrated below. If you are unable to obtain an API key but would still like to visualize the streaming in action, you may wish to check out the [**simulated stream**](/docs/examples/simulated_stream.md) example.
 
 :::caution
 

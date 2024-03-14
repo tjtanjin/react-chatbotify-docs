@@ -21,4 +21,4 @@ If you're using a version below 1.2.0 of React ChatBotify, there are known view 
 
 **Q4) I would like to stream my responses from the bot instead of sending messages as a whole, how can I do this?**
 
-There are 2 approaches to this. If you are streaming your responses from a backend (e.g. from LLM models), then the [**real-time stream**](/docs/examples/real_time_stream) example will be relevant to you. Otherwise, if you're just looking to simulate streaming of your messages, then you may take a look at the [**simulation stream**]((/docs/examples/simulate_stream)) example.
+There are 2 approaches to this. If you are streaming your responses from a backend (e.g. from LLM models), then the [**real-time stream**](/docs/examples/real_time_stream) example will be relevant to you. Otherwise, if you're just looking to simulate streaming of your messages, then you may take a look at the [**simulated stream**]((/docs/examples/simulated_stream)) example.

@@ -11,14 +11,80 @@ import Loading from '@theme/Loading';
     <BrowserOnly>
       {() => {
         const ChatBot = require("react-chatbotify").default;
-        return <ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "introduction_overview"}}}/>
+        const helpOptions = ["Quickstart", "API Docs", "Examples", "Github", "Discord"];
+        const flow = {
+          start: {
+            message: "Hello, I am Tan Jin 👋! Welcome to React ChatBotify, I'm excited that you are using our " +
+              "chatbot 😊!",
+            transition: {duration: 0},
+            path: "show_options"
+          },
+          show_options: {
+            message: "I hope you find this documentation helpful 😊, Below are some links you may wish to checkout:",
+            options: helpOptions,
+            path: "process_options"
+          },
+          prompt_again: {
+            message: "Do you need any other help?",
+            options: helpOptions,
+            path: "process_options"
+          },
+          unknown_input: {
+            message: "Sorry, I do not understand your message 😢! If you require further assistance, you may click on " +
+              "the Github option and open an issue there or visit our discord.",
+            options: helpOptions,
+            path: "process_options"
+          },
+          process_options: {
+            transition: {duration: 0},
+            path: (params) => {
+              let link = "";
+              switch (params.userInput) {
+              case "Quickstart":
+                link = "https://react-chatbotify.tjtanjin.com/docs/introduction/quickstart/";
+                break;
+              case "API Docs":
+                link = "https://react-chatbotify.tjtanjin.com/docs/api/bot_options";
+                break;
+              case "Examples":
+                link = "https://react-chatbotify.tjtanjin.com/docs/examples/basic_form";
+                break;
+              case "Github":
+                link = "https://github.com/tjtanjin/react-chatbotify/";
+                break;
+              case "Discord":
+                link = "https://discord.gg/6R4DK4G5Zh";
+                break;
+              default:
+                return "unknown_input";
+              }
+              params.injectMessage("Sit tight! I'll send you right there!");
+              setTimeout(() => {
+                window.open(link);
+              }, 1000)
+              return "repeat"
+            },
+          },
+          repeat: {
+            transition: {duration: 3000},
+            path: "prompt_again"
+          },
+        }
+
+        const options = {
+          theme: {embedded: true},
+          chatHistory: {storageKey: "introduction_overview"},
+          botBubble: {simStream: true}
+        }
+
+        return <ChatBot flow={flow} options={options}/>
       }}
     </BrowserOnly>
 </div>
 
 ## About
 
-React ChatBotify is an intuitive and versatile chatbot library tailored to streamline your development process while providing the flexibility to implement advanced features. It is crafted to meet a wide range of requirements, whether you're building a straightforward FAQ chatbot or an intricate conversational interface. 
+React ChatBotify is an intuitive and versatile chatbot library tailored to streamline your development process while providing the flexibility to implement advanced features. It is crafted to meet a wide range of requirements, whether you're building a straightforward FAQ chatbot, an intricate conversational interface or even an integration with Large Language Models (LLMs).
 
 React ChatBotify aims to simplify the creation of chatbots by offering a user-friendly experience while accommodating the diverse needs of developers. With its extensive capabilities, you can easily customize and expand your chatbot's functionalities. From basic interactions to sophisticated conversational flows, React ChatBotify empowers you to build chatbots that meet your specific project goals.
 
