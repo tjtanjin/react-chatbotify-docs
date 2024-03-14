@@ -21,7 +21,7 @@
 ### Introduction
 
 <p align="center">
-  <img height="400px" src="https://raw.githubusercontent.com/tjtanjin/react-chatbotify/main/src/assets/demo.png" />
+  <img height="400px" src="https://github.com/tjtanjin/react-chatbotify-docs/assets/43908963/dfa40631-e328-494a-911f-774d9549a5e5" />
 </p>
 
 React ChatBotify Docs is the user guide for the [React ChatBotify library](https://www.npmjs.com/package/react-chatbotify). The guide itself is built on Docusaurus and this repository contains the code for generating the site.
