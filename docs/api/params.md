@@ -19,6 +19,12 @@ The following table provides details about the parameters available for dynamic 
 | openChat    | function             | All Dynamic Attributes         | A utility function used to control the visibility of the chat component. It takes one parameter: <ul><li>`isOpen`:</li> A boolean indicating whether the chat should be opened (`true`) or closed (`false`).</ul>                                                                             |
 | files   | FileList                                | Only `file` Attribute          | A list of file(s) uploaded by the user.  
 
+:::caution Caution
+
+If you are using `params.injectMessage` or `params.streamMessage`, do remember that they are `async` and that without using `await`, behavior may be unexpected (e.g. multiple messages sent at once). This is a common pitfall!
+
+:::
+
 :::tip Tip
 
 Do consider checking out the examples if you need more clarity on the usages of `params`.

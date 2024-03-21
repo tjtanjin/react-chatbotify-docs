@@ -30,7 +30,10 @@ const CustomChatBot = () => {
 		},
 		botBubble: {
 			simStream: true
-		}
+		},
+		chatHistory: {
+			storageKey: "main_chatbot"
+		},
 	}
 
 	const flow = {
@@ -38,7 +41,8 @@ const CustomChatBot = () => {
 			message: "Hello, I am Tan Jin 👋! Welcome to React ChatBotify, I'm excited that you are using our " +
 				"chatbot 😊!",
 			transition: {duration: 0},
-			path: "show_options"
+			path: "show_options",
+			chatDisabled: true
 		},
 		show_options: {
 			message: "Here are a few helpful things you can check out to get started:",
@@ -58,7 +62,8 @@ const CustomChatBot = () => {
 		},
 		process_options: {
 			transition: {duration: 0},
-			path: (params: Params) => {
+			chatDisabled: true,
+			path: async (params: Params) => {
 				let link = "";
 				switch (params.userInput) {
 				case "Quickstart":
@@ -79,7 +84,7 @@ const CustomChatBot = () => {
 				default:
 					return "unknown_input";
 				}
-				params.injectMessage("Sit tight! I'll send you right there!");
+				await params.injectMessage("Sit tight! I'll send you right there!");
 				setTimeout(() => {
 					navigatePage(link, params);
 				}, 2000)
@@ -88,7 +93,8 @@ const CustomChatBot = () => {
 		},
 		repeat: {
 			transition: {duration: 3000},
-			path: "prompt_again"
+			chatDisabled: true,
+			path: "prompt_again",
 		},
 	}
 	return (

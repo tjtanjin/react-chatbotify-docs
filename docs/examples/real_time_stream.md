@@ -35,7 +35,7 @@ const MyChatBot = () => {
                 for (let i = offset; i < chunkText.length; i++) {
                     // while this example shows params.streamMessage taking in text input,
                     // you may also feed it custom JSX.Element if you wish
-                    params.streamMessage(text.slice(0, i + 1));
+                    await params.streamMessage(text.slice(0, i + 1));
                     await new Promise(resolve => setTimeout(resolve, 30));
                 }
                 offset += chunkText.length;
@@ -44,12 +44,12 @@ const MyChatBot = () => {
             // in case any remaining chunks are missed (e.g. timeout)
             // you may do your own nicer logic handling for large chunks
             for (let i = offset; i < text.length; i++) {
-                params.streamMessage(text.slice(0, i + 1));
+                await params.streamMessage(text.slice(0, i + 1));
                 await new Promise(resolve => setTimeout(resolve, 30));
             }
-            params.streamMessage(text);
+            await params.streamMessage(text);
         } catch {
-            params.injectMessage("Unable to load model, is your API Key valid?");
+            await params.injectMessage("Unable to load model, is your API Key valid?");
             has_error = true;
         }
     }

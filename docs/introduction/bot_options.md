@@ -29,6 +29,7 @@ Within **Configurations**, options are grouped into different **sections**, each
 - **Audio**: Configuration for chatbot audio settings.
 - **BotBubble**: Configuration for bot chat bubbles.
 - **ChatButton**: Configuration for the chatbot button.
+- **ChatWindow**: Configuration for the chatbot window.
 - **ChatHistory**: Configuration for chatbot chat history.
 - **ChatInput**: Configuration for chatbot input settings.
 - **Emoji**: Configuration for chatbot emojis.

@@ -12,7 +12,6 @@ This page documents all available sections and properties that may be passed int
 ```jsx
 const defaultOptions = {
 	// Configurations Category
-	isOpen: false,
 	theme: {
 		primaryColor: "#42b0c5",
 		secondaryColor: "#491d8d",
@@ -25,7 +24,7 @@ const defaultOptions = {
 		actionDisabledIcon: actionDisabledIcon,
 		embedded: false,
 		desktopEnabled: true,
-		mobileEnabled: true
+		mobileEnabled: true,
 	},
 	tooltip: {
 		mode: "CLOSE",
@@ -81,6 +80,13 @@ const defaultOptions = {
 		sendCheckboxOutput: true,
 		sendAttachmentOutput: true,
 	},
+	chatWindow: {
+		showScrollbar: false,
+		autoJumpToBottom: false,
+		showMessagePrompt: true,
+		messagePromptText: "New Messages ↓",
+		messagePromptOffset: 30,
+	},
 	userBubble: {
 		showAvatar: false,
 		avatar: userAvatar,
@@ -123,10 +129,7 @@ const defaultOptions = {
 	emoji: {
 		disabled: false,
 		icon: emojiIcon,
-		list: [
-			"😀", "😃", "😄", "😅", "😊", "😌", "😇", "🙃",
-			"🤣", "😍", "🥰", "🥳", "🎉", "🎈", "🚀", "⭐️"
-		]
+		list: ["😀", "😃", "😄", "😅", "😊", "😌", "😇", "🙃", "🤣", "😍", "🥰", "🥳", "🎉", "🎈", "🚀", "⭐️"]
 	},
 	advance: {
 		useCustomMessages: false,
@@ -158,6 +161,8 @@ const defaultOptions = {
 	chatHistoryButtonStyle: {},
 	chatHistoryButtonHoveredStyle: {},
 	chatHistoryLineBreakStyle: {},
+	chatMessagePromptStyle: {},
+	chatMessagePromptHoveredStyle: {},
 	footerStyle: {},
 	loadingSpinnerStyle: {},
 }
@@ -181,6 +186,7 @@ Below is the list of sections available for configurations.
 | audio                      | object                          | {}                                            | Configuration for chatbot audio.                                                                                               |
 | botBubble                  | object                          | {}                                            | Configuration for bot chat bubbles.                                                                                            |
 | chatButton                 | object                          | {}                                            | Configuration for the chatbot button.                                                                                          |
+| chatWindow                 | object                          | {}                                            | Configuration for the chatbot window.                                                                                          |
 | chatHistory                | object                          | {}                                            | Configuration for chatbot chat history.                                                                                        |
 | chatInput                  | object                          | {}                                            | Configuration for chatbot input.                                                                                               |
 | emoji                      | object                          | {}                                            | Configuration for chatbot emojis.                                                                                              |
@@ -235,6 +241,18 @@ Properties here handle the chat button that is used to toggle chat window. Note 
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | icon            | string                          | -                                            | Image import or URL for the chatbot button.                                                                                          |
+
+### ChatWindow
+
+Properties here handle the UI/UX in the chat window. Note that it is recommended to stick to default values for this section as they have been optimized for the ideal experience.
+
+| Name                       | Type                            | Default                                     | Description                                                                                                                    |
+| -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| showScrollbar              | boolean                         | false                                       | Specifies whether scrollbar will be shown when chat messages overflow the window.                                                                            |
+| autoJumpToBottom           | boolean                         | false                                       | Specifies whether new messages will always send the user to the bottom of the chat window (recommended to keep `false` as this can be disruptive).                    |
+| showMessagePrompt          | boolean                         | true                                        | Specifies whether to show a message prompt when new messages are received while a user is scrolling the window.                                                      |
+| messagePromptText          | string                          | "New Messages ↓"                            | The text to be displayed on the message prompt shown.                                                                             |
+| messagePromptOffset        | number                          | 30                                          | The offset (in pixels) that the user must be from the bottom of the chat window to be considered scrolling and thus see the message prompt (recommended to keep at `30` or higher).                                                                  |
 
 ### ChatHistory
 

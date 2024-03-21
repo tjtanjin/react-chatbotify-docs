@@ -35,7 +35,8 @@ const MyChatBot = () => {
         },
         process_options: {
             transition: {duration: 0},
-            path: (params) => {
+            chatDisabled: true,
+            path: async (params) => {
                 let link = "";
                 switch (params.userInput) {
                 case "Quickstart":
@@ -56,7 +57,7 @@ const MyChatBot = () => {
                 default:
                     return "unknown_input";
                 }
-                params.injectMessage("Sit tight! I'll send you right there!");
+                await params.injectMessage("Sit tight! I'll send you right there!");
                 setTimeout(() => {
                     window.open(link);
                 }, 1000)

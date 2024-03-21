@@ -27,9 +27,9 @@ const MyChatBot = () => {
 		ask_age: {
 			message: (params) => `Nice to meet you ${params.userInput}, what is your age?`,
 			function: (params) => setForm({...form, age: params.userInput}),
-			path: (params) => {
+			path: async (params) => {
 				if (isNaN(Number(params.userInput))) {
-					params.injectMessage("Age needs to be a number!");
+					await params.injectMessage("Age needs to be a number!");
 					return;
 				}
 				return "ask_pet";
@@ -52,9 +52,9 @@ const MyChatBot = () => {
 		ask_work_days: {
 			message: "How many days can you work per week?",
 			function: (params) => setForm({...form, num_work_days: params.userInput}),
-			path: (params) => {
+			path: async (params) => {
 				if (isNaN(Number(params.userInput))) {
-					params.injectMessage("Number of work day(s) need to be a number!");
+					await params.injectMessage("Number of work day(s) need to be a number!");
 					return;
 				}
 				return "end";
