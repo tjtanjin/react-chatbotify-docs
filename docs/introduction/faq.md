@@ -21,7 +21,7 @@ If you're using a version below 1.2.0 of React ChatBotify, there are known view 
 
 **Q4) I would like to stream my responses from the bot instead of sending messages as a whole, how can I do this?**
 
-There are 2 approaches to this. If you are streaming your responses from a backend (e.g. from LLM models), then the [**real-time stream**](/docs/examples/real_time_stream) example will be relevant to you. Otherwise, if you're just looking to simulate streaming of your messages, then you may take a look at the [**simulated stream**]((/docs/examples/simulated_stream)) example.
+There are 2 approaches to this. If you are streaming your responses from a backend (e.g. from LLM models), then the [**real-time stream**](/docs/examples/real_time_stream) example will be relevant to you. Otherwise, if you're just looking to simulate streaming of your messages, then you may take a look at the [**simulated stream**](/docs/examples/simulated_stream) example.
 
 **Q5) My messages are not streaming even though I have set simStream to true, why?**
 
@@ -30,3 +30,7 @@ For streaming messages, ensure you're on at least **version 1.3.0**. That said, 
 **Q6) My messages are appearing in parallel or are misordered and messy, why?**
 
 It is likely you're using `params.injectMessage` or `params.streamMessage`. Do note that both these functions are `async` so you should use `await` on them for your desired behavior.
+
+**Q7) I have audio toggled on but my bot only reads out certain messages or not at all, why?**
+
+Check if your messages are being sent with [**real-time stream**](/docs/examples/real_time_stream). Audio is currently **not supported** for such messages (still works fine for [**simulated stream**](/docs/examples/simulated_stream))

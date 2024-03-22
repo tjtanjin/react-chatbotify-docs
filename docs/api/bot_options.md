@@ -211,7 +211,7 @@ These properties are only recommended for advanced use cases. You may refer to t
 
 ### Audio
 
-Properties here handle the playing of audio for messages sent by the bot. When toggled on, messages sent by the bot will be read out.
+Properties here handle the playing of audio for messages sent by the bot. When toggled on, messages sent by the bot will be read out. Note that audio is not supported for messages sent in [real-time stream](/docs/examples/real_time_stream).
 
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
