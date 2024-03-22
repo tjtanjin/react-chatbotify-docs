@@ -8,7 +8,7 @@ Looking to get started 😊? The process of setting up the chatbot only involves
 
 ## Installation
 
-Install React ChatBotify by running the following command within your project folder:
+React ChatBotify is [**available on npm**](https://www.npmjs.com/package/react-chatbotify) so install it with the following command within your project folder:
 
 ```
 npm install react-chatbotify --save
