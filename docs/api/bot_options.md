@@ -88,12 +88,14 @@ const defaultOptions = {
 		messagePromptOffset: 30,
 	},
 	userBubble: {
+		animate: true,
 		showAvatar: false,
 		avatar: userAvatar,
 		simStream: false,
 		streamSpeed: 30,
 	},
 	botBubble: {
+		animate: true,
 		showAvatar: false,
 		avatar: botAvatar,
 		simStream: false,
@@ -229,6 +231,7 @@ Properties here handle the chat bubble for messages sent by the bot.
 
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| animate                    | boolean                         | true                                        | Specifies whether the bot chat bubbles should be animated.                                                        |
 | showAvatar                 | boolean                         | false                                       | Specifies whether the avatar should be displayed for bot chat bubbles.                                                         |
 | avatar                | string                          | -                                            | Image import or URL for the avatar to be displayed for bot chat bubbles.                                                             |                                                                              |
 | simStream                 | boolean                         | false                                       | Specifies whether to simulate text messages from the bot as a stream.                                                         |
@@ -368,6 +371,7 @@ Properties here handle the chat bubble for messages sent by the user.
 
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| animate                    | boolean                         | true                                        | Specifies whether the user chat bubbles should be animated.                                                        |
 | showAvatar                 | boolean                         | false                                       | Specifies whether the avatar should be displayed for user chat bubbles.                                                        |
 | avatar                | string                          | -                                            | Image import or URL for the avatar to be displayed for user chat bubbles.                                                            |
 | simStream                 | boolean                         | false                                       | Specifies whether to simulate text messages from the user as a stream.                                                         |
