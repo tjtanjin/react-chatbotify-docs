@@ -1,5 +1,8 @@
 ---
 sidebar_position: 1
+title: Quickstart
+description: content describing chatbot quickstart
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Quickstart

@@ -1,5 +1,8 @@
 ---
 sidebar_position: 12
+title: Smart Conversation
+description: smart conversation chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Smart Conversation

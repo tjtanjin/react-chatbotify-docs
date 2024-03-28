@@ -1,5 +1,8 @@
 ---
 sidebar_position: 3
+title: Params
+description: api documentation for params
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Params

@@ -1,5 +1,8 @@
 ---
 sidebar_position: 5
+title: TypeScript
+description: content describing chatbot typescript
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Typescript

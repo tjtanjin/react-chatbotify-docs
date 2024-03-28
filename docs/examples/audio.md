@@ -1,5 +1,8 @@
 ---
 sidebar_position: 5
+title: Audio
+description: audio chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Audio

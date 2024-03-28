@@ -1,6 +1,8 @@
 ---
 sidebar_position: 7
-sidebar_label: FAQ
+title: FAQ
+description: content describing chatbot faq
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Frequently Asked Questions (FAQ)

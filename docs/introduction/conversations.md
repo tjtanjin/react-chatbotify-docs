@@ -1,5 +1,8 @@
 ---
 sidebar_position: 3
+title: Conversations
+description: content describing chatbot conversations
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Conversations

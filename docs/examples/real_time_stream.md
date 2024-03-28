@@ -1,5 +1,8 @@
 ---
 sidebar_position: 9
+title: Real-time Stream
+description: real-time stream chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Real-time Stream

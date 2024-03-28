@@ -1,5 +1,8 @@
 ---
 sidebar_position: 6
+title: Voice
+description: voice chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Voice

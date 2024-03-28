@@ -1,5 +1,8 @@
 ---
 sidebar_position: 2
+title: Advanced Form
+description: advanced form chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Advanced Form

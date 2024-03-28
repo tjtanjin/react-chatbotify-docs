@@ -1,5 +1,8 @@
 ---
 sidebar_position: 10
+title: Render Component
+description: render component chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Render Component

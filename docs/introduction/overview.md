@@ -1,5 +1,8 @@
 ---
 sidebar_position: 2
+title: Overview
+description: content describing chatbot overview
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 import BrowserOnly from '@docusaurus/BrowserOnly';

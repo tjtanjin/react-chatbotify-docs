@@ -1,5 +1,8 @@
 ---
 sidebar_position: 1
+title: Bot Options
+description: api documentation for bot options
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Bot Options

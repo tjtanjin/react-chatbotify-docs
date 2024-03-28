@@ -1,5 +1,8 @@
 ---
 sidebar_position: 14
+title: Custom Options
+description: custom options chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Custom Options

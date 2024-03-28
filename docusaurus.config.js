@@ -8,7 +8,7 @@ const darkCodeTheme = themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'React ChatBotify',
-  tagline: 'Enrich Conversations - Power & Flexibility at Your Fingertips!',
+  tagline: 'A modern React library for creating a flexible and extensible chatbot.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -54,6 +54,9 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      metadata: [
+        {name: 'keywords', content: 'react, chatbot, chat, chatbotify, conversational-chatbot'}
+      ],
       navbar: {
         title: 'React ChatBotify',
         logo: {
@@ -169,7 +172,7 @@ const config = {
               },
               {
                 label: 'Changelog',
-                href: 'https://github.com/tjtanjin/react-chatbotify/releases',
+                href: 'https://github.com/tjtanjin/react-chatbotify/blob/main/CHANGELOG.md',
               },
               {
                 label: 'GitHub Repo',
@@ -181,7 +184,7 @@ const config = {
         logo: {
           alt: 'React ChatBotify Logo',
           src: 'img/react-chatbotify.png',
-          href: 'https://react-chatbotify.tjtanjin.com',
+          href: 'https://www.npmjs.com/package/react-chatbotify',
           width: 100,
           height: 100,
         },

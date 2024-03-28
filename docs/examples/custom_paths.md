@@ -1,5 +1,8 @@
 ---
 sidebar_position: 16
+title: Custom Paths
+description: custom paths chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Custom Paths

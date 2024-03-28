@@ -1,5 +1,8 @@
 ---
 sidebar_position: 11
+title: Smart Welcome
+description: smart welcome chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Smart Welcome

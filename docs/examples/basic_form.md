@@ -1,5 +1,8 @@
 ---
 sidebar_position: 1
+title: Basic Form
+description: basic form chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Basic Form

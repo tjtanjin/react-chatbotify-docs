@@ -1,5 +1,8 @@
 ---
 sidebar_position: 15
+title: Custom Messages
+description: custom messages chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Custom Messages

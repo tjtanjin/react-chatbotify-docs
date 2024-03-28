@@ -1,5 +1,8 @@
 ---
 sidebar_position: 7
+title: Theming
+description: theming chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Theming

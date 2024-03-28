@@ -1,5 +1,8 @@
 ---
 sidebar_position: 2
+title: Attributes
+description: api documentation for attributes
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Attributes

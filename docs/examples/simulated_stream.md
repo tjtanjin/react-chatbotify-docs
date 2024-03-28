@@ -1,5 +1,8 @@
 ---
 sidebar_position: 8
+title: Simulated Stream
+description: simulated stream chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Simulated Stream

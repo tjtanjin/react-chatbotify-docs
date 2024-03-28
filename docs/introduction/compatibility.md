@@ -1,6 +1,8 @@
 ---
 sidebar_position: 6
-sidebar_label: Compatibility
+title: Compatibility
+description: content describing chatbot compatibility
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # Compatibility

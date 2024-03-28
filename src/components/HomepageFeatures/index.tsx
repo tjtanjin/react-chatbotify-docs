@@ -30,7 +30,7 @@ const FeatureList: FeatureItem[] = [
 		imgSrc: intuitiveTouchImage,
 		description: (
 			<>
-				Curate a seamless journey with an organized and clean interface, ensuring a delightful user experience.
+				Curate a seamless journey with an organized and sleek chatbot, ensuring a delightful user experience.
 			</>
 		),
 	},
@@ -39,7 +39,7 @@ const FeatureList: FeatureItem[] = [
 		imgSrc: enhancedEngagementsImage,
 		description: (
 			<>
-				Offer dynamic and interactive conversations that keep users engaged and excited to find out more.
+				Offer dynamic and interactive chatbot conversations that keep users engaged and excited to learn more.
 			</>
 		),
 	},

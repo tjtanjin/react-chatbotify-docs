@@ -62,7 +62,7 @@ export default function Home(): JSX.Element {
 	return (
 		<Layout
 			title={`Hello from ${siteConfig.title}`}
-			description="A React library for creating a flexible and extensible chatbot.">
+			description="A modern React library for creating a flexible and extensible chatbot.">
 			<HomepageHeader />
 			<main>
 				<HomepageFeatures />

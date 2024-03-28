@@ -1,5 +1,8 @@
 ---
 sidebar_position: 3
+title: FAQ Bot
+description: faq bot chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # FAQ Bot

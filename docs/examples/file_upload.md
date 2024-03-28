@@ -1,5 +1,8 @@
 ---
 sidebar_position: 4
+title: File Upload
+description: file upload chatbot example
+keywords: [react, chat, chatbot, chatbotify]
 ---
 
 # File Upload
