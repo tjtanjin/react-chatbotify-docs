@@ -14,18 +14,18 @@ const MyChatBot = () => {
 	const flow={
 		start: {
 			message: () => {
-                const seenBefore = localStorage.getItem("example_welcome");
-                if (seenBefore) {
-                    return `Welcome back ${seenBefore}!`;
-                }
-                return "Welcome there 👋! It's nice to meet you, what is your name?";
-            },
-            function: (params) => localStorage.setItem("example_welcome", params.userInput),
+				const seenBefore = localStorage.getItem("example_welcome");
+				if (seenBefore) {
+					return `Welcome back ${seenBefore}!`;
+				}
+				return "Welcome there 👋! It's nice to meet you, what is your name?";
+			},
+			function: (params) => localStorage.setItem("example_welcome", params.userInput),
 			path: "say_goodbye"
 		},
 		say_goodbye: {
 			message: (params) => `Great to know you ${params.userInput}, hope to see you again!`,
-            chatDisabled: true
+			chatDisabled: true
 		}
 	}
 	return (

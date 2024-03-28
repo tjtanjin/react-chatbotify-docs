@@ -17,32 +17,32 @@ A slightly more advanced example involving stream responses from LLM models can 
 
 ```jsx live noInline title=MyChatBot.js
 const MyChatBot = () => {
-    async function fetchData() {
-      try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+	async function fetchData() {
+	  try {
+		const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
 		const data = await response.json();
 		return data.title;
-      } catch (error) {
-        return "Oh no I don't know what to say!";
-      }
-    }
-    let count = 0;
-    const flow={
-        start: {
-            message: "Hey! I call an API!",
-            path: "loop"
-        },
-        loop: {
-            message: async (params) => {
-                const result = await fetchData();
-                return result;
-            },
-            path: "loop",
-        }
-    }
-    return (
-        <ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "example_smart_conversation"}}} flow={flow}/>
-    );
+	  } catch (error) {
+		return "Oh no I don't know what to say!";
+	  }
+	}
+	let count = 0;
+	const flow={
+		start: {
+			message: "Hey! I call an API!",
+			path: "loop"
+		},
+		loop: {
+			message: async (params) => {
+				const result = await fetchData();
+				return result;
+			},
+			path: "loop",
+		}
+	}
+	return (
+		<ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "example_smart_conversation"}}} flow={flow}/>
+	);
 };
 
 render(<MyChatBot/>)

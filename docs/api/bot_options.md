@@ -14,162 +14,162 @@ This page documents all available sections and properties that may be passed int
 
 ```jsx
 const defaultOptions = {
-	// Configurations Category
-	theme: {
-		primaryColor: "#42b0c5",
-		secondaryColor: "#491d8d",
-		fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', " +
-			"'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', " +
-			"sans-serif",
-		showHeader: true,
-		showFooter: true,
-		showInputRow: true,
-		actionDisabledIcon: actionDisabledIcon,
-		embedded: false,
-		desktopEnabled: true,
-		mobileEnabled: true,
-	},
-	tooltip: {
-		mode: "CLOSE",
-		text: "Talk to me! 😊",
-	},
-	chatButton: {
-		icon: chatIcon,
-	},
-	header: {
-		title: (
-			<h3 style={{cursor: "pointer", margin: 0}} onClick={
-				() => window.open("https://github.com/tjtanjin/")
-			}>Tan Jin
-			</h3>
-		),
-		showAvatar: true,
-		avatar: botAvatar,
-		closeChatIcon: closeChatIcon,
-	},
-	notification: {
-		disabled: false,
-		defaultToggledOn: true,
-		volume: 0.2,
-		icon: notificationIcon,
-		sound: notificationSound,
-	},
-	audio: {
-		disabled: true,
-		defaultToggledOn: false,
-		language: "en-US",
-		voiceNames: ["Microsoft David - English (United States)", "Alex (English - United States)"],
-		rate: 1,
-		volume: 1,
-		icon: audioIcon,
-	},
-	chatHistory: {
-		disabled: false,
-		maxEntries: 30,
-		storageKey: "rcb-history",
-		viewChatHistoryButtonText: "Load Chat History ⟳",
-		chatHistoryLineBreakText: "----- Previous Chat History -----",
-	},
-	chatInput: {
-		disabled: false,
-		enabledPlaceholderText: "Type your message...",
-		disabledPlaceholderText: "",
-		showCharacterCount: false,
-		characterLimit: -1,
-		botDelay: 1000,
-		sendButtonIcon: sendButtonIcon,
-		blockSpam: true,
-		sendOptionOutput: true,
-		sendCheckboxOutput: true,
-		sendAttachmentOutput: true,
-	},
-	chatWindow: {
-		showScrollbar: false,
-		autoJumpToBottom: false,
-		showMessagePrompt: true,
-		messagePromptText: "New Messages ↓",
-		messagePromptOffset: 30,
-	},
-	userBubble: {
-		animate: true,
-		showAvatar: false,
-		avatar: userAvatar,
-		simStream: false,
-		streamSpeed: 30,
-	},
-	botBubble: {
-		animate: true,
-		showAvatar: false,
-		avatar: botAvatar,
-		simStream: false,
-		streamSpeed: 30,
-	},
-	voice: {
-		disabled: true,
-		defaultToggledOn: false,
-		timeoutPeriod: 10000,
-		autoSendDisabled: false,
-		autoSendPeriod: 1000,
-		icon: voiceIcon,
-	},
-	footer: {
-		text: (
-			<div style={{cursor: "pointer"}} 
-				onClick={() => window.open("https://react-chatbotify.tjtanjin.com")}
-			>
-				<span>Powered By </span>
-				<span style={{fontWeight: "bold"}}>
-					<img style={{width: 10, height: 10}} src={logo}></img>
-					<span> React ChatBotify</span>
-				</span>
-			</div>
-		),
-	},
-	fileAttachment: {
-		disabled: false,
-		multiple: true,
-		accept: ".png",
-		icon: fileAttachmentIcon,
-	},
-	emoji: {
-		disabled: false,
-		icon: emojiIcon,
-		list: ["😀", "😃", "😄", "😅", "😊", "😌", "😇", "🙃", "🤣", "😍", "🥰", "🥳", "🎉", "🎈", "🚀", "⭐️"]
-	},
-	advance: {
-		useCustomMessages: false,
-		useCustomBotOptions: false,
-		useCustomPaths: false,
-	},
+  // Configurations Category
+  theme: {
+    primaryColor: "#42b0c5",
+    secondaryColor: "#491d8d",
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', " +
+        "'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', " +
+        "sans-serif",
+    showHeader: true,
+    showFooter: true,
+    showInputRow: true,
+    actionDisabledIcon: actionDisabledIcon,
+    embedded: false,
+    desktopEnabled: true,
+    mobileEnabled: true,
+  },
+  tooltip: {
+    mode: "CLOSE",
+    text: "Talk to me! 😊",
+  },
+  chatButton: {
+    icon: chatIcon,
+  },
+  header: {
+    title: (
+        <h3 style={{cursor: "pointer", margin: 0}} onClick={
+            () => window.open("https://github.com/tjtanjin/")
+        }>Tan Jin
+        </h3>
+    ),
+    showAvatar: true,
+    avatar: botAvatar,
+    closeChatIcon: closeChatIcon,
+  },
+  notification: {
+    disabled: false,
+    defaultToggledOn: true,
+    volume: 0.2,
+    icon: notificationIcon,
+    sound: notificationSound,
+  },
+  audio: {
+    disabled: true,
+    defaultToggledOn: false,
+    language: "en-US",
+    voiceNames: ["Microsoft David - English (United States)", "Alex (English - United States)"],
+    rate: 1,
+    volume: 1,
+    icon: audioIcon,
+  },
+  chatHistory: {
+    disabled: false,
+    maxEntries: 30,
+    storageKey: "rcb-history",
+    viewChatHistoryButtonText: "Load Chat History ⟳",
+    chatHistoryLineBreakText: "----- Previous Chat History -----",
+  },
+  chatInput: {
+    disabled: false,
+    enabledPlaceholderText: "Type your message...",
+    disabledPlaceholderText: "",
+    showCharacterCount: false,
+    characterLimit: -1,
+    botDelay: 1000,
+    sendButtonIcon: sendButtonIcon,
+    blockSpam: true,
+    sendOptionOutput: true,
+    sendCheckboxOutput: true,
+    sendAttachmentOutput: true,
+  },
+  chatWindow: {
+    showScrollbar: false,
+    autoJumpToBottom: false,
+    showMessagePrompt: true,
+    messagePromptText: "New Messages ↓",
+    messagePromptOffset: 30,
+  },
+  userBubble: {
+    animate: true,
+    showAvatar: false,
+    avatar: userAvatar,
+    simStream: false,
+    streamSpeed: 30,
+  },
+  botBubble: {
+    animate: true,
+    showAvatar: false,
+    avatar: botAvatar,
+    simStream: false,
+    streamSpeed: 30,
+  },
+  voice: {
+    disabled: true,
+    defaultToggledOn: false,
+    timeoutPeriod: 10000,
+    autoSendDisabled: false,
+    autoSendPeriod: 1000,
+    icon: voiceIcon,
+  },
+  footer: {
+    text: (
+      <div style={{cursor: "pointer"}} 
+        onClick={() => window.open("https://react-chatbotify.tjtanjin.com")}
+      >
+        <span>Powered By </span>
+        <span style={{fontWeight: "bold"}}>
+          <img style={{width: 10, height: 10}} src={logo}></img>
+          <span> React ChatBotify</span>
+        </span>
+      </div>
+    ),
+  },
+  fileAttachment: {
+    disabled: false,
+    multiple: true,
+    accept: ".png",
+    icon: fileAttachmentIcon,
+  },
+  emoji: {
+    disabled: false,
+    icon: emojiIcon,
+    list: ["😀", "😃", "😄", "😅", "😊", "😌", "😇", "🙃", "🤣", "😍", "🥰", "🥳", "🎉", "🎈", "🚀", "⭐️"]
+  },
+  advance: {
+    useCustomMessages: false,
+    useCustomBotOptions: false,
+    useCustomPaths: false,
+  },
 
-	// Styles Category
-	tooltipStyle: {},
-	chatButtonStyle: {},
-	notificationBadgeStyle: {},
-	chatWindowStyle: {},
-	headerStyle: {},
-	bodyStyle: {},
-	chatInputContainerStyle: {},
-	chatInputAreaStyle: {},
-	userBubbleStyle: {},
-	botBubbleStyle: {},
-	botOptionStyle: {},
-	botOptionHoveredStyle: {},
-	botCheckboxRowStyle: {},
-	botCheckboxNextStyle: {},
-	botCheckMarkStyle: {},
-	botCheckMarkSelectedStyle: {},
-	sendButtonStyle: {},
-	sendButtonHoveredStyle: {},
-	characterLimitStyle: {},
-	characterLimitReachedStyle: {},
-	chatHistoryButtonStyle: {},
-	chatHistoryButtonHoveredStyle: {},
-	chatHistoryLineBreakStyle: {},
-	chatMessagePromptStyle: {},
-	chatMessagePromptHoveredStyle: {},
-	footerStyle: {},
-	loadingSpinnerStyle: {},
+  // Styles Category
+  tooltipStyle: {},
+  chatButtonStyle: {},
+  notificationBadgeStyle: {},
+  chatWindowStyle: {},
+  headerStyle: {},
+  bodyStyle: {},
+  chatInputContainerStyle: {},
+  chatInputAreaStyle: {},
+  userBubbleStyle: {},
+  botBubbleStyle: {},
+  botOptionStyle: {},
+  botOptionHoveredStyle: {},
+  botCheckboxRowStyle: {},
+  botCheckboxNextStyle: {},
+  botCheckMarkStyle: {},
+  botCheckMarkSelectedStyle: {},
+  sendButtonStyle: {},
+  sendButtonHoveredStyle: {},
+  characterLimitStyle: {},
+  characterLimitReachedStyle: {},
+  chatHistoryButtonStyle: {},
+  chatHistoryButtonHoveredStyle: {},
+  chatHistoryLineBreakStyle: {},
+  chatMessagePromptStyle: {},
+  chatMessagePromptHoveredStyle: {},
+  footerStyle: {},
+  loadingSpinnerStyle: {},
 }
 ```
 </details>

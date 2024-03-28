@@ -51,26 +51,26 @@ Each section contains distinct properties that provide granular control over the
 import { ChatBot } from 'react-chatbotify';
 
 const options = {
-	isOpen: true,
-	// ...other configurations
-	theme: {
-		primaryColor: '#42b0c5',
-		secondaryColor: '#491d8d',
-		fontFamily: 'Arial, sans-serif',
-	},
-	audio: {
-		disabled: false,
-	},
-	// ...other styles
+  isOpen: true,
+  // ...other configurations
+  theme: {
+    primaryColor: '#42b0c5',
+    secondaryColor: '#491d8d',
+    fontFamily: 'Arial, sans-serif',
+  },
+  audio: {
+    disabled: false,
+  },
+  // ...other styles
 };
 
 const App = () => {
-	return (
-		<div>
-			<h1>My Chatbot</h1>
-			<ChatBot options={options} />
-		</div>
-	);
+  return (
+    <div>
+      <h1>My Chatbot</h1>
+      <ChatBot options={options} />
+    </div>
+  );
 }
 ```
 
@@ -106,24 +106,24 @@ Each section is responsible for the appearance of a chatbot component. The API d
 import { ChatBot } from 'react-chatbotify';
 
 const options = {
-	// ...other configurations
-	headerStyle: {
-		backgroundColor: '#42b0c5',
-		color: '#ffffff',
-		padding: '10px',
-	},
-	chatWindowStyle: {
-		backgroundColor: '#f2f2f2',
-	},
-	// ...other styles
+  // ...other configurations
+  headerStyle: {
+    backgroundColor: '#42b0c5',
+    color: '#ffffff',
+    padding: '10px',
+  },
+  chatWindowStyle: {
+    backgroundColor: '#f2f2f2',
+  },
+  // ...other styles
 };
 
 const App = () => {
   return (
-	<div>
-	  <h1>My Chatbot</h1>
-	  <ChatBot options={options} />
-	</div>
+    <div>
+      <h1>My Chatbot</h1>
+      <ChatBot options={options} />
+    </div>
   );
 }
 ```

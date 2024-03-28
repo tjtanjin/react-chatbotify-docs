@@ -14,13 +14,13 @@ This page documents all the attributes that may be used in a conversation [**Blo
 
 ```jsx
 const flow = {
-    start: {
-        message: "Hello there! What is your name?",
-        path: "ask_age",
-    },
-    ask_age: {
-        message: (params) => `Good to see you ${params.userInput}, how old are you?`
-    }
+  start: {
+    message: "Hello there! What is your name?",
+    path: "ask_age",
+  },
+  ask_age: {
+    message: (params) => `Good to see you ${params.userInput}, how old are you?`
+  }
 }
 ```
 </details>

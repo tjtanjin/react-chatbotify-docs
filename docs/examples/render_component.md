@@ -30,30 +30,30 @@ const MyChatBot = () => {
 			),
 			path: "check_answer",
 		},
-        check_answer: {
-            transition: (params) => {
-                if (params.prevPath === "incorrect_answer") {
-                    return;
-                }
-                return {duration: 0};
-            },
-            path: (params) => {
+		check_answer: {
+			transition: (params) => {
+				if (params.prevPath === "incorrect_answer") {
+					return;
+				}
+				return {duration: 0};
+			},
+			path: (params) => {
 				if (params.userInput.toLowerCase() != "black") {
 					return "incorrect_answer"
 				} else {
 					return "correct_answer";
 				}
 			},
-        },
-        incorrect_answer: {
+		},
+		incorrect_answer: {
 			message: "Your answer is incorrect, try again!",
 			transition: {duration: 0},
 			path: (params) => params.prevPath
 		},
-        correct_answer: {
-            message: "Brilliant! Come back next time!",
-            chatDisabled: true
-        }
+		correct_answer: {
+			message: "Brilliant! Come back next time!",
+			chatDisabled: true
+		}
 	}
 	return (
 		<ChatBot options={{theme: {embedded: true}, voice: {disabled: false}, chatHistory: {storageKey: "example_render_component"}}} flow={flow}/>

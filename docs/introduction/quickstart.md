@@ -33,9 +33,9 @@ Initialize the ChatBot and you will be greeted with a default welcome/help messa
 import ChatBot from "react-chatbotify";
 
 const MyComponent = () => {
-	return (
-		<Chatbot/>
-	);
+  return (
+    <Chatbot/>
+  );
 };
 ```
 

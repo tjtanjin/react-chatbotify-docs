@@ -11,14 +11,14 @@ Conversations refer to the interactions between the bot and the user. Here's how
 
 ```jsx
 const flow = {
-    start: {
-		message: "What is your age?",
-		path: "end"
-	},
-	end: {
-		message: (params) => `I see you are ${params.userInput}!`,
-		chatDisabled: true
-	}
+  start: {
+    message: "What is your age?",
+    path: "end"
+  },
+  end: {
+    message: (params) => `I see you are ${params.userInput}!`,
+    chatDisabled: true
+  }
 }
 ```
 
@@ -47,14 +47,14 @@ in your conversation). In the code snippet shown below, the flow contains 2 bloc
 
 ```jsx
 const flow = {
-    start: {
-		message: "What is your age?",
-		path: "end"
-	},
-	end: {
-		message: (params) => `I see you are ${params.userInput}!`,
-		chatDisabled: true
-	}
+  start: {
+    message: "What is your age?",
+    path: "end"
+  },
+  end: {
+    message: (params) => `I see you are ${params.userInput}!`,
+    chatDisabled: true
+  }
 }
 ```
 
@@ -68,8 +68,8 @@ Note that the type of attributes available for pre-processing and post-processin
 
 ```jsx
 start: {
-	message: "What is your age?",
-	path: "end"
+  message: "What is your age?",
+  path: "end"
 }
 ```
 
@@ -110,8 +110,8 @@ before `chatDisabled`. It's also worth noting that in this case, `message` is de
 
 ```jsx
 end: {
-	message: (params) => `I see you are ${params.userInput}!`,
-	chatDisabled: true
+  message: (params) => `I see you are ${params.userInput}!`,
+  chatDisabled: true
 }
 ```
 
@@ -149,8 +149,8 @@ As shown in the `end` code snippet, the parameter used in its `message` attribut
 
 ```jsx
 end: {
-	message: (params) => `I see you are ${params.userInput}!`,
-	chatDisabled: true
+  message: (params) => `I see you are ${params.userInput}!`,
+  chatDisabled: true
 }
 ```
 
@@ -181,26 +181,26 @@ takes in the `flow` that we have just gone through above. Tinker with the live e
 
 ```jsx live noInline title=MyComponent.js
 const MyComponent = () => {
-	const flow = {
-		start: {
-			message: "What is your age?",
-			path: "end"
-		},
-		end: {
-			message: (params) => `I see you are ${params.userInput}!`,
-			chatDisabled: true
-		}
-	}
+  const flow = {
+    start: {
+      message: "What is your age?",
+      path: "end"
+    },
+    end: {
+      message: (params) => `I see you are ${params.userInput}!`,
+      chatDisabled: true
+    }
+  }
 
-	return (
-		<ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "conversations_summary"}}} flow={flow}/>
-	);
+  return (
+    <ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "conversations_summary"}}} flow={flow}/>
+  );
 };
 
 render(
-	<div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-		<MyComponent/>
-	</div>
+  <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+    <MyComponent/>
+  </div>
 )
 ```
 

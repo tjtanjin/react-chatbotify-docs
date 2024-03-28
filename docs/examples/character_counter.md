@@ -11,21 +11,21 @@ The following is an example of showing character count and enforcing character l
 
 ```jsx live noInline title=MyChatBot.js
 const MyChatBot = () => {
-    const flow={
-        start: {
-            message: "Hey! Keep within the character limit!",
-            path: "loop"
-        },
-        loop: {
-            message: "Seems like you are within the limit, great job!",
-            path: "loop",
-        }
-    }
-    return (
-        <ChatBot options={{theme: {embedded: true}, chatInput: {showCharacterCount: true, characterLimit: 10},
-            chatHistory: {storageKey: "example_character_counter"}}} flow={flow}
-        />
-    );
+	const flow={
+		start: {
+			message: "Hey! Keep within the character limit!",
+			path: "loop"
+		},
+		loop: {
+			message: "Seems like you are within the limit, great job!",
+			path: "loop",
+		}
+	}
+	return (
+		<ChatBot options={{theme: {embedded: true}, chatInput: {showCharacterCount: true, characterLimit: 10},
+			chatHistory: {storageKey: "example_character_counter"}}} flow={flow}
+		/>
+	);
 };
 
 render(<MyChatBot/>)

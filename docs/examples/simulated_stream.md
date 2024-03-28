@@ -11,22 +11,22 @@ The following is an example of a bot simulating stream messages. In the era of L
 
 ```jsx live noInline title=MyChatBot.js
 const MyChatBot = () => {
-    const flow={
-        start: {
-            message: "Hey! Look at my messages stream in, pretty cool isn't it?",
-            path: "thank"
-        },
-        thank: {
-            message: async (params) => {
-                await params.injectMessage("I am an injected message!");
-                return "I am a return message!";
-            },
-            path: "start"
-        }
-    }
-    return (
-        <ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "example_simulation_stream"}, botBubble: {simStream: true}}} flow={flow}/>
-    );
+	const flow={
+		start: {
+			message: "Hey! Look at my messages stream in, pretty cool isn't it?",
+			path: "thank"
+		},
+		thank: {
+			message: async (params) => {
+				await params.injectMessage("I am an injected message!");
+				return "I am a return message!";
+			},
+			path: "start"
+		}
+	}
+	return (
+		<ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "example_simulation_stream"}, botBubble: {simStream: true}}} flow={flow}/>
+	);
 };
 
 render(<MyChatBot/>)
