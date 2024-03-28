@@ -17,13 +17,7 @@ React ChatBotify is [**available on npm**](https://www.npmjs.com/package/react-c
 npm install react-chatbotify --save
 ```
 
-## Imports
-
-Import the CSS file at the top level of your project (e.g. `index.js`).
-
-```jsx title=index.js
-Import * from "react-chatbotify/dist/react-chatbotify.css";
-```
+## Import
 
 Import the ChatBot within your component of interest (e.g. `MyComponent.js`).
 
@@ -44,6 +38,12 @@ const MyComponent = () => {
 	);
 };
 ```
+
+:::info Info
+
+If you are using [**NextJS**](https://nextjs.org/) and running into errors, look [**here**](/docs/introduction/faq#q8-i-am-using-nextjs-and-running-into-referenceerror-window-is-not-defined-errors-how-can-i-fix-this)!
+
+:::
 
 ## Theming (Optional)
 
