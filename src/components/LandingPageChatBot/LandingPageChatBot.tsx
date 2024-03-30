@@ -6,9 +6,9 @@ import "react-chatbotify/dist/react-chatbotify.css";
 
 
 // boolean indicating if user is on desktop (otherwise treated as on mobile)
-export const isDesktop = !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+const isDesktop = !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
 
-const CustomChatBot = () => {
+const LandingPageChatBot = () => {
 	const history = useHistory();
 	const navigatePage = (page, params) => {
 		if (page.startsWith("https")) {
@@ -20,32 +20,78 @@ const CustomChatBot = () => {
 			history.push(page);
 		}
 	};
-	const helpOptions = ["Quickstart", "API Docs", "Examples", "Github", "Discord"];
+	const helpOptions = ["Quickstart", "API Docs", "Examples", "Playground"];
 
 	const options = {
-		voice: {disabled: false},
-		audio: {disabled: false},
 		theme: {
-			mobileEnabled: true
+			embedded: true
 		},
-		botBubble: {
-			simStream: true
+		notification: {
+			disabled: true
 		},
 		chatHistory: {
-			storageKey: "main_chatbot"
+			disabled: true
 		},
+		header: {
+			showAvatar: true,
+			title: (
+				<p style={{cursor: "pointer", margin: 0}} onClick={
+					() => window.open("https://github.com/tjtanjin/")
+				}>Tan Jin
+				</p>
+			),
+		},
+		footer: {
+			text: (<></>),
+		},
+		botBubble: {
+			showAvatar: true,
+			simStream: true
+		},
+		chatWindowStyle: {
+			height: 404,
+			width: 300
+		},
+		headerStyle: {
+			padding: 8,
+			background: "#5a5a5a",
+			height: 44
+		},
+		chatInputContainerStyle: {
+			height: 57,
+		},
+		chatInputAreaStyle: {
+			fontSize: 12
+		},
+		footerStyle: {
+			height: 41
+		},
+		botBubbleStyle: {
+			maxWidth: "75%",
+			textAlign: "left",
+			fontSize: 12
+		},
+		userBubbleStyle: {
+			textAlign: "left",
+			fontSize: 12
+		},
+		botOptionStyle: {
+			fontSize: 12
+		},
+		botOptionHoveredStyle: {
+			fontSize: 12
+		}
 	}
 
 	const flow = {
 		start: {
-			message: "Hello, I am Tan Jin 👋! Welcome to React ChatBotify, I'm excited that you are using our " +
-				"chatbot 😊!",
-			transition: {duration: 0},
+			message: "Welcome to React ChatBotify 👋!",
+			transition: {duration: 1000},
 			path: "show_options",
 			chatDisabled: true
 		},
 		show_options: {
-			message: "Here are a few helpful things you can check out to get started:",
+			message: "Let's get you started below 😊!",
 			options: helpOptions,
 			path: "process_options"
 		},
@@ -75,11 +121,8 @@ const CustomChatBot = () => {
 				case "Examples":
 					link = "/docs/examples/basic_form";
 					break;
-				case "Github":
-					link = "https://github.com/tjtanjin/react-chatbotify/";
-					break;
-				case "Discord":
-					link = "https://discord.gg/6R4DK4G5Zh";
+				case "Playground":
+					link = "/playground";
 					break;
 				default:
 					return "unknown_input";
@@ -102,4 +145,4 @@ const CustomChatBot = () => {
 	);
 };
 
-export default CustomChatBot;
+export default LandingPageChatBot;

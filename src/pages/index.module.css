@@ -12,14 +12,79 @@
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+
+  .heroContainer {
+    flex-direction: column !important;
+  }
+
+  .leftContainer {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 90% !important;
+  }
+
+  .rightContainer {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
   }
 }
 
-.buttons {
+@media screen and (max-width: 540px) {
+  .buttonContainer {
+    flex-direction: column !important;
+  }
+  
+  .documentationButton {
+    margin-right: 0px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .landingPageSubtitleWide {
+    display: none !important;
+  }
+  
+  .landingPageSubtitleThin {
+    display: block !important;
+  }
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.leftContainer {
+  margin-left: auto;
+  margin-right: 0;
+  width: 60%;
+}
+
+.rightContainer {
+  width: 40%;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.documentationButton {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 25px;
+}
+
+.playgroundButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25;
 }
 
 .codeContainer {
@@ -42,4 +107,12 @@
   font-weight: bold;
   margin-top: 25px;
   transition: opacity 1s;
+}
+
+.landingPageSubtitleWide {
+  display: block;
+}
+
+.landingPageSubtitleThin {
+  display: none;
 }

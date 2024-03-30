@@ -8,8 +8,8 @@ export default function Root({children}) {
 			{children}
 			<BrowserOnly>
 				{() => {
-					const CustomChatBot = require("../components/CustomChatBot/CustomChatBot").default;
-					return <CustomChatBot/>
+					const FloatingChatBot = require("../components/FloatingChatBot/FloatingChatBot").default;
+					return <FloatingChatBot/>
 				}}
 			</BrowserOnly>
 		</>
