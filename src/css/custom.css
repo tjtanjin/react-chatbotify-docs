@@ -89,6 +89,10 @@ table th:nth-of-type(4) {
   background: var(--ifm-color-primary) !important;
 }
 
+.hero .rcb-user-message.rcb-user-message-entry {
+  background: var(--ifm-color-inverse-primary) !important;
+}
+
 .hero .rcb-send-button {
   background: var(--ifm-color-primary) !important;
 }
