@@ -19,7 +19,7 @@ const FloatingChatBot = () => {
 			history.push(page);
 		}
 	};
-	const helpOptions = ["Quickstart", "API Docs", "Examples", "Github", "Discord"];
+	const helpOptions = ["Quickstart", "API Docs", "Examples", "Github", "Discord", "CodeSandbox"];
 
 	const options = {
 		voice: {disabled: false},
@@ -82,6 +82,9 @@ const FloatingChatBot = () => {
 					break;
 				case "Discord":
 					link = "https://discord.gg/6R4DK4G5Zh";
+					break;
+				case "CodeSandbox":
+					link = "https://codesandbox.io/search?query=react-chatbotify&page=1&configure%5BhitsPerPage%5D=12&refinementList%5Bnpm_dependencies.dependency%5D%5B0%5D=react-chatbotify";
 					break;
 				default:
 					return "unknown_input";

@@ -365,7 +365,7 @@ Properties here handle the tooltip shown beside the chat button.
 
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| mode                       | string                          | "CLOSE"                                     | The mode of the tooltip which includes: <ul><li>`ALWAYS`:</li> Tooltip is always shown<li>`CLOSE`:</li> Tooltip is shown when chat window is closed<li>`START`:</li> Tooltip is shown once on page load</ul>                                                                                                   |
+| mode                       | string                          | "CLOSE"                                     | The mode of the tooltip which includes: <ul><li>`ALWAYS`:</li> Tooltip is always shown<li>`CLOSE`:</li> Tooltip is shown when chat window is closed<li>`START`:</li> Tooltip is shown once on page load<li>`NEVER`:</li> Tooltip is never shown</ul>                                                                                                   |
 | text                       | string                          | "Talk to me! 😊"                            | The text to be displayed in the tooltip.                                                                                       |
 
 ### UserBubble
