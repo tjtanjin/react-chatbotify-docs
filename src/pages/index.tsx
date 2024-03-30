@@ -17,8 +17,12 @@ function HomepageHeader() {
 			<div className={`container ${styles.heroContainer}`}>
 				<div className={styles.leftContainer}>
 					<h1 className="hero__title">{siteConfig.title}</h1>
-					<p className={`hero__subtitle ${styles.landingPageSubtitleWide}`}>A modern React library for creating<br/> a flexible and extensible chatbot</p>
-					<p className={`hero__subtitle ${styles.landingPageSubtitleThin}`}>A modern React library for creating a flexible and extensible chatbot</p>
+					<p className={`hero__subtitle ${styles.landingPageSubtitleWide}`}>
+						A modern React library for creating<br/> a flexible and extensible chatbot
+					</p>
+					<p className={`hero__subtitle ${styles.landingPageSubtitleThin}`}>
+						A modern React library for creating a flexible and extensible chatbot
+					</p>
 					<GitHubButtonsContainer/>
 					<div className={styles.buttonContainer}>
 						<div className={styles.documentationButton}>
@@ -65,7 +69,9 @@ function HomepageHeader() {
 				<div className={styles.rightContainer}>
 					<BrowserOnly>
 						{() => {
-							const LandingPageChatBot = require("../components/LandingPageChatBot/LandingPageChatBot").default;
+							const LandingPageChatBot = 
+								// eslint-disable-next-line @typescript-eslint/no-var-requires
+								require("../components/LandingPageChatBot/LandingPageChatBot").default;
 							return <LandingPageChatBot/>
 						}}
 					</BrowserOnly>
