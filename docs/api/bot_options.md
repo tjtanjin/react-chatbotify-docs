@@ -151,6 +151,8 @@ const defaultOptions = {
   bodyStyle: {},
   chatInputContainerStyle: {},
   chatInputAreaStyle: {},
+  chatInputAreaFocusedStyle: {},
+  chatInputAreaDisabledStyle: {},
   userBubbleStyle: {},
   botBubbleStyle: {},
   botOptionStyle: {},
@@ -419,6 +421,8 @@ If you wish to make further changes to the chatbot styles, then below is the lis
 | chatHistoryLineBreakStyle | object                          | {}                                                                                       | Styles for the chat history line break.                                                                                         |
 | chatInputContainerStyle           | object                          | {}                                                                                       | Styles for the chatbot input text area.                                                                                                   |
 | chatInputAreaStyle           | object                          | {}                                                                                       | Styles for the chatbot input container.                                                                                                   |
+| chatInputAreaFocusedStyle           | object                          | {}                                                                                       | Styles for the chatbot input container when it is focused.                                                                                                   |
+| chatInputAreaDisabledStyle           | object                          | {}                                                                                       | Styles for the chatbot input container when it is disabled.                                                                                                   |
 | chatWindowStyle          | object                          | {}                                                                                       | Styles for the chatbot window.                                                                                                  |
 | footerStyle              | object                          | {}                                                                                       | Styles for the chatbot footer.                                                                                                  |
 | headerStyle              | object                          | {}                                                                                       | Styles for the chatbot header.                                                                                                  |
