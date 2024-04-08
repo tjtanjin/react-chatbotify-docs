@@ -15,7 +15,7 @@ Each of these two categories contain `sections` (which in turn contains `propert
 - `advance: {useCustomMessages: true}`
 - `audio: {disabled: false}`
 - `theme: {primaryColor: "#ff0000", embedded: true}`
-- `headerStyle: {backgroundColor: "#00ff00", color: "#0000ff"}`
+- `headerStyle: {background: "#00ff00", color: "#0000ff"}`
 - `footerStyle: {fontSize: 12}`
 
 :::tip Tip
@@ -108,7 +108,7 @@ import { ChatBot } from 'react-chatbotify';
 const options = {
   // ...other configurations
   headerStyle: {
-    backgroundColor: '#42b0c5',
+    background: '#42b0c5',
     color: '#ffffff',
     padding: '10px',
   },
