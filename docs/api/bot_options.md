@@ -212,7 +212,7 @@ These properties are only recommended for advanced use cases. You may refer to t
 
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| useCustomMessages          | boolean                         | false                                       | Specifies whether to use custom messages in the chatbot.                                                                       |
+| useCustomMessages          | boolean                         | false                                       | Specifies whether to use custom messages in the chatbot (audio and message streaming will not work for messages that are directly added).                                                                       |
 | useCustomBotOptions        | boolean                         | false                                       | Specifies whether to use custom bot options in the chatbot.                                                                    |
 | useCustomPaths             | boolean                         | false                                       | Specifies whether to use custom paths in the chatbot.                                                                          |
 
