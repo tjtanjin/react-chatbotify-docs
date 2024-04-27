@@ -13,7 +13,7 @@ However, you will need to acquire your own API key for testing within this edito
 
 :::caution
 
-This is for testing purposes only. **Do not** embed your API keys on your website in production, you will want to use a proxy instead. I'll be writing a medium article on this soon (link will be updated here when the article is out).
+This is for testing purposes only, **do not** embed your API keys on your website in production. You may refer to [this article](https://tjtanjin.medium.com/how-to-build-and-integrate-a-react-chatbot-with-llms-a-react-chatbotify-guide-part-4-b40cd59fd6e6) for more details.
 
 :::
 

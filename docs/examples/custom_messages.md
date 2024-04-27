@@ -9,6 +9,12 @@ keywords: [react, chat, chatbot, chatbotify]
 
 The following is an example for the `MessagesContext`, which allows you to modify messages from outside the chatbot using your own application's logic. Note that this is an **advance** feature and is thus slightly more involved in setup.
 
+:::caution
+
+When you are working with `useCustomMessages`, you are modifying the messages array directly and as a result, `audio` and `stream` features will not work on such messages. You may refer to this [GitHub Issue](https://github.com/tjtanjin/react-chatbotify/issues/41#issuecomment-2077010086) for more information.
+
+:::
+
 ```jsx live noInline title=MyChatBot.js
 const MyChatBot = () => {
 	// setup your own messages state 
