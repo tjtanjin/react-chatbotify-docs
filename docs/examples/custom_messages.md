@@ -1,5 +1,5 @@
 ---
-sidebar_position: 15
+sidebar_position: 17
 title: Custom Messages
 description: custom messages chatbot example
 keywords: [react, chat, chatbot, chatbotify]

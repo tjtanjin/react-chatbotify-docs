@@ -59,7 +59,8 @@ const MyChatBot = () => {
 	const flow={
 		start: {
 			message: "Enter your gemini api key and start asking away!",
-			path: "api_key"
+			path: "api_key",
+			isSensitive: true
 		},
 		api_key: {
 			message: (params) => {

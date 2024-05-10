@@ -69,6 +69,7 @@ const defaultOptions = {
     storageKey: "rcb-history",
     viewChatHistoryButtonText: "Load Chat History ⟳",
     chatHistoryLineBreakText: "----- Previous Chat History -----",
+    autoLoad: false,
   },
   chatInput: {
     disabled: false,
@@ -90,12 +91,19 @@ const defaultOptions = {
     messagePromptText: "New Messages ↓",
     messagePromptOffset: 30,
   },
+  sensitiveInput: {
+		maskInTextArea: true,
+		maskInUserBubble: true,
+		asterisksCount: 10,
+		hideInUserBubble: false,
+	},
   userBubble: {
     animate: true,
     showAvatar: false,
     avatar: userAvatar,
     simStream: false,
     streamSpeed: 30,
+    dangerouslySetInnerHtml: false,
   },
   botBubble: {
     animate: true,
@@ -103,6 +111,7 @@ const defaultOptions = {
     avatar: botAvatar,
     simStream: false,
     streamSpeed: 30,
+    dangerouslySetInnerHtml: false,
   },
   voice: {
     disabled: true,
@@ -201,6 +210,7 @@ Below is the list of sections available for configurations.
 | footer                     | object                          | {}                                            | Configuration for the chatbot footer.                                                                                          |
 | header                     | object                          | {}                                            | Configuration for the chatbot header.                                                                                          |
 | notification               | object                          | {}                                            | Configuration for chatbot notifications.                                                                                       |
+| sensitiveInput             | object                          | {}                                            | Configuration for chatbot sensitive input.                                                                                         |
 | theme                      | object                          | {}                                            | Configuration for the chatbot theme.                                                                                        |
 | tooltip                    | object                          | {}                                            | Configuration for the chatbot tooltip.                                                                                         |
 | userBubble                 | object                          | {}                                            | Configuration for user chat bubbles.                                                                                           |
@@ -241,6 +251,7 @@ Properties here handle the chat bubble for messages sent by the bot.
 | avatar                | string                          | -                                            | Image import or URL for the avatar to be displayed for bot chat bubbles.                                                             |                                                                              |
 | simStream                 | boolean                         | false                                       | Specifies whether to simulate text messages from the bot as a stream.                                                         |
 | streamSpeed                | number                          | 30                                            | Specifies the interval in milliseconds between streaming each character (ignored if `simStream` is false).                                                             |                                                                              |
+| dangerouslySetInnerHtml    | boolean                         | false                                       | Specifies whether to allow setting of raw HTML content within a bot message bubble (if `true`, do sanitize input strings and use with caution).                                                         |
 
 ### ChatButton
 
@@ -273,6 +284,7 @@ Properties here handle the viewing of chat history.
 | storageKey                 | string                          | "rcb-history"                               | The key to use for storing chat history. Can be ignored if you only have a single instance of the chatbot on your website. Otherwise, if multiple chatbots share the same storage key, their chat history will overlap.                                                                                       |
 | viewChatHistoryButtonText  | string                          | "Load Chat History"                         | The text to be displayed on the view chat history button.                                                                     |
 | chatHistoryLineBreakText   | string                          | "----- Previous Chat History -----"         | The text to be displayed as a line break in the chat history.                                                                  |
+| autoLoad                   | boolean                         | false                                       | Specifies whether to automatically load chat history on start (requires `disabled` to be set to `false` as well)                                                                     |
 
 ### ChatInput
 
@@ -344,6 +356,17 @@ Properties here handle the message notification sent to the user. When toggled o
 | notificationSound          | string                          | -                                            | The sound to be played for chatbot notifications.                                                                              |
 | icon          | string                          | -                                            | Image import or URL for the notification icon to be displayed in the chatbot header.
 
+### SensitiveInput
+
+Properties here handle sensitive chat input sent by the user.
+
+| Name                       | Type                            | Default                                     | Description                                                                                                                    |
+| -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| maskInTextArea             | boolean                         | true                                        | Specifies whether to mask sensitive text with asterisks within the chat input textarea that users type in (if `hideInUserBubble` is set to true, it will override this option).                                                                                       |
+| maskInUserBubble           | boolean                         | true                                        | Specifies whether to mask sensitive text with asterisks within the user message bubble sent to chat.                                                                                       |
+| asterisksCount             | number                          | true                                        | Specifies the number of asterisks used to mask the sensitive text in chat bubbles.                                                                                       |
+| hideInUserBubble           | boolean                         | true                                        | Specifies whether to completely hide user message bubbles containing sensitive text when sent to chat.                                                                                       |
+
 ### Theme
 
 Properties here handle the chatbot theme.
@@ -381,6 +404,7 @@ Properties here handle the chat bubble for messages sent by the user.
 | avatar                | string                          | -                                            | Image import or URL for the avatar to be displayed for user chat bubbles.                                                            |
 | simStream                 | boolean                         | false                                       | Specifies whether to simulate text messages from the user as a stream.                                                         |
 | streamSpeed                | number                          | 30                                            | Specifies the interval in milliseconds between streaming each character (ignored if `simStream` is false).                                                             |      
+| dangerouslySetInnerHtml    | boolean                         | false                                       | Specifies whether to allow setting of raw HTML content within a user message bubble (if `true`, do sanitize input strings and use with caution).                                                         |
 
 ### Voice
 

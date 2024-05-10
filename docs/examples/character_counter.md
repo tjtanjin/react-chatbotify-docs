@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 15
 title: Character Counter
 description: character counter chatbot example
 keywords: [react, chat, chatbot, chatbotify]
