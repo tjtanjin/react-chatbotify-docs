@@ -11,7 +11,7 @@ The following is an example showing how you may allow users to enter sensitive i
 
 :::tip
 
-The default sensitive input configuration is used here. For customizing the behavior for hiding sensitive information, you may check out its [API documentation](/docs/api/bot_options.md/#sensitiveinput).
+The default sensitive input configuration is used here. For customizing the behavior for hiding sensitive information, you may check out its [API documentation](/docs/api/bot_options#sensitiveinput).
 
 :::
 
