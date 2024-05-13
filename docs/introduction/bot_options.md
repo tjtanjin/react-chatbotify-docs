@@ -78,9 +78,16 @@ const App = () => {
 
 The **Styles** category comprises **sections** that allow you to personalize the visual components of the chatbot. By adjusting these sections, you have the ability to customize the colors, typography, and other visual elements of the chatbot's interface. Here are the available sections:
 
-- `headerStyle`: Styles for the chatbot header.
+- `tooltipStyle`: Styles for the chatbot tooltip.
+- `chatButtonStyle`: Styles for the chatbot button.
+- `notificationBadgeStyle`: Styles for the notification badge.
 - `chatWindowStyle`: Styles for the chat window.
-- `chatInputStyle`: Styles for the chat input area.
+- `headerStyle`: Styles for the chatbot header.
+- `bodyStyle`: Styles for the chatbot body.
+- `chatInputContainerStyle`: Styles for the chat input container.
+- `chatInputAreaStyle`: Styles for the chat input area.
+- `chatInputAreaFocusedStyle`: Styles for the chat input area when focused.
+- `chatInputAreaDisabledStyle`: Styles for the chat input area when disabled.
 - `userBubbleStyle`: Styles for user chat bubbles.
 - `botBubbleStyle`: Styles for bot chat bubbles.
 - `botOptionStyle`: Styles for bot options.
@@ -96,6 +103,8 @@ The **Styles** category comprises **sections** that allow you to personalize the
 - `chatHistoryButtonStyle`: Styles for the chat history button.
 - `chatHistoryButtonHoveredStyle`: Styles for the chat history button when hovered.
 - `chatHistoryLineBreakStyle`: Styles for the chat history line break.
+- `chatMessagePromptStyle`: Styles for the chat message prompt.
+- `chatMessagePromptHoveredStyle`: Styles for the chat message prompt when hovered.
 - `footerStyle`: Styles for the chatbot footer.
 - `loadingSpinnerStyle`: Styles for the loading spinner.
 
