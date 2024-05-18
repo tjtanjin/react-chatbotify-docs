@@ -1,5 +1,5 @@
 ---
-sidebar_position: 12
+sidebar_position: 13
 title: Smart Conversation
 description: smart conversation chatbot example
 keywords: [react, chat, chatbot, chatbotify]
@@ -18,13 +18,13 @@ A slightly more advanced example involving stream responses from LLM models can 
 ```jsx live noInline title=MyChatBot.js
 const MyChatBot = () => {
 	async function fetchData() {
-	  try {
-		const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
-		const data = await response.json();
-		return data.title;
-	  } catch (error) {
-		return "Oh no I don't know what to say!";
-	  }
+		try {
+			const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+			const data = await response.json();
+			return data.title;
+		} catch (error) {
+			return "Oh no I don't know what to say!";
+		}
 	}
 	let count = 0;
 	const flow={

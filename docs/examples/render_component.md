@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 11
 title: Render Component
 description: render component chatbot example
 keywords: [react, chat, chatbot, chatbotify]

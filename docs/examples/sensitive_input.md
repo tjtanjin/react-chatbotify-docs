@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 14
 title: Sensitive Input
 description: sensitive input chatbot example
 keywords: [react, chat, chatbot, chatbotify]
@@ -25,9 +25,9 @@ const MyChatBot = () => {
 		},
 		token: {
 			message: "I have received your token!",
-            options: ["Re-enter token"],
-            chatDisabled: true,
-            path: "start"
+			options: ["Re-enter token"],
+			chatDisabled: true,
+			path: "start"
 		},
 	}
 	return (

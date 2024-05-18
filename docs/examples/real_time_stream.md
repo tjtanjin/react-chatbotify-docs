@@ -7,27 +7,28 @@ keywords: [react, chat, chatbot, chatbotify]
 
 # Real-time Stream
 
-The following is a detailed example demonstrating real-time message streaming. Given the current popularity of Large Language Models (LLMs), I've opted to showcase real-time streaming using [**Google's Gemini AI**](https://ai.google.dev/), which generously offers free API usage. This example can easily be extended to interact with other providers or even your own custom endpoints.
+The following is a detailed example demonstrating real-time message streaming. Given the current popularity of Large Language Models (LLMs), I've opted to showcase real-time streaming using [**Google's Gemini AI**](https://ai.google.dev/), which generously offers free API usage. This example can easily be extended to interact with other providers such in the [**OpenAI example**](/docs/examples/llm_conversation) or even your own custom endpoints.
 
-However, you will need to acquire your own API key for testing within this editor. It's important to highlight that streaming functionality is exclusively supported through the `params.streamMessage` parameter, as illustrated below. If you are unable to obtain an API key but would still like to visualize the streaming in action, you may wish to check out the [**simulated stream**](/docs/examples/simulated_stream.md) example.
+However, you will need to acquire your own API key for testing within this editor. It's important to highlight that streaming functionality is exclusively supported through the `params.streamMessage` parameter, as illustrated below. If you are unable to obtain an API key but would still like to visualize the streaming in action, you may wish to check out the [**simulated stream**](/docs/examples/simulated_stream) example.
 
 :::caution
 
-This is for testing purposes only, **do not** embed your API keys on your website in production. You may refer to [this article](https://tjtanjin.medium.com/how-to-build-and-integrate-a-react-chatbot-with-llms-a-react-chatbotify-guide-part-4-b40cd59fd6e6) for more details.
+This is for testing purposes only, **do not** embed your API keys on your website in production. You may refer to [**this article**](https://tjtanjin.medium.com/how-to-build-and-integrate-a-react-chatbot-with-llms-a-react-chatbotify-guide-part-4-b40cd59fd6e6) for more details.
 
 :::
 
 ```jsx live noInline title=MyChatBot.js
 const MyChatBot = () => {
-	let api_key = null;
-	let has_error = false;
+	let apiKey = null;
+	const modelType = "gemini-pro";
+	let hasError = false;
 
 	// example gemini stream
 	// you can replace with other LLMs or even have a simulated stream
 	const gemini_stream = async (params) => {
 		try {
-			const genAI = new GoogleGenerativeAI(api_key);
-			const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+			const genAI = new GoogleGenerativeAI(apiKey);
+			const model = genAI.getGenerativeModel({ model: modelType });
 			const result = await model.generateContentStream(params.userInput);
 
 			let text = "";
@@ -51,20 +52,21 @@ const MyChatBot = () => {
 				await new Promise(resolve => setTimeout(resolve, 30));
 			}
 			await params.streamMessage(text);
-		} catch {
+		} catch (error) {
+			alert(error)
 			await params.injectMessage("Unable to load model, is your API Key valid?");
-			has_error = true;
+			hasError = true;
 		}
 	}
 	const flow={
 		start: {
-			message: "Enter your gemini api key and start asking away!",
+			message: "Enter your Gemini api key and start asking away!",
 			path: "api_key",
 			isSensitive: true
 		},
 		api_key: {
 			message: (params) => {
-				api_key = params.userInput.trim();
+				apiKey = params.userInput.trim();
 				return "Ask me anything!";
 			},
 			path: "loop",
@@ -74,7 +76,7 @@ const MyChatBot = () => {
 				await gemini_stream(params);
 			},
 			path: () => {
-				if (has_error) {
+				if (hasError) {
 					return "start"
 				}
 				return "loop"
