@@ -53,6 +53,7 @@ const defaultOptions = {
     volume: 0.2,
     icon: notificationIcon,
     sound: notificationSound,
+    showCount: true,
   },
   audio: {
     disabled: true,
@@ -355,6 +356,7 @@ Properties here handle the message notification sent to the user. When toggled o
 | volume                       | number                          | 0.2                                           | The volume (between 0 to 1) at which notification sound is played.                                                                                     |                                                   |
 | notificationSound          | string                          | -                                            | The sound to be played for chatbot notifications.                                                                              |
 | icon          | string                          | -                                            | Image import or URL for the notification icon to be displayed in the chatbot header.
+| showCount                  | boolean                         | true                                       | Specifies whether unread message count is shown on the top right corner of the chat bot button (this option is ignored if notification is `disabled`).                                                                          |
 
 ### SensitiveInput
 
