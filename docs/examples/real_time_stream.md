@@ -36,6 +36,8 @@ const MyChatBot = () => {
 			for await (const chunk of result.stream) {
 				const chunkText = chunk.text();
 				text += chunkText;
+				// inner for-loop used to visually stream messages character-by-character
+				// feel free to remove this loop if you are alright with visually chunky streams
 				for (let i = offset; i < chunkText.length; i++) {
 					// while this example shows params.streamMessage taking in text input,
 					// you may also feed it custom JSX.Element if you wish
@@ -53,7 +55,6 @@ const MyChatBot = () => {
 			}
 			await params.streamMessage(text);
 		} catch (error) {
-			alert(error)
 			await params.injectMessage("Unable to load model, is your API Key valid?");
 			hasError = true;
 		}
