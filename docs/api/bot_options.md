@@ -349,7 +349,7 @@ Properties here handle the chat header.
 
 ### Notification
 
-Properties here handle the message notification sent to the user. When toggled on, a notification sound will be played when a message is sent while the chat window is closed or while the user is alt-tab. Note that this feature will be disabled if chat window is embedded.
+Properties here handle the message notification sent to the user. When toggled on, a notification sound will be played when a message is sent while the chat window is closed or while the user is alt-tab. For embedded chatbots, notification will be played if chatbot is scrolled out of view.
 
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
