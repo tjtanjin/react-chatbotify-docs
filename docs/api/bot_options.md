@@ -74,6 +74,7 @@ const defaultOptions = {
   },
   chatInput: {
     disabled: false,
+    allowNewline: false,
     enabledPlaceholderText: "Type your message...",
     disabledPlaceholderText: "",
     showCharacterCount: false,
@@ -294,6 +295,7 @@ Properties here handle the chat input sent by the user. Note that when chatbot i
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | disabled                   | boolean                         | false                                       | Specifies whether chatbot input is disabled (can be overriden by the `chatDisabled` attribute within a **Block**).                                                                                   |
+| allowNewline               | boolean                         | false                                       | Specifies whether newline is allowed in chatbot input.                                                                                   |
 | enabledPlaceholderText     | string                          | "Type your message..."                      | The placeholder text to display in the chat input when it is enabled.                                                          |
 | disabledPlaceholderText    | string                          | ""                                            | The placeholder text to display in the chat input when it is disabled.                                                         |
 | showCharacterCount         | boolean                         | false                                           | Specifies whether to show the character count and limit (note that this value is **ignored if** `characterLimit` **is not set to 0 or more**).                                                            |
