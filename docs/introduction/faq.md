@@ -43,10 +43,11 @@ Since NextJS is a server-side rendering framework, the window object may not be 
 
 ```jsx
 "use client";
-import { lazy, Suspense, useEffect, useState } from "react"
+import { lazy, Suspense, useEffect, useState } from "react";
+
+const ChatBot = lazy(() => import("react-chatbotify"));
 
 export default function Home() {
-  const ChatBot = lazy(() => import("react-chatbotify"));
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     setIsLoaded(true);
