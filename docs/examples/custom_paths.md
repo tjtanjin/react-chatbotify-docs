@@ -11,8 +11,8 @@ The following is an example for the `PathsContext`, which allows you to modify p
 
 ```jsx live noInline title=MyChatBot.js
 const MyChatBot = () => {
-	// setup your own paths state (!important, always initialize paths with "start")
-	const [paths, setPaths] = React.useState(["start"]);
+	// setup your own paths state
+	const [paths, setPaths] = React.useState([]);
 
 	// example to jump to start of chat
 	const jumpToStart = () => {
