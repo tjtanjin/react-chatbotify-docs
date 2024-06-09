@@ -28,6 +28,7 @@ const defaultOptions = {
     embedded: false,
     desktopEnabled: true,
     mobileEnabled: true,
+    flowStartTrigger: "ON_LOAD",
   },
   tooltip: {
     mode: "CLOSE",
@@ -118,6 +119,7 @@ const defaultOptions = {
   voice: {
     disabled: true,
     defaultToggledOn: false,
+    language: "en-US",
     timeoutPeriod: 10000,
     autoSendDisabled: false,
     autoSendPeriod: 1000,
@@ -387,6 +389,7 @@ Properties here handle the chatbot theme.
 | embedded                   | boolean                         | false                                       | Specifies whether the chatbot is embedded in the webpage or accessed through a floating button. Note that notifications feature **will not work** for embedded chat windows.                                                             |
 | desktopEnabled                   | boolean                         | true                                       | Specifies whether the chatbot is enabled for users on desktop.                                                             |
 | mobileEnabled                    | boolean                         | true                                       | Specifies whether the chatbot is enabled for users on mobile.                                                             |
+| flowStartTrigger          | string                         | "ON_LOAD"                                      | The trigger for starting chatbot flow which includes: <ul><li>`ON_LOAD`:</li> Flow begins on chatbot load<li>`ON_CHATBOT_INTERACT`:</li> Flow begins when user interacts with chatbot<li>`ON_PAGE_INTERACT`:</li> Flow begins when user interacts with page</ul>                                                                                                   |
 
 ### Tooltip
 
@@ -418,6 +421,7 @@ Properties here handle the voice to text feature (**feature is available only on
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | disabled                   | boolean                         | false                                       | Specifies whether chatbot voice is disabled.                                                                                   |
 | defaultToggledOn           | boolean                         | false                                       | Specifies whether chatbot voice is toggled on by default.                                                                      |
+| language                   | string                          | "en-US"                                     | The expected language from the user, set by a string representing a [**BCP 47 language tag**](https://www.techonthenet.com/js/language_tags.php).                                                                                                |
 | timeoutPeriod              | number                          | 10000                                       | The timeout period in milliseconds for chatbot voice before it automatically toggles off.                                                                          |
 | autoSendDisabled           | boolean                         | false                                       | Specifies whether auto-sending of voice messages into the chat is disabled.                                                                  |
 | autoSendPeriod             | number                          | 1000                                        | The period in milliseconds after which voice messages are automatically sent.                                                  |
