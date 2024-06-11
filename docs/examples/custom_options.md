@@ -16,16 +16,20 @@ const MyChatBot = () => {
 
 	// setup your own bot options state
 	const [botOptions, setBotOptions] = React.useState({
+		// includes the default values in bot options before overriding
 		...defaultBotOptions,
 		theme: {
+			// includes the default values for each section before overriding
 			...defaultBotOptions.theme,
 			embedded: true
 		},
 		chatHistory: {
+			...defaultBotOptions.chatHistory,
 			storageKey: "example_custom_options"
 		},
 		// remember to enable custom bot options under the advance section
 		advance: {
+			...defaultBotOptions.advance,
 			useCustomBotOptions: true
 		}
 	});
