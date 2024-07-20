@@ -15,7 +15,7 @@ const config = {
   url: 'https://react-chatbotify.tjtanjin.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/legacy/v1/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -121,6 +121,13 @@ const config = {
         searchPagePath: 'search',
   
         //... other Algolia params
+      },
+      announcementBar: {
+        id: 'announcement-bar',
+        content: 'Warning: You are viewing a legacy documentation for version 1 of the chatbot. You are strongly encouraged to update the library by following the migration guide <a target="_blank" rel="noopener noreferrer" href="https://react-chatbotify.com/docs/introduction/migration_guide"><b>here</b></a>.',
+        backgroundColor: '#ff0000',
+        textColor: '#091E42',
+        isCloseable: false
       },
       footer: {
         style: 'dark',
