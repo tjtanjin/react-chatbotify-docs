@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 title: Voice
 description: voice chatbot example
 keywords: [react, chat, chatbot, chatbotify]
@@ -22,7 +22,7 @@ const MyChatBot = () => {
 		}
 	}
 	return (
-		<ChatBot options={{theme: {embedded: true}, voice: {disabled: false}, chatHistory: {storageKey: "example_voice"}}} flow={flow}/>
+		<ChatBot settings={{general: {embedded: true}, voice: {disabled: false}, chatHistory: {storageKey: "example_voice"}}} flow={flow}/>
 	);
 };
 

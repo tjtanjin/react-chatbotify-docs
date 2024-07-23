@@ -1,11 +1,11 @@
 ---
 sidebar_position: 11
-title: Render Component
-description: render component chatbot example
+title: Custom Component
+description: custom component chatbot example
 keywords: [react, chat, chatbot, chatbotify]
 ---
 
-# Render Component
+# Custom Component
 
 The following is an example for rendering a simple custom hint button within the chat window.
 
@@ -19,7 +19,7 @@ const MyChatBot = () => {
 				}
 				return "Hello there! Would you like to guess my favourite color? I've left you a hint below!"
 			},
-			render: (
+			component: (
 				<div style={{display: "flex", alignItems: "center", justifyContent: "center", marginTop: 10}}>
 					<button 
 						className="secret-fav-color"
@@ -56,7 +56,7 @@ const MyChatBot = () => {
 		}
 	}
 	return (
-		<ChatBot options={{theme: {embedded: true}, voice: {disabled: false}, chatHistory: {storageKey: "example_render_component"}}} flow={flow}/>
+		<ChatBot settings={{general: {embedded: true}, voice: {disabled: false}, chatHistory: {storageKey: "example_custom_component"}}} flow={flow}/>
 	);
 };
 

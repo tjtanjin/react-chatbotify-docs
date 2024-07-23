@@ -53,7 +53,7 @@ const MyChatBot = () => {
 		},
 		end: {
 			message: "Thank you for your interest, we will get back to you shortly!",
-			render: (
+			component: (
 				<div style={formStyle}>
 					<p>Name: {form.name}</p>
 					<p>Age: {form.age}</p>
@@ -68,7 +68,7 @@ const MyChatBot = () => {
 		},
 	}
 	return (
-		<ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "example_basic_form"}}} flow={flow}/>
+		<ChatBot settings={{general: {embedded: true}, chatHistory: {storageKey: "example_basic_form"}}} flow={flow}/>
 	);
 };
 

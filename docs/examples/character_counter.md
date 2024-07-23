@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: Character Counter
 description: character counter chatbot example
 keywords: [react, chat, chatbot, chatbotify]
@@ -22,7 +22,7 @@ const MyChatBot = () => {
 		}
 	}
 	return (
-		<ChatBot options={{theme: {embedded: true}, chatInput: {showCharacterCount: true, characterLimit: 10},
+		<ChatBot settings={{general: {embedded: true}, chatInput: {showCharacterCount: true, characterLimit: 10},
 			chatHistory: {storageKey: "example_character_counter"}}} flow={flow}
 		/>
 	);

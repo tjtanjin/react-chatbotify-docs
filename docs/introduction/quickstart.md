@@ -7,7 +7,7 @@ keywords: [react, chat, chatbot, chatbotify]
 
 # Quickstart
 
-Looking to get started 😊? The process of setting up the chatbot only involves 3 simple steps, making it incredibly easy to jump right in!
+Getting started? 😊 The process of setting up the chatbot only involves **3 simple steps**, making it incredibly easy to jump right in!
 
 ## Installation
 
@@ -34,7 +34,7 @@ import ChatBot from "react-chatbotify";
 
 const MyComponent = () => {
   return (
-    <Chatbot/>
+    <ChatBot/>
   );
 };
 ```
@@ -47,7 +47,9 @@ If you are using [**NextJS**](https://nextjs.org/) and running into errors, look
 
 ## Theming (Optional)
 
-If you are looking to adapt the chatbot to the color scheme on your website, the recommended **fastest and easiest** way is via the `primaryColor` and `secondaryColor` properties in the `theme` section. You may refer to the [**Theming Example**](/docs/examples/theming) for more details.
+If you are looking for a quick way to customize your chatbot, consider browsing for [**`themes`**](/docs/concepts/themes) on [**React ChatBotify Gallery**](https://gallery.react-chatbotify.com). You may then further refine the themes via [**`settings`**](/docs/concepts/settings) and [**`styles`**](/docs/concepts/styles). An example for this can be found [**here**](/docs/examples/basic_theme).
+
+Alternatively, you may also experiment with the `primaryColor` and `secondaryColor` properties in the `general` section of [**`settings`**](/docs/concepts/settings).
 
 :::info Info
 

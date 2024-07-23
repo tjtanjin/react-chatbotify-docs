@@ -1,5 +1,5 @@
 ---
-sidebar_position: 15
+sidebar_position: 16
 title: Markup Message
 description: markup message chatbot example
 keywords: [react, chat, chatbot, chatbotify]
@@ -30,7 +30,7 @@ const MyChatBot = () => {
 		},
 	}
 	return (
-		<ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "example_markup_message"},
+		<ChatBot settings={{general: {embedded: true}, chatHistory: {storageKey: "example_markup_message"},
 			userBubble: {dangerouslySetInnerHtml: true},
 			botBubble: {dangerouslySetInnerHtml: true}}} flow={flow}
 		/>

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: Attributes
 description: api documentation for attributes
 keywords: [react, chat, chatbot, chatbotify]
@@ -7,7 +7,7 @@ keywords: [react, chat, chatbot, chatbotify]
 
 # Attributes
 
-This page documents all the attributes that may be used in a conversation [**Block**](/docs/introduction/Conversations#block). Note that the 6 dynamic attributes `message`, `render`, `function`, `file`, `transition` and `path` are able to accept [**Params**](/docs/introduction/Conversations#params) as documented [**here**](/docs/api/params). For an example on how to use these attributes, you may refer to the sample flow in the dropdown below.
+This page documents all the attributes that may be used in a conversation [**Block**](/docs/introduction/Conversations#block). Take note that [**Attributes**](/docs/introduction/conversations#attributes) are divided into **pre-processing** and **post-processing** as listed in the tables below. For a brief example on the usage of attributes, you may refer to the **sample flow** in the dropdown which uses `message` and `path`.
 
 <details>
 <summary>Click to view sample flow</summary>
@@ -29,24 +29,25 @@ const flow = {
 
 Below is the list of available pre-processing attributes (processed upon entering a block and before user input).
 
-| Name      | Type                                               | Dynamic | Description                                                                                                                                                                                  |
-|----------------|----------------------------------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| message        | string \| function | Yes     | Message sent by the bot to the user - if using function, it can be passed `params`.             |
-| options        | array                                    | No      | An array of options that the bot presents to the user to choose from.                                                                      |
-| checkboxes     | object | No      | An object containing the following 3 properties: <ul><li>`items`:</li> (required) array of choices that the bot presents to the user to select from.<li>`max`:</li> (optional) maximum number of allowed selections, defaults to `all` if not specified<li>`min`:</li> (optional) minimum number of allowed selections, defaults to `1` if not specified</ul>
-| render         | JSX.Element \| function | Yes     | Custom component to render in the chat window to the user - if using function, it can be passed `params`.           |
-| chatDisabled   | boolean                                            | No      | Boolean indicating whether chat input is to be enabled or disabled in this block (overrides the `chatInput` section under [**Configurations**](/docs/api/bot_options#chatinput)).                                                                                  |
-| transition     | object \| function                                         | Yes      | An object (or function returning an object) containing the following 2 properties: <ul><li>`duration`:</li> (required) duration in milliseconds before the post-process attributes of a block are ran (auto-transition)<li>`interruptable`:</li> (optional) boolean indicating if user input will halt this auto-transition, defaults to `false` if not specified</ul> If using function, it can be passed `params`.                                                                                   |
+| Name         | Type                | Description                                                                                                                                                                                                                                                                                                               |
+|--------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| message      | string \| function  | Message sent by the bot to the user - if using function, it can be passed `params`.                                                                                                                                                                                                                                        |
+| options      | array               | An array of options that the bot presents to the user to choose from.                                                                                                                                                                                                                                                      |
+| checkboxes   | object              | An object containing the following 3 properties: <ul><li>`items`:</li> (required) array of choices that the bot presents to the user to select from.<li>`max`:</li> (optional) maximum number of allowed selections, defaults to `all` if not specified<li>`min`:</li> (optional) minimum number of allowed selections, defaults to `1` if not specified</ul> |
+| component    | JSX.Element \| function | Custom component to render in the chat window to the user - if using function, it can be passed `params`.                                                                                                                                                                                                                     |
+| isSensitive  | boolean             | Boolean indicating whether chat input is sensitive and needs to be masked.                                                                                                                                                |
+| chatDisabled | boolean             | Boolean indicating whether chat input is to be enabled or disabled in this block (overrides the `chatInput` section under [**Configurations**](/docs/api/settings#chatinput)).                                                                                                                                                |
+| transition   | object \| function  | An object (or function returning an object) containing the following 2 properties: <ul><li>`duration`:</li> (required) duration in milliseconds before the post-process attributes of a block are ran (auto-transition)<li>`interruptable`:</li> (optional) boolean indicating if user input will halt this auto-transition, defaults to `false` if not specified</ul> If using function, it can be passed `params`. |
 
 ## Post-processing Attributes
 
 Below is the list of available pre-processing attributes (processed upon user input and before exiting a block).
 
-| Name      | Type                                        | Dynamic | Description                                                                                                                                                                                  |
-|----------------|---------------------------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| function       | function                | Yes     | Function that runs after a user input (can be passed `params`)                             |
-| file           | function | Yes     | Function that runs after file upload (can be passed `params`). |
-| path           | string \| function | Yes     | Path to navigate to after processing this block - if using function, it can be passed `params`. |
+| Name     | Type                | Description                                                                                              |
+|----------|---------------------|----------------------------------------------------------------------------------------------------------|
+| function | function            | Function that runs after a user input (can be passed `params`)                                            |
+| file     | function            | Function that runs after file upload (can be passed `params`).                                            |
+| path     | string \| function  | Path to navigate to after processing this block - if using function, it can be passed `params`.           |
 
 :::tip Tip
 

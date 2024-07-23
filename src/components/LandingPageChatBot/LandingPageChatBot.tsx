@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import ChatBot, { Params } from "react-chatbotify";
-import "react-chatbotify/dist/react-chatbotify.css";
 
 
 // boolean indicating if user is on desktop (otherwise treated as on mobile)
@@ -22,8 +21,8 @@ const LandingPageChatBot = () => {
 	};
 	const helpOptions = ["Quickstart", "API Docs", "Examples", "Playground"];
 
-	const options = {
-		theme: {
+	const settings = {
+		general: {
 			embedded: true
 		},
 		notification: {
@@ -34,12 +33,6 @@ const LandingPageChatBot = () => {
 		},
 		header: {
 			showAvatar: true,
-			title: (
-				<p style={{cursor: "pointer", margin: 0}} onClick={
-					() => window.open("https://github.com/tjtanjin/")
-				}>Tan Jin
-				</p>
-			),
 		},
 		footer: {
 			text: (<></>),
@@ -47,7 +40,10 @@ const LandingPageChatBot = () => {
 		botBubble: {
 			showAvatar: true,
 			simStream: true
-		},
+		}
+	}
+
+	const styles = {
 		chatWindowStyle: {
 			height: 404,
 			width: 300
@@ -116,7 +112,7 @@ const LandingPageChatBot = () => {
 					link = "/docs/introduction/quickstart/";
 					break;
 				case "API Docs":
-					link = "/docs/api/bot_options";
+					link = "/docs/api/settings";
 					break;
 				case "Examples":
 					link = "/docs/examples/basic_form";
@@ -141,7 +137,7 @@ const LandingPageChatBot = () => {
 		},
 	}
 	return (
-		<ChatBot flow={flow} options={options}></ChatBot>
+		<ChatBot flow={flow} settings={settings} styles={styles}></ChatBot>
 	);
 };
 

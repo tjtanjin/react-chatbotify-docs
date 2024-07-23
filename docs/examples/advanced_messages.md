@@ -1,17 +1,17 @@
 ---
-sidebar_position: 18
-title: Custom Messages
-description: custom messages chatbot example
+sidebar_position: 21
+title: Advanced Messages
+description: advanced messages chatbot example
 keywords: [react, chat, chatbot, chatbotify]
 ---
 
-# Custom Messages
+# Advanced Messages
 
 The following is an example for the `MessagesContext`, which allows you to modify messages from outside the chatbot using your own application's logic. Note that this is an **advance** feature and is thus slightly more involved in setup.
 
 :::caution
 
-When you are working with `useCustomMessages`, you are modifying the messages array directly and as a result, `audio` and `stream` features will not work on such messages. You may refer to this [GitHub Issue](https://github.com/tjtanjin/react-chatbotify/issues/41#issuecomment-2077010086) for more information.
+When you are working with `useAdvancedMessages`, you are modifying the messages array directly and as a result, `audio` and `stream` features will not work on such messages. You may refer to this [GitHub Issue](https://github.com/tjtanjin/react-chatbotify/issues/41#issuecomment-2077010086) for more information.
 
 :::
 
@@ -38,42 +38,42 @@ const MyChatBot = () => {
 		})
 	}
 
-	// example options
-	const options = {
-		theme: {
+	// example settings
+	const settings = {
+		general: {
 			embedded: true
 		},  
 		chatHistory: {
-			storageKey: "example_custom_messages"
+			storageKey: "example_advanced_messages"
 		},
-		// remember to enable custom messages under the advance section
+		// remember to enable useAdvancedMessages under the advance section
 		advance: {
-			useCustomMessages: true
+			useAdvancedMessages: true
 		}
 	}
 
 	// example flow
 	const flow = {
 		start: {
-			message: "Hello there! I am a demo for custom messages!",
+			message: "Hello there! I am a demo for advanced messages!",
 			chatDisabled: true
 		}
 	}
 
 	return (
 		<>
-			<Button onClick={clearMessages} text="Click me to clear messages!"/>
-			<Button onClick={insertMessage} text="Click me to add a message!"/>
+			<ExampleButton onClick={clearMessages} text="Click me to clear messages!"/>
+			<ExampleButton onClick={insertMessage} text="Click me to add a message!"/>
 			{/* Import MessagesContext and wrap as Provider around the chatbot */}
 			<MessagesContext.Provider value={{messages: messages, setMessages: setMessages}}>
-				<ChatBot options={options} flow={flow}/>
+				<ChatBot settings={settings} flow={flow}/>
 			</MessagesContext.Provider>
 		</>
 	);
 };
 
 // button to test above feature
-const buttonStyle = {
+const exampleButtonStyle = {
 	backgroundColor: '#ff0000',
 	color: 'white',
 	border: 'none',
@@ -87,9 +87,9 @@ const buttonStyle = {
 	transition: 'background-color 0.2s',
 	margin: 10,
 };
-const Button = (props) => {
+const ExampleButton = (props) => {
 	return (
-		<button onClick={props.onClick} style={buttonStyle}>{props.text}</button>
+		<button onClick={props.onClick} style={exampleButtonStyle}>{props.text}</button>
 	);
 };
 

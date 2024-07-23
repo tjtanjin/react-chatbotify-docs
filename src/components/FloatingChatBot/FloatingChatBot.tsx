@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import ChatBot, { Params } from "react-chatbotify";
-import "react-chatbotify/dist/react-chatbotify.css";
 
 // boolean indicating if user is on desktop (otherwise treated as on mobile)
 const isDesktop = !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
@@ -20,23 +19,25 @@ const FloatingChatBot = () => {
 		}
 	};
 	const helpOptions = ["Quickstart", "API Docs", "Examples", "Github", "Discord", "CodeSandbox"];
+	
+	const settings = {}
 
-	const options = {
-		voice: {disabled: false},
-		audio: {disabled: false},
-		theme: {
-			mobileEnabled: true
-		},
-		botBubble: {
-			simStream: true
-		},
-		chatHistory: {
-			storageKey: "main_chatbot"
-		},
-		tooltip: {
-			mode: isDesktop ? "CLOSE" : "NEVER",
-		}
-	}
+	// const settings = {
+	// 	voice: {disabled: false},
+	// 	audio: {disabled: false},
+	// 	general: {
+	// 		mobileEnabled: true,
+	// 	},
+	// 	botBubble: {
+	// 		simStream: true
+	// 	},
+	// 	chatHistory: {
+	// 		storageKey: "main_chatbot"
+	// 	},
+	// 	tooltip: {
+	// 		mode: isDesktop ? "CLOSE" : "NEVER",
+	// 	}
+	// }
 
 	const flow = {
 		start: {
@@ -72,7 +73,7 @@ const FloatingChatBot = () => {
 					link = "/docs/introduction/quickstart/";
 					break;
 				case "API Docs":
-					link = "/docs/api/bot_options";
+					link = "/docs/api/settings";
 					break;
 				case "Examples":
 					link = "/docs/examples/basic_form";
@@ -107,7 +108,7 @@ const FloatingChatBot = () => {
 		},
 	}
 	return (
-		<ChatBot flow={flow} options={options}></ChatBot>
+		<ChatBot flow={flow} settings={settings}></ChatBot>
 	);
 };
 

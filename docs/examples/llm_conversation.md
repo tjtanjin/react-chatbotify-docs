@@ -69,7 +69,7 @@ const MyChatBot = () => {
 		}
 	}
 	return (
-		<ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "example_llm_conversation"}}} flow={flow}/>
+		<ChatBot settings={{general: {embedded: true}, chatHistory: {storageKey: "example_llm_conversation"}}} flow={flow}/>
 	);
 };
 

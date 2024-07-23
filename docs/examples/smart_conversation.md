@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 14
 title: Smart Conversation
 description: smart conversation chatbot example
 keywords: [react, chat, chatbot, chatbotify]
@@ -41,7 +41,7 @@ const MyChatBot = () => {
 		}
 	}
 	return (
-		<ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "example_smart_conversation"}}} flow={flow}/>
+		<ChatBot settings={{general: {embedded: true}, chatHistory: {storageKey: "example_smart_conversation"}}} flow={flow}/>
 	);
 };
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 title: Conversations
 description: content describing chatbot conversations
 keywords: [react, chat, chatbot, chatbotify]
@@ -31,7 +31,7 @@ we observe how these properties interact with each other:
 Following which, it patiently waits for a user input.
 2. When a user sends a message (or uploads a file), the **current block** is retrieved and **post-processing** is done for it. If a next path is found during **post-processing**,
 then **pre-processing** of the **next block** is also done. Notice that **both pre-processing and post-processing** of a block involves accessing
-attributes (e.g. `messages` and `path`). For dynamic attributes, params (e.g. `userInput`) are also involved.
+attributes (e.g. `messages` and `path`). Optionally, params (e.g. `userInput`) may also be involved.
 3. Once the **pre-processing** of the new block (if applicable) is done, the chatbot again waits for the next user input.
 
 In short, each user input triggers post-processing of a current block and pre-processing of the next block (if applicable)! In between the pre-processing and post-processing of the
@@ -61,10 +61,10 @@ const flow = {
 ## Block
 
 Sometimes used interchangeably with a path (as conversations paths from one block to another), it represents the current state of a
-conversation and contains attributes (e.g. `message`) that may be dynamic or static.
+conversation and contains attributes (e.g. `message`, `path`).
 
 Note that the type of attributes available for pre-processing and post-processing are **different**. In the `start` block below, `message` is an attribute that belongs to
-**pre-processing** while `path` is an attribute that belongs to **post-processing**. The list of attributes along with their use and categorisation is covered in the section below and may also be found in the [**API documentation**](/docs/api/attributes).
+**pre-processing** while `path` is an attribute that belongs to **post-processing**. The list of attributes along with their use and categorisation is covered below and may also be found in the [**API documentation**](/docs/api/attributes).
 
 ```jsx
 start: {
@@ -75,7 +75,7 @@ start: {
 
 ## Attributes
 
-Attributes defines the various actions that can be taken within a specific block of conversation between the bot and the user. They are categorised into **pre-processing attributes** which runs before a user input and **post-processing attributes** which runs after a user input. The following are considered as user input:
+Attributes defines the various actions that can be taken within a specific block of conversation between the bot and the user. They are categorised into [**pre-processing attributes**](/docs/api/attributes#pre-processing-attributes) which runs before a user input and [**post-processing attributes**](/docs/api/attributes#post-processing-attributes) which runs after a user input. The following are considered as user input:
 
 - User sends a message in chat (either by typing/voice)
 - User selects an option provided by the bot
@@ -90,8 +90,9 @@ The following attributes are processed before user input:
 - message
 - options
 - checkboxes
-- render
+- component
 - chatDisabled
+- isSensitive
 - transition
 
 ### Post-processing Attributes
@@ -101,12 +102,9 @@ The following attributes are processed after user input:
 - file
 - path
 
-To understand the specifics and how to utilize each attribute, you can consult the [**API documentation for attributes**](/docs/api/attributes). You have the freedom to include **any combination** of these attributes in a block,
-whether it's all of them, some of them, or none at all. It's important to note that the attributes are handled in the **order they are stated**, except for the `path` attribute, which is
-always **processed last** during post-processing, if it exists.
+To understand the specifics and how to utilize each attribute, you can consult the [**API documentation for attributes**](/docs/api/attributes). You have the freedom to include **any combination** of these attributes in a block, whether it's all of them, some of them, or none at all. It's important to note that the attributes are handled in the **order they are stated**, except for the `path` attribute, which is always **processed last** during post-processing, if it exists.
 
-In the provided snippet of the `end` block, both the `message` and `chatDisabled` attributes are categorized under pre-processing. Since `message` is declared first, it will be processed
-before `chatDisabled`. It's also worth noting that in this case, `message` is defined as a **dynamic attribute**.
+In the provided snippet of the `end` block, both the `message` and `chatDisabled` attributes are categorized under pre-processing. Since `message` is declared first, it will be processed before `chatDisabled`.
 
 ```jsx
 end: {
@@ -121,25 +119,13 @@ As the library does not enforce any of these attributes to be compulsory, it is 
 
 :::
 
-### Dynamic Attributes
-
-Dynamic attributes are attributes that can vary its output based on parameter inputs. There are currently 6 dynamic attributes:
-
-- message
-- render
-- transition
-- function
-- file
-- path
-
-The next section will list all the parameters that may be used in dynamic attributes.
-
 ## Params
 
-Parameters contain information/functions that can be passed into **dynamic attributes** for usage/decision making and they are as listed below:
+Parameters contain information/functions that can be passed into **attributes** for usage/decision making and they are as listed below:
 
 - userInput
 - prevPath
+- goToPath
 - injectMessage
 - streamMessage
 - openChat
@@ -154,7 +140,7 @@ end: {
 }
 ```
 
-For details and usage on each of these parameters, do again consult the [**API documentation for params**](/docs/api/params).
+For details and usage on each of these parameters, you may consult the [**API documentation for params**](/docs/api/params).
 
 ## Message
 
@@ -162,7 +148,7 @@ For details and usage on each of these parameters, do again consult the [**API d
 ![RCB Message](./img/rcb-message.png)
 </div>
 
-Not to be confused with `message` from the section on [**Attributes**](/docs/introduction/conversations#attributes), the `Message` component here represents the interactions between the user and the bot. Every element in the chat bot body (including custom render components) are considered a Message (as **outlined in red** on the image above). Within a message you will find 3 properties: 
+Not to be confused with `message` from the section on [**Attributes**](/docs/introduction/conversations#attributes), the `Message` component here represents the interactions between the user and the bot. Every element in the chatbot body (including custom components) are considered a Message (as **outlined in red** on the image above). Within a message you will find 3 properties: 
 
 - content (required) - a string or JSX.Element representing the content of the message
 - sender (required) - string representing message sender (can be `user`, `bot` or `system`)
@@ -170,7 +156,7 @@ Not to be confused with `message` from the section on [**Attributes**](/docs/int
 
 :::tip
 
-If you are using `params.injectMessage`, `params.streamMessage` or the advance [**custom messages**](/docs/examples/custom_messages) feature, you minimally only need to pass in the `content` parameter when inserting your own messages. The `sender` field defaults to `bot` while `type` is not required at all. When in doubt, check out [**examples**](/docs/examples/advanced_form) for details on usage.
+If you are using `params.injectMessage`, `params.streamMessage` or the [**advanced messages**](/docs/examples/advanced_messages) feature, you minimally only need to pass in the `content` parameter when inserting your own messages. The `sender` field defaults to `bot` while `type` is not required at all. When in doubt, check out [**examples**](/docs/examples/complex_form) for details on usage.
 
 :::
 
@@ -193,7 +179,7 @@ const MyComponent = () => {
   }
 
   return (
-    <ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "conversations_summary"}}} flow={flow}/>
+    <ChatBot settings={{general: {embedded: true}, chatHistory: {storageKey: "conversations_summary"}}} flow={flow}/>
   );
 };
 
@@ -204,4 +190,4 @@ render(
 )
 ```
 
-In the following section, we will explore how you can customize the options for your chatbot to suit your specific needs and preferences!
+In the next section, we will explore how you can customize the settings for your chatbot to suit your specific needs and preferences!

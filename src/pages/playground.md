@@ -4,8 +4,8 @@ title: Playground
 
 ```jsx live noInline title=MyComponent.js
 const MyChatBot = () => {
-    const options={
-        theme: {embedded: true},
+    const settings = {
+        general: {embedded: true},
         chatHistory: {storageKey: "playground"},
         botBubble: {simStream: true}
     }
@@ -20,7 +20,7 @@ const MyChatBot = () => {
         }
     }
     return (
-        <ChatBot options={options} flow={flow}/>
+        <ChatBot settings={settings} flow={flow}/>
     );
 };
 

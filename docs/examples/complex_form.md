@@ -1,13 +1,13 @@
 ---
-sidebar_position: 2
-title: Advanced Form
-description: advanced form chatbot example
+sidebar_position: 3
+title: Complex Form
+description: complex form chatbot example
 keywords: [react, chat, chatbot, chatbotify]
 ---
 
-# Advanced Form
+# Complex Form
 
-The following example is an advanced recruitment form for a pet store with validation for user input. If you would like a simpler example, you may refer to the [**Basic Form**](/docs/examples/basic_form).
+The following example is a slightly more complex recruitment form for a pet store with validation for user input. If you would like a simpler example, you may refer to the [**Basic Form**](/docs/examples/basic_form).
 
 ```jsx live noInline title=MyChatBot.js
 const MyChatBot = () => {
@@ -65,7 +65,7 @@ const MyChatBot = () => {
 		},
 		end: {
 			message: "Thank you for your interest, we will get back to you shortly!",
-			render: (
+			component: (
 				<div style={formStyle}>
 					<p>Name: {form.name}</p>
 					<p>Age: {form.age}</p>
@@ -80,7 +80,7 @@ const MyChatBot = () => {
 		},
 	}
 	return (
-		<ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "example_advanced_form"}}} flow={flow}/>
+		<ChatBot settings={{general: {embedded: true}, chatHistory: {storageKey: "example_complex_form"}}} flow={flow}/>
 	);
 };
 

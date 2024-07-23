@@ -32,13 +32,13 @@ import Loading from '@theme/Loading';
           },
         }
 
-        const options = {
-          theme: {embedded: true},
+        const settings = {
+          general: {embedded: true},
           chatHistory: {storageKey: "introduction_overview"},
           botBubble: {simStream: true}
         }
 
-        return <ChatBot flow={flow} options={options}/>
+        return <ChatBot flow={flow} settings={settings}/>
       }}
     </BrowserOnly>
 </div>
@@ -53,8 +53,8 @@ React ChatBotify aims to simplify the creation of chatbots by offering a user-fr
 
 React ChatBotify offers a wide array of features designed to enhance your chatbot experience. Here are just a few of the key features:
 
-- **Dynamic Attributes:** Create interactive conversations by dynamically generating messages and defining multiple conversation paths based on user inputs.
-- **Custom Rendering of Components:** Seamlessly integrate your own custom components into the chatbot interface to boast your application's unique design and functionality.
+- **Dynamic Outputs:** Create interactive conversations by dynamically generating messages and defining multiple conversation paths based on user inputs.
+- **Custom Components:** Seamlessly integrate your own custom components into the chatbot interface to boast your application's unique design and functionality.
 - **Stream Responses:** Integrate with LLM models and custom endpoints to stream (or even simulate) your bot responses for an elevated user experience.
 - **Timeouts and Auto-Transitions:** Set timeouts and automate transitions between chatbot paths, providing users with a guided flow and journey.
 - **Voice Input & Audio Output:** Enable voice input for users to interact with the chatbot through speech, and leverage audio output capabilities to provide spoken responses or prompts.
@@ -62,8 +62,10 @@ React ChatBotify offers a wide array of features designed to enhance your chatbo
 - **Checkbox & Options Support:** Utilize checkboxes and options within the chatbot interface, allowing users to select from a list of choices and easily make selections.
 - **Emoji Picker:** Enhance the chatbot's expression and engagement with users by incorporating emojis into messages, adding a touch of personality and emotion.
 - **File Attachments:** Seamlessly handle file attachments within the chatbot, enabling users to share and receive documents, images, or other relevant files during conversations.
+- **Sensitive Input:** Handle sensitive information from your users by masking them, maintaining user confidentiality.
 - **Mobile-Friendly Interface:** Provide smooth user experience across various devices with our mobile-friendly chatbot interface.
+- **Themes:** Choose from a wide variety of community themes, stack multiple themes together, and explore endless possibilities to customize the appearance of your chatbot!
 
 These features, **along with many others**, empower developers to create highly interactive and personalized chatbot experiences tailored to their specific application requirements.
 
-In the next section, let us take a look at how to craft a simple conversation for your chatbot.
+In the next section, we'll learn about the core concept of [**conversations**](/docs/concepts/conversations), which determines the interactions between your users and your chatbot!

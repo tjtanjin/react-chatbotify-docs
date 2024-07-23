@@ -1,5 +1,5 @@
 ---
-sidebar_position: 12
+sidebar_position: 13
 title: Smart Welcome
 description: smart welcome chatbot example
 keywords: [react, chat, chatbot, chatbotify]
@@ -29,7 +29,7 @@ const MyChatBot = () => {
 		}
 	}
 	return (
-		<ChatBot options={{theme: {embedded: true}, voice: {disabled: false}, chatHistory: {storageKey: "example_smart_welcome"}}} flow={flow}/>
+		<ChatBot settings={{general: {embedded: true}, voice: {disabled: false}, chatHistory: {storageKey: "example_smart_welcome"}}} flow={flow}/>
 	);
 };
 

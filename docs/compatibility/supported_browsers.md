@@ -1,11 +1,11 @@
 ---
 sidebar_position: 6
-title: Compatibility
-description: content describing chatbot compatibility
+title: Supported Browsers
+description: content describing chatbot supported browsers
 keywords: [react, chat, chatbot, chatbotify]
 ---
 
-# Compatibility
+# Supported Browsers
 
 The following table shows the browsers that React ChatBotify has been tested on. If you notice any discrepancies or would like to add on to this list, please feel free to raise an issue on [**github**](https://github.com/tjtanjin/react-chatbotify/issues) or reach out on [**discord**](https://discord.gg/6R4DK4G5Zh).
 

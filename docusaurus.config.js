@@ -12,7 +12,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://react-chatbotify.tjtanjin.com',
+  url: 'https://react-chatbotify.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -76,6 +76,11 @@ const config = {
             position: 'left',
           },
           {
+            label: 'Gallery',
+            to: 'https://gallery.react-chatbotify.com',
+            position: 'left',
+          },
+          {
             label: 'Contributing',
             to: 'https://github.com/tjtanjin/react-chatbotify#contributing',
             position: 'left',
@@ -104,9 +109,9 @@ const config = {
         appId: 'JOCIO5HXBI',
   
         // Public API key: it is safe to commit it
-        apiKey: '4035057ca1aa4d61a99d73a5e1756ce4',
+        apiKey: 'eb2e5725e235ffcdbaa35ea6cccb00be',
   
-        indexName: 'react-chatbotify-tjtanjin',
+        indexName: 'react-chatbotify-tjtanjin-v2',
   
         // Optional: see doc section below
         contextualSearch: true,
@@ -121,6 +126,13 @@ const config = {
         searchPagePath: 'search',
   
         //... other Algolia params
+      },
+      announcementBar: {
+        id: 'announcement-bar',
+        content: 'Info: v2 of the chatbot is in <a target="_blank" rel="noopener noreferrer" href="https://react-chatbotify.com/docs/introduction/migration_v2"><b>beta release</b></a>. If you are still on v1, you can find legacy documentation <a target="_blank" rel="noopener noreferrer" href="https://react-chatbotify.com/legacy/v1"><b>here</b></a>. Issues, suggestions or bug reports are welcome on <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/6R4DK4G5Zh"><b>discord</b></a>.',
+        backgroundColor: '#fafbfc',
+        textColor: '#091E42',
+        isCloseable: true
       },
       footer: {
         style: 'dark',
@@ -138,7 +150,7 @@ const config = {
               },
               {
                 label: 'API Documentation',
-                to: '/docs/api/bot_options',
+                to: '/docs/api/settings',
               },
               {
                 label: 'Examples',

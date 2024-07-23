@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 title: FAQ Bot
 description: faq bot chatbot example
 keywords: [react, chat, chatbot, chatbotify]
@@ -43,13 +43,13 @@ const MyChatBot = () => {
 				let link = "";
 				switch (params.userInput) {
 				case "Quickstart":
-					link = "https://react-chatbotify.tjtanjin.com/docs/introduction/quickstart/";
+					link = "https://react-chatbotify.com/docs/introduction/quickstart/";
 					break;
 				case "API Docs":
-					link = "https://react-chatbotify.tjtanjin.com/docs/api/bot_options";
+					link = "https://react-chatbotify.com/docs/api/settings";
 					break;
 				case "Examples":
-					link = "https://react-chatbotify.tjtanjin.com/docs/examples/basic_form";
+					link = "https://react-chatbotify.com/docs/examples/basic_form";
 					break;
 				case "Github":
 					link = "https://github.com/tjtanjin/react-chatbotify/";
@@ -73,7 +73,7 @@ const MyChatBot = () => {
 		},
 	}
 	return (
-		<ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "example_faq_bot"}}} flow={flow}/>
+		<ChatBot settings={{general: {embedded: true}, chatHistory: {storageKey: "example_faq_bot"}}} flow={flow}/>
 	);
 };
 

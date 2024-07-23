@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 title: File Upload
 description: file upload chatbot example
 keywords: [react, chat, chatbot, chatbotify]
@@ -43,7 +43,7 @@ const MyChatBot = () => {
 		},
 	}
 	return (
-		<ChatBot options={{theme: {embedded: true}, chatHistory: {storageKey: "example_file_upload"}}} flow={flow}/>
+		<ChatBot settings={{general: {embedded: true}, chatHistory: {storageKey: "example_file_upload"}}} flow={flow}/>
 	);
 };
 

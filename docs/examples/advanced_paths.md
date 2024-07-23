@@ -1,11 +1,11 @@
 ---
-sidebar_position: 19
-title: Custom Paths
-description: custom paths chatbot example
+sidebar_position: 22
+title: Advanced Paths
+description: advanced paths chatbot example
 keywords: [react, chat, chatbot, chatbotify]
 ---
 
-# Custom Paths
+# Advanced Paths
 
 The following is an example for the `PathsContext`, which allows you to modify paths from outside the chatbot using your own application's logic. Note that this is an **advance** feature and is thus slightly more involved in setup.
 
@@ -24,17 +24,17 @@ const MyChatBot = () => {
 		setPaths(prev => [...prev, "end"]);
 	}
 
-	// example options
-	const options = {
-		theme: {
+	// example settings
+	const settings = {
+		general: {
 			embedded: true
 		},
 		chatHistory: {
-			storageKey: "example_custom_paths"
+			storageKey: "example_advanced_paths"
 		},
-		// remember to enable custom paths under the advance section
+		// remember to enable useAdvancedPaths under the advance section
 		advance: {
-			useCustomPaths: true
+			useAdvancedPaths: true
 		}
 	}
 
@@ -60,18 +60,18 @@ const MyChatBot = () => {
 
 	return (
 		<>
-			<Button onClick={jumpToStart} text="Click me to jump to start!"/>
-			<Button onClick={jumpToEnd} text="Click me to jump to end!"/>
+			<ExampleButton onClick={jumpToStart} text="Click me to jump to start!"/>
+			<ExampleButton onClick={jumpToEnd} text="Click me to jump to end!"/>
 			{/* Import PathsContext and wrap as Provider around the chatbot */}
 			<PathsContext.Provider value={{paths: paths, setPaths: setPaths}}>
-				<ChatBot options={options} flow={flow}/>
+				<ChatBot settings={settings} flow={flow}/>
 			</PathsContext.Provider>
 		</>
 	);
 };
 
 // button to test above feature
-const buttonStyle = {
+const exampleButtonStyle = {
 	backgroundColor: '#ff0000',
 	color: 'white',
 	border: 'none',
@@ -85,9 +85,9 @@ const buttonStyle = {
 	transition: 'background-color 0.2s',
 	margin: 10,
 };
-const Button = (props) => {
+const ExampleButton = (props) => {
 	return (
-		<button onClick={props.onClick} style={buttonStyle}>{props.text}</button>
+		<button onClick={props.onClick} style={exampleButtonStyle}>{props.text}</button>
 	);
 };
 

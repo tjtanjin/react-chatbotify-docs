@@ -6,32 +6,44 @@ import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 let ChatBot = null;
 let hooks = {};
-let BotOptionsContext = null;
+let SettingsContext = null;
+let StylesContext = null;
 let MessagesContext = null;
 let PathsContext = null;
-let getDefaultBotOptions = null;
+let Button = null;
+let getDefaultSettings = null
+let getDefaultStyles = null;
 
 if (ExecutionEnvironment.canUseDOM) {
 	ChatBot = require("react-chatbotify").default;
 	hooks = {
-		BotOptionsContext,
+		SettingsContext,
+		StylesContext,
 		MessagesContext,
 		PathsContext,
-		getDefaultBotOptions
+		Button,
+		getDefaultSettings,
+		getDefaultStyles,
 	} = require("react-chatbotify");
-	BotOptionsContext = hooks.BotOptionsContext;
+	SettingsContext = hooks.SettingsContext;
+	StylesContext = hooks.StylesContext;
 	MessagesContext = hooks.MessagesContext;
 	PathsContext = hooks.PathsContext;
-	getDefaultBotOptions = hooks.getDefaultBotOptions;
+	Button = hooks.Button;
+	getDefaultSettings = hooks.getDefaultSettings;
+	getDefaultStyles = hooks.getDefaultStyles;
 }
 
 const ReactLiveScope = {
 	React,
 	ChatBot,
-	BotOptionsContext,
+	SettingsContext,
+	StylesContext,
 	MessagesContext,
 	PathsContext,
-	getDefaultBotOptions,
+	Button,
+	getDefaultSettings,
+	getDefaultStyles,
 	GoogleGenerativeAI,
 	OpenAI
 };

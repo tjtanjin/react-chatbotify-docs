@@ -40,7 +40,7 @@ React ChatBotify Docs offer the following notable features:
 - **Live Examples:** A slew of examples curated to fit common use cases are present, complete with live editors for experimentation.
 - **API Documentation:** API for the chatbot are clearly documented in tables for easy reference.
 
-These features, **along with many others**, help provide a highly robust user guide to aid in the usage of [React ChatBotify](https://react-chatbotify.tjtanjin.com).
+These features, **along with many others**, help provide a highly robust user guide to aid in the usage of [React ChatBotify](https://react-chatbotify.com).
 
 ### Technologies
 Technologies used by React ChatBotify Docs are as below:

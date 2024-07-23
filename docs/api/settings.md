@@ -1,203 +1,185 @@
 ---
-sidebar_position: 1
-title: Bot Options
-description: api documentation for bot options
+sidebar_position: 3
+title: Settings
+description: api documentation for settings
 keywords: [react, chat, chatbot, chatbotify]
 ---
 
-# Bot Options
+# Settings
 
-This page documents all available sections and properties that may be passed into the `options` prop of the `ChatBot`. For an example on how to structure your `options`, please refer to the default bot options in the dropdown below.
+This page documents all available sections and properties that may be passed into the `settings` prop of the `ChatBot`. For an example on how to structure your `settings`, please refer to the default settings in the dropdown below.
 
 <details>
-<summary>Click to view default bot options</summary>
+<summary>Click to view default settings</summary>
 
 ```jsx
-const defaultOptions = {
-  // Configurations Category
-  theme: {
-    primaryColor: "#42b0c5",
-    secondaryColor: "#491d8d",
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', " +
-        "'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', " +
-        "sans-serif",
-    showHeader: true,
-    showFooter: true,
-    showInputRow: true,
-    actionDisabledIcon: actionDisabledIcon,
-    embedded: false,
-    desktopEnabled: true,
-    mobileEnabled: true,
-    flowStartTrigger: "ON_LOAD",
-  },
-  tooltip: {
-    mode: "CLOSE",
-    text: "Talk to me! 😊",
-  },
-  chatButton: {
-    icon: chatIcon,
-  },
-  header: {
-    title: (
-        <h3 style={{cursor: "pointer", margin: 0}} onClick={
-            () => window.open("https://github.com/tjtanjin/")
-        }>Tan Jin
-        </h3>
-    ),
-    showAvatar: true,
-    avatar: botAvatar,
-    closeChatIcon: closeChatIcon,
-  },
-  notification: {
-    disabled: false,
-    defaultToggledOn: true,
-    volume: 0.2,
-    icon: notificationIcon,
-    sound: notificationSound,
-    showCount: true,
-  },
-  audio: {
-    disabled: true,
-    defaultToggledOn: false,
-    language: "en-US",
-    voiceNames: ["Microsoft David - English (United States)", "Alex (English - United States)"],
-    rate: 1,
-    volume: 1,
-    icon: audioIcon,
-  },
-  chatHistory: {
-    disabled: false,
-    maxEntries: 30,
-    storageKey: "rcb-history",
-    viewChatHistoryButtonText: "Load Chat History ⟳",
-    chatHistoryLineBreakText: "----- Previous Chat History -----",
-    autoLoad: false,
-  },
-  chatInput: {
-    disabled: false,
-    allowNewline: false,
-    enabledPlaceholderText: "Type your message...",
-    disabledPlaceholderText: "",
-    showCharacterCount: false,
-    characterLimit: -1,
-    botDelay: 1000,
-    sendButtonIcon: sendButtonIcon,
-    blockSpam: true,
-    sendOptionOutput: true,
-    sendCheckboxOutput: true,
-    sendAttachmentOutput: true,
-  },
-  chatWindow: {
-    showScrollbar: false,
-    autoJumpToBottom: false,
-    showMessagePrompt: true,
-    messagePromptText: "New Messages ↓",
-    messagePromptOffset: 30,
-  },
-  sensitiveInput: {
+const DefaultSettings: Settings = {
+	// special value to track state of chat window, also the default state to load it in
+	isOpen: false,
+
+  // other sections
+	general: {
+		primaryColor: "#42b0c5",
+		secondaryColor: "#491d8d",
+		fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', " +
+			"'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', " +
+			"sans-serif",
+		showHeader: true,
+		showFooter: true,
+		showInputRow: true,
+		actionDisabledIcon: actionDisabledIcon,
+		embedded: false,
+		desktopEnabled: true,
+		mobileEnabled: true,
+		flowStartTrigger: "ON_LOAD",
+	},
+	tooltip: {
+		mode: "CLOSE",
+		text: "Talk to me! 😊",
+	},
+	chatButton: {
+		icon: chatIcon,
+	},
+	header: {
+		title: (
+			<div style={{cursor: "pointer", margin: 0, fontSize: 20, fontWeight: "bold"}} onClick={
+				() => window.open("https://github.com/tjtanjin/")
+			}>
+				Tan Jin
+			</div>
+		),
+		showAvatar: true,
+		avatar: botAvatar,
+		buttons: [Button.NOTIFICATION_BUTTON, Button.AUDIO_BUTTON, Button.CLOSE_CHAT_BUTTON],
+		closeChatIcon: closeChatIcon,
+	},
+	notification: {
+		disabled: false,
+		defaultToggledOn: true,
+		volume: 0.2,
+		icon: notificationIcon,
+		sound: notificationSound,
+		showCount: true,
+	},
+	audio: {
+		disabled: true,
+		defaultToggledOn: false,
+		language: "en-US",
+		voiceNames: ["Microsoft David - English (United States)", "Alex (English - United States)"],
+		rate: 1,
+		volume: 1,
+		icon: audioIcon,
+	},
+	chatHistory: {
+		disabled: false,
+		maxEntries: 30,
+		storageKey: "rcb-history",
+		viewChatHistoryButtonText: "Load Chat History ⟳",
+		chatHistoryLineBreakText: "----- Previous Chat History -----",
+		autoLoad: false,
+	},
+	chatInput: {
+		disabled: false,
+		allowNewline: false,
+		enabledPlaceholderText: "Type your message...",
+		disabledPlaceholderText: "",
+		showCharacterCount: false,
+		characterLimit: -1,
+		botDelay: 1000,
+		sendButtonIcon: sendButtonIcon,
+		blockSpam: true,
+		sendOptionOutput: true,
+		sendCheckboxOutput: true,
+		buttons: [Button.VOICE_MESSAGE_BUTTON, Button.SEND_MESSAGE_BUTTON]
+	},
+	chatWindow: {
+		showScrollbar: false,
+		autoJumpToBottom: false,
+		showMessagePrompt: true,
+		messagePromptText: "New Messages ↓",
+		messagePromptOffset: 30,
+	},
+	sensitiveInput: {
 		maskInTextArea: true,
 		maskInUserBubble: true,
 		asterisksCount: 10,
 		hideInUserBubble: false,
 	},
-  userBubble: {
-    animate: true,
-    showAvatar: false,
-    avatar: userAvatar,
-    simStream: false,
-    streamSpeed: 30,
-    dangerouslySetInnerHtml: false,
-  },
-  botBubble: {
-    animate: true,
-    showAvatar: false,
-    avatar: botAvatar,
-    simStream: false,
-    streamSpeed: 30,
-    dangerouslySetInnerHtml: false,
-  },
-  voice: {
-    disabled: true,
-    defaultToggledOn: false,
-    language: "en-US",
-    timeoutPeriod: 10000,
-    autoSendDisabled: false,
-    autoSendPeriod: 1000,
-    icon: voiceIcon,
-  },
-  footer: {
-    text: (
-      <div style={{cursor: "pointer"}} 
-        onClick={() => window.open("https://react-chatbotify.tjtanjin.com")}
-      >
-        <span>Powered By </span>
-        <span style={{fontWeight: "bold"}}>
-          <img style={{width: 10, height: 10}} src={logo}></img>
-          <span> React ChatBotify</span>
-        </span>
-      </div>
-    ),
-  },
-  fileAttachment: {
-    disabled: false,
-    multiple: true,
-    accept: ".png",
-    icon: fileAttachmentIcon,
-  },
-  emoji: {
-    disabled: false,
-    icon: emojiIcon,
-    list: ["😀", "😃", "😄", "😅", "😊", "😌", "😇", "🙃", "🤣", "😍", "🥰", "🥳", "🎉", "🎈", "🚀", "⭐️"]
-  },
-  advance: {
-    useCustomMessages: false,
-    useCustomBotOptions: false,
-    useCustomPaths: false,
-  },
-
-  // Styles Category
-  tooltipStyle: {},
-  chatButtonStyle: {},
-  notificationBadgeStyle: {},
-  chatWindowStyle: {},
-  headerStyle: {},
-  bodyStyle: {},
-  chatInputContainerStyle: {},
-  chatInputAreaStyle: {},
-  chatInputAreaFocusedStyle: {},
-  chatInputAreaDisabledStyle: {},
-  userBubbleStyle: {},
-  botBubbleStyle: {},
-  botOptionStyle: {},
-  botOptionHoveredStyle: {},
-  botCheckboxRowStyle: {},
-  botCheckboxNextStyle: {},
-  botCheckMarkStyle: {},
-  botCheckMarkSelectedStyle: {},
-  sendButtonStyle: {},
-  sendButtonHoveredStyle: {},
-  characterLimitStyle: {},
-  characterLimitReachedStyle: {},
-  chatHistoryButtonStyle: {},
-  chatHistoryButtonHoveredStyle: {},
-  chatHistoryLineBreakStyle: {},
-  chatMessagePromptStyle: {},
-  chatMessagePromptHoveredStyle: {},
-  footerStyle: {},
-  loadingSpinnerStyle: {},
+	userBubble: {
+		animate: true,
+		showAvatar: false,
+		avatar: userAvatar,
+		simStream: false,
+		streamSpeed: 30,
+		dangerouslySetInnerHtml: false,
+	},
+	botBubble: {
+		animate: true,
+		showAvatar: false,
+		avatar: botAvatar,
+		simStream: false,
+		streamSpeed: 30,
+		dangerouslySetInnerHtml: false,
+	},
+	voice: {
+		disabled: true,
+		defaultToggledOn: false,
+		language: "en-US",
+		timeoutPeriod: 10000,
+		autoSendDisabled: false,
+		autoSendPeriod: 1000,
+		sendAsAudio: false,
+		icon: voiceIcon,
+	},
+	footer: {
+		text: (
+			<div style={{cursor: "pointer", display: "flex", flexDirection: "row", alignItems: "center", columnGap: 3}} 
+				onClick={() => window.open("https://react-chatbotify.com")}
+			>
+				<span key={0}>Powered By </span>
+				<img key={1} style={{
+					borderRadius: "50%",
+					width: 14, height: 14, backgroundImage: `url(${chatIcon}),
+					linear-gradient(to right, #42b0c5, #491d8d)`
+				}}>
+				</img>
+				<span key={2} style={{fontWeight: "bold"}}> React ChatBotify</span>
+			</div>
+		),
+		buttons: [Button.FILE_ATTACHMENT_BUTTON, Button.EMOJI_PICKER_BUTTON]
+	},
+	fileAttachment: {
+		disabled: false,
+		multiple: true,
+		accept: ".png",
+		icon: fileAttachmentIcon,
+		sendFileName: true,
+		showMediaDisplay: true,
+	},
+	emoji: {
+		disabled: false,
+		icon: emojiIcon,
+		list: ["😀", "😃", "😄", "😅", "😊", "😌", "😇", "🙃", "🤣", "😍", "🥰", "🥳", "🎉", "🎈", "🚀", "⭐️"]
+	},
+	advance: {
+		useAdvancedMessages: false,
+		useAdvancedSettings: false,
+		useAdvancedPaths: false,
+		useAdvancedStyles: false,
+	}
 }
 ```
 </details>
 
 :::info Info
 
-Default values for icons, avatars and JSX Elements may not be reflected in the tables below due to space constraints. If you would like information on those, you may refer to the source code containing the default options [**here**](https://github.com/tjtanjin/react-chatbotify/blob/main/src/services/BotOptionsService.tsx).
+Default values for icons, avatars and JSX Elements may not be reflected in the tables below due to space constraints. If you would like information on those, you may refer to the source code containing the default settings [**here**](https://github.com/tjtanjin/react-chatbotify/blob/main/src/constants/internal/DefaultSettings.tsx).
 
 :::
 
-## Configurations
+## Sections
 
-Below is the list of sections available for configurations.
+Below is are the list of sections available.
 
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -222,13 +204,13 @@ Below is the list of sections available for configurations.
 
 ### Advance
 
-These properties are only recommended for advanced use cases. You may refer to the examples [**here**](/docs/examples/custom_options) for more details.
+These properties are only recommended for advanced use cases. You may refer to the examples [**here**](/docs/examples/advanced_settings) for more details.
 
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| useCustomMessages          | boolean                         | false                                       | Specifies whether to use custom messages in the chatbot (audio and message streaming will not work for messages that are directly added).                                                                       |
-| useCustomBotOptions        | boolean                         | false                                       | Specifies whether to use custom bot options in the chatbot.                                                                    |
-| useCustomPaths             | boolean                         | false                                       | Specifies whether to use custom paths in the chatbot.                                                                          |
+| useAdvancedMessages          | boolean                         | false                                       | Specifies whether to use custom messages in the chatbot (audio and message streaming will not work for messages that are directly added).                                                                       |
+| useAdvancedSettings        | boolean                         | false                                       | Specifies whether to use custom settings in the chatbot.                                                                    |
+| useAdvancedPaths             | boolean                         | false                                       | Specifies whether to use custom paths in the chatbot.                                                                          |
 
 ### Audio
 
@@ -307,7 +289,7 @@ Properties here handle the chat input sent by the user. Note that when chatbot i
 | blockSpam                  | boolean                         | true                                        | Specifies whether user input should be blocked while the bot is processing its next action (highly recommended to keep this `true` as spamming messages can result in unexpected behaviors).                                     |
 | sendOptionOutput           | boolean                         | true                                        | Specifies whether to send user option as a message to the bot.                                                   |
 | sendCheckboxOutput         | boolean                         | true                                        | Specifies whether to send user selection(s) as a message to the bot.                                                 |
-| sendAttachmentOutput         | boolean                         | true                                        | Specifies whether to send a message with name(s) of file attachments as a message to the bot.                                                |
+| buttons             | (string \| JSX.Element)[]                         | [Button.VOICE_MESSAGE_BUTTON, Button.SEND_MESSAGE_BUTTON]                                            | An ordered list of buttons to show in the chat input (supports both default buttons and custom components) - for the list of default buttons, import the `Button` constant from the library.                                                    |
 
 ### Emoji
 
@@ -328,6 +310,8 @@ Properties here handle the file attachment button.
 | disabled                   | boolean                         | false                                       | Specifies whether chatbot file attachments are disabled.                                                                       |
 | multiple                   | boolean                         | true                                        | Specifies whether multiple file attachments are allowed.                                                                        |
 | accept                     | string                          | *                                      | The accepted file types for file attachments (e.g. `".png, .jpg"` to restrict file types or `*` to accept all file types).                                                                                  |
+| sendFileName         | boolean                         | true                                        | Specifies whether to send a message with name(s) of file attachments as a message to the bot.                                                |
+| showMediaDisplay        | boolean                         | true                                            | Specifies whether file attachments that are either image, video or audio will be displayed (previewed).                                             |
 | icon        | string                          | -                                            | Image import or URL for the file attachment icon to be displayed in the chatbot footer.                                             |
 
 ### Footer
@@ -337,6 +321,7 @@ Properties here handle the chat footer.
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | text                       | string \| JSX.Element           | -                                            | The text or JSX element to be displayed in the chatbot footer.                                                                 |
+| buttons             | (string \| JSX.Element)[]                         | [Button.FILE_ATTACHMENT_BUTTON, Button.EMOJI_PICKER_BUTTON]                                            | An ordered list of buttons to show in the footer (supports both default buttons and custom components) - for the list of default buttons, import the `Button` constant from the library.                                                    |
 
 ### Header
 
@@ -348,6 +333,7 @@ Properties here handle the chat header.
 | showAvatar                 | boolean                         | true                                        | Specifies whether the avatar should be displayed in the chatbot header.                                                        |
 | avatar                | string                          | -                                            | Image import or URL for the avatar to be displayed in the chatbot header.                                                            |                                               |
 | closeChatIcon             | string                          | -                                            | Image import or URL for the close chat icon to be displayed in the chatbot header.                                                    |
+| buttons             | (string \| JSX.Element)[]                         | [Button.NOTIFICATION_BUTTON, Button.AUDIO_BUTTON, Button.CLOSE_CHAT_BUTTON]                                            | An ordered list of buttons to show in the header (supports both default buttons and custom components) - for the list of default buttons, import the `Button` constant from the library.                                                    |
 
 ### Notification
 
@@ -373,9 +359,9 @@ Properties here handle sensitive chat input sent by the user.
 | asterisksCount             | number                          | true                                        | Specifies the number of asterisks used to mask the sensitive text in chat bubbles.                                                                                       |
 | hideInUserBubble           | boolean                         | true                                        | Specifies whether to completely hide user message bubbles containing sensitive text when sent to chat.                                                                                       |
 
-### Theme
+### General
 
-Properties here handle the chatbot theme.
+Properties here handle general configurations for the chatbot.
 
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -425,54 +411,5 @@ Properties here handle the voice to text feature (**feature is available only on
 | timeoutPeriod              | number                          | 10000                                       | The timeout period in milliseconds for chatbot voice before it automatically toggles off.                                                                          |
 | autoSendDisabled           | boolean                         | false                                       | Specifies whether auto-sending of voice messages into the chat is disabled.                                                                  |
 | autoSendPeriod             | number                          | 1000                                        | The period in milliseconds after which voice messages are automatically sent.                                                  |
+| sendAsAudio                 | boolean                         | false                                            | Specifies whether voice input will be sent as an audio file instead (note that `autoSend` features will not work if this is `true`).                                                     |
 | icon                 | string                          | -                                            | Image import or URL for the voice icon to be displayed in the chatbot interface.                                                     |
-
-## Styles
-
-:::tip Tip
-
-Before diving into styling, note that if you merely wish to change the color theme of the chatbot to suit your website, you are advised to modify the `primaryColor` and `secondaryColor` properties within the `theme` section. Often times, this is enough to complement your website theme.
-
-:::
-
-If you wish to make further changes to the chatbot styles, then below is the list of sections available.
-
-| Name                       | Type                            | Default                                                                                  | Description                                                                                                                    |
-| -------------------------- | ------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| bodyStyle                | object                          | {}                                                                                       | Styles for the chatbot body.                                                                                                    |
-| botBubbleStyle           | object                          | {}                                                                                       | Styles for bot chat bubbles.                                                                                                    |
-| botCheckboxNextStyle     | object                          | {}                                                                                       | Styles for the next bot checkbox.                                                                                               |
-| botCheckboxRowStyle      | object                          | {}                                                                                       | Styles for bot checkbox rows.                                                                                                   |
-| botCheckMarkSelectedStyle| object                          | {}                                                                                       | Styles for the selected bot checkmark.                                                                                          |
-| botCheckMarkStyle        | object                          | {}                                                                                       | Styles for the bot checkmark.                                                                                                   |
-| botOptionHoveredStyle    | object                          | {}                                                                                       | Styles for hovered bot options.                                                                                             |
-| botOptionStyle           | object                          | {}                                                                                       | Styles for bot options.                                                                                                         |
-| characterLimitStyle      | object                          | {}                                                                                       | Styles for the character limit display.                                                                                                         |
-| characterLimitReachedStyle | object                          | {}                                                                                       | Styles for the character limit display when limit is reached.                                                                                                         |
-| chatButtonStyle          | object                          | {}                                                                                       | Styles for the chatbot button.                                                                                                  |
-| chatHistoryButtonHoveredStyle | object                      | {}                                                                                       | Styles for the hovered chat history button.                                                                                     |
-| chatHistoryButtonStyle   | object                          | {}                                                                                       | Styles for the chat history button.                                                                                             |
-| chatHistoryLineBreakStyle | object                          | {}                                                                                       | Styles for the chat history line break.                                                                                         |
-| chatInputContainerStyle           | object                          | {}                                                                                       | Styles for the chatbot input text area.                                                                                                   |
-| chatInputAreaStyle           | object                          | {}                                                                                       | Styles for the chatbot input container.                                                                                                   |
-| chatInputAreaFocusedStyle           | object                          | {}                                                                                       | Styles for the chatbot input container when it is focused.                                                                                                   |
-| chatInputAreaDisabledStyle           | object                          | {}                                                                                       | Styles for the chatbot input container when it is disabled.                                                                                                   |
-| chatMessagePromptStyle           | object                          | {}                                                                                       | Styles for the new message prompt.                                                                                                   |
-| chatMessagePromptHoveredStyle           | object                          | {}                                                                                       | Styles for the new message prompt when it is hovered.                                                                                                   |
-| chatWindowStyle          | object                          | {}                                                                                       | Styles for the chatbot window.                                                                                                  |
-| footerStyle              | object                          | {}                                                                                       | Styles for the chatbot footer.                                                                                                  |
-| headerStyle              | object                          | {}                                                                                       | Styles for the chatbot header.                                                                                                  |
-| loadingSpinnerStyle      | object                          | {}                                                                                       | Styles for the loading spinner.                                                                                                 |
-| notificationBadgeStyle   | object                          | {}                                                                                       | Styles for the chatbot notification badge.                                                                                      |
-| sendButtonHoveredStyle   | object                          | {}                                                                                       | Styles for the hovered send button.                                                                                             |
-| sendButtonStyle          | object                          | {}                                                                                       | Styles for the send button.                                                                                                     |
-| tooltipStyle             | object                          | {}                                                                                       | Styles for the chatbot tooltip.                                                                                                 |
-| userBubbleStyle          | object                          | {}                                                                                       | Styles for user chat bubbles.                                                                                                   |
-
-The utilization of styles is remarkably simple, as each section readily accepts inline React styles. For instance, you can customise the headerStyle with `headerStyle: {backgroundColor: "red"}`.
-
-:::tip Tip
-
-If you wish to customise the chatbot appearance with even more granularity, you may also overwrite the CSS classes directly. Class names for this library are appended with `rcb` and you may find the relevant classes through **inspect element** or by combing through the CSS files within the components in the [**code repository**](https://github.com/tjtanjin/react-chatbotify/tree/main/src/components).
-
-:::

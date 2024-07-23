@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: Audio
 description: audio chatbot example
 keywords: [react, chat, chatbot, chatbotify]
@@ -51,7 +51,7 @@ const MyChatBot = () => {
 		},
 	}
 	return (
-		<ChatBot options={{theme: {embedded: true}, audio: {disabled: false, defaultToggledOn: true, tapToPlay: true}, chatInput: {disabled: true}, chatHistory: {storageKey: "example_audio"}}} flow={flow}/>
+		<ChatBot settings={{general: {embedded: true}, audio: {disabled: false, defaultToggledOn: true, tapToPlay: true}, chatInput: {disabled: true}, chatHistory: {storageKey: "example_audio"}}} flow={flow}/>
 	);
 };
 
