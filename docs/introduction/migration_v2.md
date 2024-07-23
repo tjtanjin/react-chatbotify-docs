@@ -45,7 +45,7 @@ Changes Required:
 - Remove all imports of `react-chatbotify.css`
 
 ### Renamed BotOptions to Settings
-The term **BotOptions** was previously used for the [**`options`**](/legacy/v1/docs/introduction/bot_options) prop, causing confusion with the [**`options attribute`**](/legacy/v1/docs/api/attributes#pre-processing-attributes) in conversation blocks. To minimize the potential for confusion, **BotOptions** is now simply called **Settings**.
+The term **BotOptions** was previously used for the [**`options`**](https://react-chatbotify.com/legacy/v1/docs/introduction/bot_options) prop, causing confusion with the [**`options attribute`**](https://react-chatbotify.com/legacy/v1/docs/api/attributes#pre-processing-attributes) in conversation blocks. To minimize the potential for confusion, **BotOptions** is now simply called **Settings**.
 
 Changes Required:
 - Replace `BotOptionsContext` with `SettingsContext`
@@ -53,13 +53,13 @@ Changes Required:
 - Replace `getDefaultBotOptions` with `getDefaultSettings`
 
 ### Renamed Theme Section to General Section
-In version 1, the [**`theme`**](/legacy/v1/docs/api/bot_options#theme) section within `options` (now `settings`) configured generic properties. With the introduction of a `themes` prop in version 2, this section is now called [**`general`**](/docs/api/settings#general) to avoid confusion.
+In version 1, the [**`theme`**](https://react-chatbotify.com/legacy/v1/docs/api/bot_options#theme) section within `options` (now `settings`) configured generic properties. With the introduction of a `themes` prop in version 2, this section is now called [**`general`**](/docs/api/settings#general) to avoid confusion.
 
 Changes Required:
 - Replace `theme` section with `general` section inside `settings` prop
 
 ### Renamed Render Attribute to Component Attribute
-The [**`render`**](/legacy/v1/docs/api/attributes#pre-processing-attributes) is understandably poorly named and has been a source of confusion for some users who mistakenly tried using `component` instead. Indeed, the purpose of this attribute was to allow users to provide their own components. With that said, it felt appropriate to update the name of this attribute to [**`component`**](/docs/api/attributes#pre-processing-attributes).
+The [**`render`**](https://react-chatbotify.com/legacy/v1/docs/api/attributes#pre-processing-attributes) is understandably poorly named and has been a source of confusion for some users who mistakenly tried using `component` instead. Indeed, the purpose of this attribute was to allow users to provide their own components. With that said, it felt appropriate to update the name of this attribute to [**`component`**](/docs/api/attributes#pre-processing-attributes).
 
 Changes Required:
 - Replace `render` attribute with `component` attribute inside all applicable conversation blocks
@@ -115,7 +115,7 @@ New Additions:
 Following the removal of `styles` from **BotOptions**, a new [**`styles`**](/docs/concepts/styles) prop has been introduced for tweaking chatbot styles.
 
 New Additions:
-- Added [**`styles`**](/docs/concepts/styles) prop (essentially the style sections previously under [**`BotOptions`**](/legacy/v1/docs/api/bot_options#styles))
+- Added [**`styles`**](/docs/concepts/styles) prop (essentially the style sections previously under [**`BotOptions`**](https://react-chatbotify.com/legacy/v1/docs/api/bot_options#styles))
 - Added `getDefaultStyles` which provides an empty default list of styles
 
 ### Custom Buttons in Header, Chat Input, and Footer

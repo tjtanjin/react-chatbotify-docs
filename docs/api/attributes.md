@@ -7,7 +7,7 @@ keywords: [react, chat, chatbot, chatbotify]
 
 # Attributes
 
-This page documents all the attributes that may be used in a conversation [**Block**](/docs/introduction/Conversations#block). Take note that [**Attributes**](/docs/introduction/conversations#attributes) are divided into **pre-processing** and **post-processing** as listed in the tables below. For a brief example on the usage of attributes, you may refer to the **sample flow** in the dropdown which uses `message` and `path`.
+This page documents all the attributes that may be used in a conversation [**Block**](/docs/concepts/conversations#block). Take note that [**Attributes**](/docs/concepts/conversations#attributes) are divided into **pre-processing** and **post-processing** as listed in the tables below. For a brief example on the usage of attributes, you may refer to the **sample flow** in the dropdown which uses `message` and `path`.
 
 <details>
 <summary>Click to view sample flow</summary>

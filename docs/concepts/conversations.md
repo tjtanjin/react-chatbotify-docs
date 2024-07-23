@@ -148,7 +148,7 @@ For details and usage on each of these parameters, you may consult the [**API do
 ![RCB Message](./img/rcb-message.png)
 </div>
 
-Not to be confused with `message` from the section on [**Attributes**](/docs/introduction/conversations#attributes), the `Message` component here represents the interactions between the user and the bot. Every element in the chatbot body (including custom components) are considered a Message (as **outlined in red** on the image above). Within a message you will find 3 properties: 
+Not to be confused with `message` from the section on [**Attributes**](/docs/concepts/conversations#attributes), the `Message` component here represents the interactions between the user and the bot. Every element in the chatbot body (including custom components) are considered a Message (as **outlined in red** on the image above). Within a message you will find 3 properties: 
 
 - content (required) - a string or JSX.Element representing the content of the message
 - sender (required) - string representing message sender (can be `user`, `bot` or `system`)
