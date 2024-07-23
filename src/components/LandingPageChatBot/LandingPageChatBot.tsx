@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import ChatBot, { Params } from "react-chatbotify";
-import "react-chatbotify/dist/react-chatbotify.css";
 
 
 // boolean indicating if user is on desktop (otherwise treated as on mobile)
