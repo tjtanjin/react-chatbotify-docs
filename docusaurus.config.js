@@ -105,7 +105,7 @@ const config = {
         appId: 'JOCIO5HXBI',
   
         // Public API key: it is safe to commit it
-        apiKey: '4035057ca1aa4d61a99d73a5e1756ce4',
+        apiKey: 'eb2e5725e235ffcdbaa35ea6cccb00be',
   
         indexName: 'react-chatbotify-tjtanjin',
   
