@@ -125,7 +125,7 @@ const config = {
       },
       announcementBar: {
         id: 'announcement-bar',
-        content: 'Warning: You are viewing a legacy documentation for v1 of the chatbot. You are strongly encouraged to update the library by following the migration guide <a target="_blank" rel="noopener noreferrer" href="https://react-chatbotify.com/docs/introduction/migration_guide"><b>here</b></a>.',
+        content: 'Warning: You are viewing a legacy documentation for v1 of the chatbot. You are strongly encouraged to update the library by following the migration guide <a target="_blank" rel="noopener noreferrer" href="https://react-chatbotify.com/docs/introduction/migration_v2"><b>here</b></a>.',
         backgroundColor: '#ff0000',
         textColor: '#091E42',
         isCloseable: false
