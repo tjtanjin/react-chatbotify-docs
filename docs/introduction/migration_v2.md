@@ -25,7 +25,7 @@ This migration guide is organized by the importance of the changes:
 
 It is recommended to read in order, but for a quick upgrade, refer to the [**summary**](#summary) section.
 
-Note: The documentation site now resides on [**react-chatbotify.com](https://react-chatbotify.com) instead of [**react-chatbotify.tjtanjin.com**](https://react-chatbotify.tjtanjin.com)
+Note: The documentation site now resides on [**react-chatbotify.com**](https://react-chatbotify.com) instead of [**react-chatbotify.tjtanjin.com**](https://react-chatbotify.tjtanjin.com)
 
 ## Breaking Changes
 In version 1, the focus was on **making things work**, ensuring features like audio behavior, mobile view, and message notifications functioned correctly.
@@ -64,7 +64,7 @@ The [**`render`**](https://react-chatbotify.com/legacy/v1/docs/api/attributes#pr
 Changes Required:
 - Replace `render` attribute with `component` attribute inside all applicable conversation blocks
 
-### Renamed sendAttachmentOutput to sendFileName, moved from chatInput section to fileAttachment section
+### Moved and renamed sendAttachmentOutput to sendFileName
 In the past, controlling whether file names were sent into chat for file attachments was determined via `sendAttachmentOutput` within `chatInput` section. However, this was a poor fit, as there was a `fileAttachment` section where such an option would be more relevant. With the addition of `showMediaDisplay`, it is also more appropriate to standardize these properties with `fileAttachment`. `sendAttachmentOutput` has also been renamed to `sendFileName` which more clearly communicates its purpose.
 
 Changes Required:
