@@ -52,7 +52,7 @@ function HomepageHeader() {
 									setIsCopied(false);
 								}, 3000)
 							}}
-							style={{color: "#333", padding: 16, backgroundColor: "#fff", cursor: "copy"}}
+							style={{color: "#333", padding: 16, backgroundColor: "#fff", cursor: "pointer"}}
 						>
 							npm install react-chatbotify --save 📋
 						</code>
