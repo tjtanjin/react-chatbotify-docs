@@ -69,6 +69,11 @@ export const DefaultStyles: Styles = {
 	voiceIconStyle: {},
 	voiceIconDisabledStyle: {},
 	sendIconStyle: {},
+	rcbTypingIndicatorContainerStyle: {},
+	rcbTypingIndicatorDotStyle: {},
+	toastPromptContainerStyle: {},
+	toastPromptStyle: {},
+	toastPromptHoveredStyle: {}
 }
 ```
 </details>
@@ -138,6 +143,11 @@ If you wish to refine the appearance of the chatbot, these are the list of secti
 | voiceIconStyle                    | object                          | {}      | Styles for the voice icon.                                                                                                    |
 | voiceIconDisabledStyle            | object                          | {}      | Styles for the disabled voice icon.                                                                                           |
 | sendIconStyle                     | object                          | {}      | Styles for the send icon.                                                                                                     |
+| rcbTypingIndicatorContainerStyle                     | object                          | {}      | Styles for the typing indicator container.                                                                                                     |
+| rcbTypingIndicatorDotStyle                     | object                          | {}      | Styles for the typing indicator dot.                                                                                                     |
+| toastPromptContainerStyle                     | object                          | {}      | Styles for the toast prompt container.                                                                                                     |
+| toastPromptStyle                     | object                          | {}      | Styles for the toast prompt.                                                                                                     |
+| toastPromptHoveredStyle                     | object                          | {}      | Styles for the hovered toast prompt.                                                                                                     |
 
 The utilization of styles is remarkably simple, as each section readily accepts inline React styles. For instance, you can customise the headerStyle with `headerStyle: {background: "red"}`.
 

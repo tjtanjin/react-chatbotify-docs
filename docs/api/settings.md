@@ -161,6 +161,11 @@ const DefaultSettings: Settings = {
 		icon: emojiIcon,
 		list: ["😀", "😃", "😄", "😅", "😊", "😌", "😇", "🙃", "🤣", "😍", "🥰", "🥳", "🎉", "🎈", "🚀", "⭐️"]
 	},
+	toast: {
+		maxCount: 3,
+		forbidOnMax: false,
+		dismissOnClick: true,
+	},
 	advance: {
 		useAdvancedMessages: false,
 		useAdvancedSettings: false,
@@ -198,6 +203,7 @@ Below is are the list of sections available.
 | notification               | object                          | {}                                            | Configuration for chatbot notifications.                                                                                       |
 | sensitiveInput             | object                          | {}                                            | Configuration for chatbot sensitive input.                                                                                         |
 | theme                      | object                          | {}                                            | Configuration for the chatbot theme.                                                                                        |
+| toast                      | object                          | {}                                            | Configuration for the chatbot toast.                                                                                         |
 | tooltip                    | object                          | {}                                            | Configuration for the chatbot tooltip.                                                                                         |
 | userBubble                 | object                          | {}                                            | Configuration for user chat bubbles.                                                                                           |
 | voice                      | object                          | {}                                            | Configuration for chatbot voice.                                                                                               |
@@ -375,7 +381,17 @@ Properties here handle general configurations for the chatbot.
 | embedded                   | boolean                         | false                                       | Specifies whether the chatbot is embedded in the webpage or accessed through a floating button. Note that notifications feature **will not work** for embedded chat windows.                                                             |
 | desktopEnabled                   | boolean                         | true                                       | Specifies whether the chatbot is enabled for users on desktop.                                                             |
 | mobileEnabled                    | boolean                         | true                                       | Specifies whether the chatbot is enabled for users on mobile.                                                             |
-| flowStartTrigger          | string                         | "ON_LOAD"                                      | The trigger for starting chatbot flow which includes: <ul><li>`ON_LOAD`:</li> Flow begins on chatbot load<li>`ON_CHATBOT_INTERACT`:</li> Flow begins when user interacts with chatbot<li>`ON_PAGE_INTERACT`:</li> Flow begins when user interacts with page</ul>                                                                                                   |
+| flowStartTrigger          | string                         | "ON_LOAD"                                      | The trigger for starting chatbot flow which includes: <ul><li>`ON_LOAD`:</li> Flow begins on chatbot load<li>`ON_CHATBOT_INTERACT`:</li> Flow begins when user interacts with chatbot<li>`ON_PAGE_INTERACT`:</li> Flow begins when user interacts with page</ul> 
+
+### Toast
+
+Properties here handle toasts shown in the chatbot.
+
+| Name                       | Type                            | Default                                     | Description                                                                                                                    |
+| -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| maxCount                   | number                          | 3                                          | Specifies the maximum number of toasts that can be shown at once.                                                        |
+| forbidOnMax                | boolean                         | false                                       | If `true`, new toasts will be prevented from being shown when the max number of toasts has been reached. If `false`, new toasts will be shown but the oldest toasts beyond the max limit will be removed.                                                       |
+| dismissOnClick             | boolean                         | true                                            | If `true`, clicking on toasts will dismiss them.                                                            |
 
 ### Tooltip
 

@@ -34,6 +34,9 @@ const MyChatBot = () => {
 		},
 		ask_pet: {
 			message: "Do you own any pets?",
+			// alternative way to declare options, with sending of output disabled
+			// more info here: https://react-chatbotify.com/docs/api/attributes
+			// options: {items: ["Yes", "No"], sendOutput: false}
 			options: ["Yes", "No"],
 			chatDisabled: true,
 			function: (params) => setForm({...form, pet_ownership: params.userInput}),
@@ -41,6 +44,9 @@ const MyChatBot = () => {
 		},
 		ask_choice: {
 			message: "Select at least 2 pets that you are comfortable to work with:",
+			// alternative way to declare checkboxes, with default configurations (i.e. min 1, max 4, send output and not reusable)
+			// more info here: https://react-chatbotify.com/docs/api/attributes
+			// checkboxes: ["Dog", "Cat", "Rabbit", "Hamster"]
 			checkboxes: {items: ["Dog", "Cat", "Rabbit", "Hamster"], min: 2},
 			chatDisabled: true,
 			function: (params) => setForm({...form, pet_choices: params.userInput}),
