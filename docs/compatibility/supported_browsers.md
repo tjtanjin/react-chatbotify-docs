@@ -11,9 +11,9 @@ The following table shows the browsers that React ChatBotify has been tested on.
 
 | Browser                                                              | Support                     |
 |----------------------------------------------------------------------|-----------------------------|
-| <div align="center">![Chrome](img/rcb-chrome.png)</div>              | &#10004;                    |
-| <div align="center">![Safari](img/rcb-safari.png)</div>              | &#10004;                    |
-| <div align="center">![Edge](img/rcb-edge.png)</div>                  | &#10004;                    |
-| <div align="center">![Samsung Internet](img/rcb-samsung.png)</div>   | &#10004;                    |
-| <div align="center">![Firefox](img/rcb-firefox.png)</div>            | &#10004;                    |
-| <div align="center">![Opera](img/rcb-opera.png)</div>                | &#10004; (No Voice Feature) |
+| <div align="center">![Chrome](img/rcb-chrome.png)</div>              | <div align="center">&#10004;</div> |
+| <div align="center">![Safari](img/rcb-safari.png)</div>              | <div align="center">&#10004;</div> |
+| <div align="center">![Edge](img/rcb-edge.png)</div>                  | <div align="center">&#10004;</div> |
+| <div align="center">![Samsung Internet](img/rcb-samsung.png)</div>   | <div align="center">&#10004;</div> |
+| <div align="center">![Firefox](img/rcb-firefox.png)</div>            | <div align="center">&#10004;</div> |
+| <div align="center">![Opera](img/rcb-opera.png)</div>                | <div align="center">&#10004; (No Voice Feature)</div> |
