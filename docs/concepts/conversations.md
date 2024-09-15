@@ -12,11 +12,11 @@ Conversations refer to the interactions between the bot and the user. Here's how
 ```jsx
 const flow = {
   start: {
-    message: "What is your age?",
+    message: "Who are you?",
     path: "end"
   },
   end: {
-    message: (params) => `I see you are ${params.userInput}!`,
+    message: (params) => `Hi ${params.userInput}!`,
     chatDisabled: true
   }
 }
@@ -27,14 +27,14 @@ we observe how these properties interact with each other:
 
 ![RCB Conversations Sequence](./img/rcb-conversations-sequence.png)
 
-1. Upon initializing the chatbot, the chatbot **immediately pre-processes** the `start` block within a conversation flow (represented by the unique yellow box above).
-Following which, it patiently waits for a user input.
-2. When a user sends a message (or uploads a file), the **current block** is retrieved and **post-processing** is done for it. If a next path is found during **post-processing**,
-then **pre-processing** of the **next block** is also done. Notice that **both pre-processing and post-processing** of a block involves accessing
-attributes (e.g. `messages` and `path`). Optionally, params (e.g. `userInput`) may also be involved.
-3. Once the **pre-processing** of the new block (if applicable) is done, the chatbot again waits for the next user input.
+We will walk through the short example code snippet above to give you a better idea of a conversation flow:
 
-In short, each user input triggers post-processing of a current block and pre-processing of the next block (if applicable)! In between the pre-processing and post-processing of the
+1. Upon the start of a conversation flow, the chatbot **immediately pre-processes** the `start` block. In the example above, the `message` attribute is processed and the message *"Who are you?"* is sent by the bot into the chat. Following which, it patiently waits for a user input.
+2. When the user sends a message (or uploads a file), the **current block** is retrieved and **post-processing** is done for it. If a next path is found during **post-processing**, the conversation flow moves to the next block. In the example above, the flow moves into the `end` block as specified by the `path` attribute.
+3. Upon entering a new block (`end` block in this case), **pre-processing** of attributes are immediately done. The `message` attribute in the `end` block accesses `params.userInput` to retrieve the user's previous input and sends a message to greet the user.
+3. Once the **pre-processing** of the new block is done, the chatbot again waits for the next user input.
+
+In short, each user input triggers post-processing of a current block and pre-processing of the next block (if applicable)! In between the pre-processing and post-processing of a
 block is where the chatbot waits for the user input. Now that you have a high level idea of a conversation structure, let us quickly take a look at the details for individual properties.
 
 ## Flow
@@ -124,10 +124,16 @@ As the library does not enforce any of these attributes to be compulsory, it is 
 Parameters contain information/functions that can be passed into **attributes** for usage/decision making and they are as listed below:
 
 - userInput
+- currPath
 - prevPath
 - goToPath
 - injectMessage
 - streamMessage
+- endStreamMessage
+- removeMessage
+- setTextAreaValue
+- showToast
+- dismissToast
 - openChat
 - files (only available for `file` attribute)
 
@@ -144,42 +150,54 @@ For details and usage on each of these parameters, you may consult the [**API do
 
 ## Message
 
-<div align="center">
-![RCB Message](./img/rcb-message.png)
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <div style={{ width: "40%" }}>
+    ![RCB Message](./img/rcb-message.png)
+  </div>
 </div>
 
-Not to be confused with `message` from the section on [**Attributes**](/docs/concepts/conversations#attributes), the `Message` component here represents the interactions between the user and the bot. Every element in the chatbot body (including custom components) are considered a Message (as **outlined in red** on the image above). Within a message you will find 3 properties: 
+Not to be confused with `message` from the section on [**Attributes**](/docs/concepts/conversations#attributes), the `Message` component here represents the interactions between the user and the bot. Every element in the chatbot body (including custom components) are considered a Message (as **outlined in red** on the image above). Within a message you will find **5 properties**: 
 
-- content (required) - a string or JSX.Element representing the content of the message
-- sender (required) - string representing message sender (can be `user`, `bot` or `system`)
-- type (optional) - either string (for plain text) or object (for JSX elements)
+- id - an auto-generated uuidv4 `string`, uniquely identifying a message
+- content - a `string` or `JSX.Element`, representing the content of the message
+- sender - a `string` representing message sender (can be `user`, `bot` or `system`)
+- type - a `string` that specifies "string" (for plain text) or "object" (for JSX elements)
+- timestamp - a `string` representing the time the message was sent in UTC
 
-:::tip
+:::info Info
 
-If you are using `params.injectMessage`, `params.streamMessage` or the [**advanced messages**](/docs/examples/advanced_messages) feature, you minimally only need to pass in the `content` parameter when inserting your own messages. The `sender` field defaults to `bot` while `type` is not required at all. When in doubt, check out [**examples**](/docs/examples/complex_form) for details on usage.
+For manipulating messages, it is recommended that you utilize `injectMessage` and `streamMessage` provided in [**params**](/docs/api/params#injectmessage) or [**hooks**](/docs/api/hooks#usemessages). If you are directly manipulating the `messages` array (not recommended), which is possible via the [`useMessages`](/docs/api/hooks#usemessages) hook, you need to specify **all 5 fields** yourself.
 
 :::
 
 ## Summary
 
-Does that sound like a lot to take in? Fret not! Let us take one final look at the code snippet we saw at the beginning and put things all together. Notice that the `ChatBot`
-takes in the `flow` that we have just gone through above. Tinker with the live editor below and try out the result for yourself!
+Does that sound like a lot to take in? Fret not! Let us take one final look at the code snippet we saw at the beginning and put things all together. Notice that the `ChatBot` takes in the `flow` that we have just gone through above. Tinker with the live editor below and try out the result for yourself!
 
 ```jsx live noInline title=MyComponent.js
 const MyComponent = () => {
   const flow = {
     start: {
-      message: "What is your age?",
+      message: "Who are you?",
       path: "end"
     },
     end: {
-      message: (params) => `I see you are ${params.userInput}!`,
+      message: (params) => `Hi ${params.userInput}!`,
       chatDisabled: true
     }
   }
 
+  const settings = {
+    general: {
+      embedded: true
+    },
+    chatHistory: {
+      storageKey: "conversations_summary"
+    }
+  }
+
   return (
-    <ChatBot settings={{general: {embedded: true}, chatHistory: {storageKey: "conversations_summary"}}} flow={flow}/>
+    <ChatBot settings={settings} flow={flow}/>
   );
 };
 
@@ -189,5 +207,3 @@ render(
   </div>
 )
 ```
-
-In the next section, we will explore how you can customize the settings for your chatbot to suit your specific needs and preferences!

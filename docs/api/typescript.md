@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 8
 title: TypeScript
 description: content describing chatbot typescript
 keywords: [react, chat, chatbot, chatbotify]
@@ -7,13 +7,15 @@ keywords: [react, chat, chatbot, chatbotify]
 
 # Typescript
 
-The library provides the following type definitions (click to find out more!):
+The library provides the following external type definitions which you may import:
 - [**Block**](/docs/concepts/conversations#block)
 - [**Flow**](/docs/concepts/conversations#flow)
 - [**Message**](/docs/concepts/conversations#message)
 - [**Params**](/docs/concepts/conversations#params)
+- [**Plugins**](/docs/concepts/plugins)
 - [**Settings**](/docs/concepts/settings)
 - [**Styles**](/docs/concepts/styles)
+- [**Toasts**](/docs/concepts/conversations#toast)
 - [**Themes**](/docs/concepts/themes)
 
 :::tip Tip

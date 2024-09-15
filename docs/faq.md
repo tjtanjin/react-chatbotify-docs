@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 6
 title: FAQ
 description: content describing chatbot faq
 keywords: [react, chat, chatbot, chatbotify]

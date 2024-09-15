@@ -54,6 +54,9 @@ const MyChatBot = () => {
 				await new Promise(resolve => setTimeout(resolve, 30));
 			}
 			await params.streamMessage(text);
+
+			// we call endStreamMessage to indicate that all streaming has ended here
+			await params.endStreamMessage();
 		} catch (error) {
 			await params.injectMessage("Unable to load model, is your API Key valid?");
 			hasError = true;

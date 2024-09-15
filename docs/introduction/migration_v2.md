@@ -38,6 +38,12 @@ Initially, the chatbot had fewer features, making **BotOptions** manageable. How
 Changes Required:
 - Remove all style sections from BotOptions and move them to the new `styles` prop (refer to new features)
 
+### Removed isOpen from BotOptions
+Up till now, the chat window state (open/close) of the chatbot has been tracked by the `isOpen` variable which was found within the chatbot's `options` (now `settings`) prop. Apart from this special variable, all that `options` contained were configuration sections. That said, `isOpen` always felt out of place and it's not great having to handle a special case as it breaks consistency. With the introduction of [**hooks**](/docs/api/hooks), the chat window state can now be exposed via the `useChatWindow` hook and `isOpen` can finally be retired.
+
+Changes Required:
+- Remove usage of `isOpen` variable found within the `options` (now `settings`) prop and use the `useChatWindow` hook if required
+
 ### Removed react-chatbotify.css import
 Since v1.5.0, importing of `react-chatbotify.css` is no longer necessary. With v2, this is being enforced so remove any `react-chatbotify.css` imports from your codebase.
 
@@ -79,20 +85,17 @@ Changes Required (for users using `render` (now `component`) attribute):
 
 Deepest apologies for this breaking change but standardizing the rules of showing avatar is important for delivering new features such as media display.
 
-### Advance Section Properties Updated
-The advance section previously contained the following 3 sections:
-- useAdvancedBotOptions
-- useAdvancedMessages
-- useAdvancedPaths
-
-Following the changes to **BotOptions** mentioned earlier, `useAdvancedBotOptions` has been renamed to `useAdvancedSettings`. As there is also a new `styles` prop, the advance section now contains the following 4 sections:
-- useAdvancedSettings
-- useAdvancedStyles
-- useAdvancedMessages
-- useAdvancedPaths
+### Advance Section Removed
+The `advance` section has been removed and replaced entirely by `ChatBotProvider` which exposes custom hooks. By moving to custom `hooks`, it is now possible to modify more than just settings, styles, messages and paths. It is now even possible to modify the text area, audio toggle, and toasts popup from outside the chatbot! The addition of custom `hooks` is covered [**here**](/docs/api/hooks).
 
 Changes Required:
-- Update the properties for `advance` section inside the `settings` prop
+- Remove all instances of `advance` section from `settings` and move to [**custom hooks**](/docs/api/hooks) if required
+
+### Message Attributes Expanded and Required
+Previously, the `Message` attribute only had 2 required fields (`sender` and `content`). In v2, the `Message` attribute has been expanded to have 5 fields (`sender`, `content`, `id`, `type` and `timestamp`) with all of them being set as required. This should affect advanced users who were manipulating `messages` directly, but the advance section has since been replaced with [**hooks**](/docs/api/hooks).
+
+Changes Required:
+- move to [**custom hooks**](/docs/api/hooks) for direct manipulation of `messages` and include required fields
 
 ## Concept Changes
 
@@ -117,6 +120,24 @@ Following the removal of `styles` from **BotOptions**, a new [**`styles`**](/doc
 New Additions:
 - Added [**`styles`**](/docs/concepts/styles) prop (essentially the style sections previously under [**`BotOptions`**](https://react-chatbotify.com/legacy/v1/docs/api/bot_options#styles))
 - Added `getDefaultStyles` which provides an empty default list of styles
+
+### New Plugins Prop
+With v2, there is now a `plugins` prop available for users to import and load custom plugins. More information on plugins can be found [**here**](/docs/concepts/plugins).
+
+New Additions:
+- Added [**`plugins`**](/docs/concepts/plugins) prop for using custom plugins
+
+### New Hooks Feature
+In v2, it is now possible to interact with the chatbot in many ways (e.g. toggle audio) from within your own components. This is done via custom hooks provided by the chatbot. More information on hooks may be found [**here**](/docs/api/hooks).
+
+New Additions:
+- Added custom [**`hooks`**](/docs/api/hooks) that users can import to use in their components for interacting with the chatbot
+
+### New Events Feature
+In v2, the chatbot now emits custom events (e.g. `RcbPreMessageInjectEvent`). Users can add event listeners to listen and respond to these custom events. More information on events may be found [**here**](/docs/api/events).
+
+New Additions:
+- Added custom [**`events`**](/docs/api/events) that users can listen and respond to
 
 ### Custom Buttons in Header, Chat Input, and Footer
 A frequently requested feature, it is now possible to add custom buttons in the header, chat input, and footer. Furthermore, it is also possible to customize the order of the buttons as well as shift them across components of the chatbot. Want your file attachment button in the chat input component instead? No problem!
