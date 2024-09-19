@@ -13,6 +13,7 @@ let getDefaultStyles = null;
 let useAudio = null;
 let useNotifications = null;
 let useFlow = null;
+let useToast = null;
 
 if (ExecutionEnvironment.canUseDOM) {
 	ChatBot = require("react-chatbotify").default;
@@ -23,7 +24,8 @@ if (ExecutionEnvironment.canUseDOM) {
 		getDefaultStyles,
 		useAudio,
 		useNotifications,
-		useFlow
+		useFlow,
+		useToast
 	} = require("react-chatbotify");
 	ChatBotProvider = hooks.ChatBotProvider;
 	Button = hooks.Button;
@@ -32,6 +34,7 @@ if (ExecutionEnvironment.canUseDOM) {
 	useAudio = hooks.useAudio;
 	useNotifications = hooks.useNotifications;
 	useFlow = hooks.useFlow;
+	useToast = hooks.useToast;
 }
 
 const ReactLiveScope = {
@@ -44,6 +47,7 @@ const ReactLiveScope = {
 	useAudio,
 	useNotifications,
 	useFlow,
+	useToast,
 	GoogleGenerativeAI,
 	OpenAI
 };

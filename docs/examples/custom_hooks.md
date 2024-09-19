@@ -7,12 +7,12 @@ keywords: [react, chat, chatbot, chatbotify]
 
 # Custom Hooks
 
-The following is an example for using custom hooks, which allows you to interact with the chatbot functionalities **externally** (i.e. from your own components). The full list of hooks and the functionalities they expose can be found [**here**](/docs/api/hooks) but for this example, we'll only be using the [**`useAudio`**](/docs/api/hooks#useaudio) hook. Specifically, we'll toggle the chatbot audio from our own `MyChatBotWrapper` component.
+The following is an example for using custom hooks, which allows you to interact with the chatbot functionalities **externally** (i.e. from your own components). The full list of hooks and the functionalities they expose can be found [**here**](/docs/api/hooks). For this example, we'll only be looking at a few hooks such as [**`useAudio`**](/docs/api/hooks#useaudio), [**`useFlow`**](/docs/api/hooks#useflow), [**`useToast`**](/docs/api/hooks#usetoast) and [**`useNotifications`**](/docs/api/hooks#usenotifications). The hooks are imported within the `MyChatBotWrapper` component which is nested under `ChatBotProvider`.
 
 ```jsx live noInline title=MyChatBot.js
 const MyChatBotWrapper = () => {
     const { toggleAudio } = useAudio();
-    const { restartConversationFlow } = useFlow();
+    const { restartFlow } = useFlow();
     const { showToast } = useToast();
     const { playNotificationSound } = useNotifications();
 
@@ -37,9 +37,9 @@ const MyChatBotWrapper = () => {
     return (
         <>
           <ExampleButton onClick={toggleAudio} text="Click me to toggle audio!"/>
-          <ExampleButton onClick={restartConversationFlow} text="Click me to reset the flow!"/>
-          <ExampleButton onClick={restartConversationFlow} text="Click me to show a toast!"/>
-          <ExampleButton onClick={playNotificationSound} text="Click me to play notification sound!"/>
+          <ExampleButton onClick={restartFlow} text="Click me to reset the flow!"/>
+          <ExampleButton onClick={() => showToast("Hello there!")} text="Click me to show a toast!"/>
+          <ExampleButton onClick={playNotificationSound} text="Click me to play a notification sound!"/>
           <ChatBot settings={settings} flow={flow}/>
         </>
     );
