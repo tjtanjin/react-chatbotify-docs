@@ -158,17 +158,25 @@ For details and usage on each of these parameters, you may consult the [**API do
 
 Not to be confused with `message` from the section on [**Attributes**](/docs/concepts/conversations#attributes), the `Message` component here represents the interactions between the user and the bot. Every element in the chatbot body (including custom components) are considered a Message (as **outlined in red** on the image above). Within a message you will find **5 properties**: 
 
-- id - an auto-generated uuidv4 `string`, uniquely identifying a message
-- content - a `string` or `JSX.Element`, representing the content of the message
-- sender - a `string` representing message sender (can be `user`, `bot` or `system`)
-- type - a `string` that specifies "string" (for plain text) or "object" (for JSX elements)
-- timestamp - a `string` representing the time the message was sent in UTC
+- id (required) - an auto-generated uuidv4 `string`, uniquely identifying a message
+- content (required) - a `string` or `JSX.Element`, representing the content of the message
+- sender (required) - a `string` representing message sender (can be `user`, `bot` or `system`)
+- type (required) - a `string` that specifies "string" (for plain text) or "object" (for JSX elements)
+- timestamp (required) - a `string` representing the time the message was sent in UTC
 
 :::info Info
 
 For manipulating messages, it is recommended that you utilize `injectMessage` and `streamMessage` provided in [**params**](/docs/api/params#injectmessage) or [**hooks**](/docs/api/hooks#usemessages). If you are directly manipulating the `messages` array (not recommended), which is possible via the [`useMessages`](/docs/api/hooks#usemessages) hook, you need to specify **all 5 fields** yourself.
 
 :::
+
+## Toast
+
+Toasts are strictly speaking not essential for chatbot conversations. However, they are oftentime useful in providing feedback to users. For example, the [**rcb-input-validator-plugin**] uses toasts to inform users of any input validation errors. A toast comprises of **3 properties**:
+
+- id (required) - an auto-generated uuidv4 `string`, uniquely identifying a toast
+- content (required) - a `string` or `JSX.Element`, representing the content of the toast
+- timeout (optional) - specifies the duration that the toast is shown for before it is automatically dismissed
 
 ## Summary
 

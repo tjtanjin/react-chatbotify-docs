@@ -64,3 +64,7 @@ export default function Home() {
   );
 }
 ```
+
+#### Q9) I'm using custom hooks but values/functions don't seem to be working (e.g. messages/paths arrays are empty), why?
+
+A common pitfall for experiencing such issues is importing custom hooks in components not nested within `ChatBotProvider`. More information about this can be found in the [**API documentation for hooks**](/docs/api/hooks).

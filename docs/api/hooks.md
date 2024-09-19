@@ -85,6 +85,7 @@ Below is a list of available hooks along with a brief description for each of th
 | useAudio            | Manages audio functionalities, such as toggling audio on or off.                        |
 | useChatWindow       | Manages the state of the chatbot window (open/close).                                   |
 | useFirstInteraction | Detects and tracks the user's first interaction with the chatbot.                       |
+| useFlow             | Allows getting and restarting chatbot flow and tracks if flow has started.              |
 | useMessages         | Handles sending, clearing, and retrieving messages in the chatbot.                      |
 | useNotifications    | Manages chatbot notifications, such as toggling notifications on or off.                |
 | usePaths            | Manages chatbot conversation paths, such as navigation                                  |
@@ -151,13 +152,42 @@ const MyNestedComponent = () => {
 ### useFirstInteraction
 
 #### Description
-The `useFirstInteraction` hook allows you to track if a page has been interacted with and whether the chatbot flow has started.
+The `useFirstInteraction` hook allows you to track if a page has been interacted with.
 
 #### Return Values
 | Name                | Type       | Description                                              |
 | ------------------- | ---------- | -------------------------------------------------------- |
 | hasInteractedPage   | `boolean`  | Indicates if the page has been interacted with.          |
+
+#### Code Example
+```jsx
+import { useEffect } from "react";
+import { useFirstInteraction } from "react-chatbotify";
+
+const MyNestedComponent = () => {
+  const { hasFlowStarted } = useFirstInteraction();
+
+  useEffect(() => {
+    // do something if flow has started
+  }, [hasFlowStarted])
+
+  return (
+    <ExampleComponent/>
+  )
+};
+```
+
+### useFlow
+
+#### Description
+The `useFlow` hook allows you to get a flow, restart a flow and track if a flow has started.
+
+#### Return Values
+| Name                | Type       | Description                                              |
+| ------------------- | ---------- | -------------------------------------------------------- |
 | hasFlowStarted      | `boolean`  | Indicates if the chatbot flow has started.               |
+| getFlow             | `function` | Retrieves the chatbot flow.                              |
+| restartFlow         | `function` | Restarts the chatbot flow.                               |
 
 #### Code Example
 ```jsx
@@ -342,7 +372,7 @@ The `useTextArea` hook allows you to track and manage the chatbot's text area fi
 | toggleTextAreaDisabled       | `function`  | Toggles the text area disabled state.                    |
 | textAreaSensitiveMode        | `boolean`   | Indicates if the text area is in sensitive mode.         |
 | toggleTextAreaSensitiveMode  | `function`  | Toggles the text area sensitive mode.                    |
-| setTextAreaValue             | `function`  | Sets the value inside the text area.                     |
+| setTextAreaValue             | `function`  | Sets the value inside the text area, identical to `params.setTextAreaValue` detailed [**here**](/docs/api/params#settextareavalue).                     |
 | focusTextArea                | `function`  | Focuses on the text area.                                |
 
 #### Code Example
