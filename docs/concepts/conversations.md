@@ -151,7 +151,7 @@ For details and usage on each of these parameters, you may consult the [**API do
 ## Message
 
 <div style={{ display: "flex", justifyContent: "center" }}>
-  <div style={{ width: "40%" }}>
+  <div style={{ width: "40%", max }}>
     ![RCB Message](./img/rcb-message.png)
   </div>
 </div>
@@ -172,11 +172,23 @@ For manipulating messages, it is recommended that you utilize `injectMessage` an
 
 ## Toast
 
-Toasts are strictly speaking not essential for chatbot conversations. However, they are oftentime useful in providing feedback to users. For example, the [**rcb-input-validator-plugin**] uses toasts to inform users of any input validation errors. A toast comprises of **3 properties**:
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <div style={{ width: "40%" }}>
+    ![RCB Toast](./img/rcb-toast.png)
+  </div>
+</div>
+
+Toasts are strictly speaking not essential for chatbot conversations. However, they are oftentime useful in providing feedback to users (as **outlined in red** on the image above). For example, the [**rcb-input-validator-plugin**](https://github.com/react-chatbotify-plugins/rcb-input-validator-plugin) uses toasts to inform users of any input validation errors. A toast comprises of **3 properties**:
 
 - id (required) - an auto-generated uuidv4 `string`, uniquely identifying a toast
 - content (required) - a `string` or `JSX.Element`, representing the content of the toast
 - timeout (optional) - specifies the duration that the toast is shown for before it is automatically dismissed
+
+:::info Info
+
+For manipulating toasts, it is recommended that you utilize `showToast` and `dismissToast` which are provided in [**params**](/docs/api/params#showtoast) or [**hooks**](/docs/api/hooks#useToast). If you are directly manipulating the `toasts` array (not recommended), which is possible via the [`useToast`](/docs/api/hooks#usetoast) hook, you need to specify **at least the 2 required fields** yourself.
+
+:::
 
 ## Summary
 
