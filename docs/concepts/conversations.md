@@ -151,7 +151,7 @@ For details and usage on each of these parameters, you may consult the [**API do
 ## Message
 
 <div style={{ display: "flex", justifyContent: "center" }}>
-  <div style={{ width: "40%", max }}>
+  <div style={{ width: "40%" }}>
     ![RCB Message](./img/rcb-message.png)
   </div>
 </div>

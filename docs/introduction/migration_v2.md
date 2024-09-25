@@ -104,6 +104,9 @@ Conceptual changes do not break any existing features, functionalities or appear
 ### Dynamic Attributes Dropped
 Previously, `params` (now `AttributeParams`) were used within predefined dynamic attributes. In version 2, all attributes can take `AttributeParams`, simplifying the process.
 
+### SSR Support Improved
+Previously, using the library in SSR frameworks (e.g. NextJS) involved importing the chatbot dynamically/lazily. This is **no longer needed** in v2 as support for SSR frameworks has been improved and the library now doesn't utilize window before it is defined!
+
 ## New Features
 
 With the **v2** release, there are several new features that have been added, most of which are based on popular requests from users.

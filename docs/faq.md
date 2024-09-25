@@ -39,7 +39,7 @@ Check if your messages are being sent with [**real-time stream**](/docs/examples
 
 #### Q8) I am using NextJS and running into `ReferenceError: window is not defined...` errors, how can I fix this?
 
-Since NextJS is a server-side rendering framework, the window object may not be available immediately. To resolve this, load the ChatBot lazily. Refer to code snippet below for an example:
+You are likely on version **v2.0.0-beta.12 or below**. To address this error, **it is recommended to update to v2.0.0-beta.13 or higher**. If you are unable to do so, then note that this error occurs because NextJS is a server-side rendering framework and the window object may not be available immediately. You can workaround this by loading the ChatBot dynamically/lazily. Refer to code snippet below for an example:
 
 ```jsx
 "use client";
@@ -64,7 +64,14 @@ export default function Home() {
   );
 }
 ```
+#### Q9) I'm using NextJS and running into `Global CSS cannot be imported from within node_modules` error, how can I fix this?
 
-#### Q9) I'm using custom hooks but values/functions don't seem to be working (e.g. messages/paths arrays are empty), why?
+This usually happens because you're still using the `pages` directory instead of the `app` directory. There are 2 solutions:
+- Use app directory instead of pages
+- If you must use pages, then find react-chatbotify/dist/index.js within node_modules and delete the css import. Copy the css file into your own project to import it. Then delete .next folder and restart the project.
+
+The first solution is recommended but the second solution is a viable workaround if you are unable to use `app` directory. However, using the second solution means that there’s a need to manually perform this whenever you do a version upgrade of the library.
+
+#### Q10) I'm using custom hooks but values/functions don't seem to be working (e.g. messages/paths arrays are empty), why?
 
 A common pitfall for experiencing such issues is importing custom hooks in components not nested within `ChatBotProvider`. More information about this can be found in the [**API documentation for hooks**](/docs/api/hooks).

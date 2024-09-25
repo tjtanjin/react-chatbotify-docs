@@ -316,25 +316,25 @@ Properties here handle the emoji picker. Note that this feature will be disabled
 
 Properties here handle the events emitted by the chatbot. All events have a default value of `false`. By enabling these events, the chatbot will emit the respective events when specific actions are triggered within the bot's lifecycle.
 
-| Name                             | Type       | Default | Description                                                                 |
-| -------------------------------- | ---------- | ------- | --------------------------------------------------------------------------- |
-| RcbChangePathEvent             | `boolean`  | false   | Specifies whether the `RcbChangePathEvent` will be emitted.                 |
-| RcbChunkStreamMessageEvent     | `boolean`  | false   | Specifies whether the `RcbChunkStreamMessageEvent` will be emitted.         |
-| RcbDismissToastEvent           | `boolean`  | false   | Specifies whether the `RcbDismissToastEvent` will be emitted.               |
-| RcbLoadChatHistoryEvent        | `boolean`  | false   | Specifies whether the `RcbLoadChatHistoryEvent` will be emitted.            |
-| RcbPostInjectMessageEvent      | `boolean`  | false   | Specifies whether the `RcbPostInjectMessageEvent` will be emitted.          |
-| RcbPreInjectMessageEvent       | `boolean`  | false   | Specifies whether the `RcbPreInjectMessageEvent` will be emitted.           |
-| RcbRemoveMessageEvent          | `boolean`  | false   | Specifies whether the `RcbRemoveMessageEvent` will be emitted.              |
-| RcbShowToastEvent              | `boolean`  | false   | Specifies whether the `RcbShowToastEvent` will be emitted.                  |
-| RcbStartStreamMessageEvent     | `boolean`  | false   | Specifies whether the `RcbStartStreamMessageEvent` will be emitted.         |
-| RcbStopStreamMessageEvent      | `boolean`  | false   | Specifies whether the `RcbStopStreamMessageEvent` will be emitted.          |
-| RcbToggleAudioEvent            | `boolean`  | false   | Specifies whether the `RcbToggleAudioEvent` will be emitted.                |
-| RcbToggleChatWindowEvent       | `boolean`  | false   | Specifies whether the `RcbToggleChatWindowEvent` will be emitted.           |
-| RcbToggleNotificationsEvent    | `boolean`  | false   | Specifies whether the `RcbToggleNotificationsEvent` will be emitted.        |
-| RcbToggleVoiceEvent            | `boolean`  | false   | Specifies whether the `RcbToggleVoiceEvent` will be emitted.                |
-| RcbUserSubmitTextEvent         | `boolean`  | false   | Specifies whether the `RcbUserSubmitTextEvent` will be emitted.             |
-| RcbUserUploadFileEvent         | `boolean`  | false   | Specifies whether the `RcbUserUploadFileEvent` will be emitted.             |
-| RcbTextAreaChangeValueEvent    | `boolean`  | false   | Specifies whether the `RcbTextAreaChangeValueEvent` will be emitted.        |
+| Name                      | Type       | Default | Description                                                                 |
+| ------------------------- | ---------- | ------- | --------------------------------------------------------------------------- |
+| RcbChangePath             | `boolean`  | false   | Specifies whether the `RcbChangePathEvent` will be emitted.                 |
+| RcbChunkStreamMessage     | `boolean`  | false   | Specifies whether the `RcbChunkStreamMessageEvent` will be emitted.         |
+| RcbDismissToast           | `boolean`  | false   | Specifies whether the `RcbDismissToastEvent` will be emitted.               |
+| RcbLoadChatHistory        | `boolean`  | false   | Specifies whether the `RcbLoadChatHistoryEvent` will be emitted.            |
+| RcbPostInjectMessage      | `boolean`  | false   | Specifies whether the `RcbPostInjectMessageEvent` will be emitted.          |
+| RcbPreInjectMessage       | `boolean`  | false   | Specifies whether the `RcbPreInjectMessageEvent` will be emitted.           |
+| RcbRemoveMessage          | `boolean`  | false   | Specifies whether the `RcbRemoveMessageEvent` will be emitted.              |
+| RcbShowToast              | `boolean`  | false   | Specifies whether the `RcbShowToastEvent` will be emitted.                  |
+| RcbStartStreamMessage     | `boolean`  | false   | Specifies whether the `RcbStartStreamMessageEvent` will be emitted.         |
+| RcbStopStreamMessage      | `boolean`  | false   | Specifies whether the `RcbStopStreamMessageEvent` will be emitted.          |
+| RcbToggleAudio            | `boolean`  | false   | Specifies whether the `RcbToggleAudioEvent` will be emitted.                |
+| RcbToggleChatWindow       | `boolean`  | false   | Specifies whether the `RcbToggleChatWindowEvent` will be emitted.           |
+| RcbToggleNotifications    | `boolean`  | false   | Specifies whether the `RcbToggleNotificationsEvent` will be emitted.        |
+| RcbToggleVoice            | `boolean`  | false   | Specifies whether the `RcbToggleVoiceEvent` will be emitted.                |
+| RcbUserSubmitText         | `boolean`  | false   | Specifies whether the `RcbUserSubmitTextEvent` will be emitted.             |
+| RcbUserUploadFile         | `boolean`  | false   | Specifies whether the `RcbUserUploadFileEvent` will be emitted.             |
+| RcbTextAreaChangeValue    | `boolean`  | false   | Specifies whether the `RcbTextAreaChangeValueEvent` will be emitted.        |
 
 ### fileAttachment
 

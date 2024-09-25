@@ -60,7 +60,10 @@ Below is a detailed description of each event and how to use them.
 #### Description
 Emitted when the chatbot changes its conversation path.
 
-### Data
+#### Note
+Requires `settings.event.RcbChangePath` to be set to true.
+
+#### Data
 | Name      | Type     | Description                                                     |
 |-----------|----------|-----------------------------------------------------------------|
 | prevPath  | `string` | Represents the previous path of the user.                       |
@@ -72,7 +75,7 @@ Emitted when the chatbot changes its conversation path.
 import { useEffect } from "react";
 import { RcbChangePathEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handlePathChange = (event: RcbChangePathEvent) => {
       // handle the path change event
@@ -95,6 +98,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when a chunk of a streamed message is received.
 
+#### Note
+Requires `settings.event.RcbChunkStreamMessage` to be set to true.
+
 #### Data
 | Name      | Type      | Description                                                     |
 |-----------|-----------|-----------------------------------------------------------------|
@@ -105,7 +111,7 @@ Emitted when a chunk of a streamed message is received.
 import { useEffect } from "react";
 import { RcbChunkStreamMessageEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleChunkStreamMessage = (event: RcbChunkStreamMessageEvent) => {
       // handle the chunk stream message event
@@ -128,6 +134,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when a toast message is dismissed.
 
+#### Note
+Requires `settings.event.RcbDismissToast` to be set to true.
+
 #### Data
 | Name      | Type      | Description                                                     |
 |-----------|-----------|-----------------------------------------------------------------|
@@ -138,7 +147,7 @@ Emitted when a toast message is dismissed.
 import { useEffect } from "react";
 import { RcbDismissToastEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleDismissToast = (event: RcbDismissToastEvent) => {
       // handle the dismiss toast event
@@ -161,6 +170,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when the chat history is loaded.
 
+#### Note
+Requires `settings.event.RcbLoadChatHistory` to be set to true.
+
 #### Data
 None
 
@@ -169,7 +181,7 @@ None
 import { useEffect } from "react";
 import { RcbLoadChatHistoryEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleLoadChatHistory = (event: RcbLoadChatHistoryEvent) => {
       // handle the load chat history event
@@ -192,6 +204,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted after a message is injected into the chat.
 
+#### Note
+Requires `settings.event.RcbPostInjectMessage` to be set to true.
+
 #### Data
 | Name      | Type      | Description                                                     |
 |-----------|-----------|-----------------------------------------------------------------|
@@ -202,7 +217,7 @@ Emitted after a message is injected into the chat.
 import { useEffect } from "react";
 import { RcbPostInjectMessageEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handlePostInjectMessage = (event: RcbPostInjectMessageEvent) => {
       // handle the post inject message event
@@ -225,6 +240,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted before a message is injected into the chat.
 
+#### Note
+Requires `settings.event.RcbPreInjectMessage` to be set to true.
+
 #### Data
 | Name      | Type      | Description                                                     |
 |-----------|-----------|-----------------------------------------------------------------|
@@ -235,7 +253,7 @@ Emitted before a message is injected into the chat.
 import { useEffect } from "react";
 import { RcbPreInjectMessageEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handlePreInjectMessage = (event: RcbPreInjectMessageEvent) => {
       // handle the pre inject message event
@@ -258,6 +276,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when a message is removed from the chat.
 
+#### Note
+Requires `settings.event.RcbRemoveMessage` to be set to true.
+
 #### Data
 | Name      | Type      | Description                                                     |
 |-----------|-----------|-----------------------------------------------------------------|
@@ -268,7 +289,7 @@ Emitted when a message is removed from the chat.
 import { useEffect } from "react";
 import { RcbRemoveMessageEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleRemoveMessage = (event: RcbRemoveMessageEvent) => {
       // handle the remove message event
@@ -291,6 +312,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when a toast message is displayed.
 
+#### Note
+Requires `settings.event.RcbShowToast` to be set to true.
+
 #### Data
 | Name      | Type      | Description                                                     |
 |-----------|-----------|-----------------------------------------------------------------|
@@ -301,7 +325,7 @@ Emitted when a toast message is displayed.
 import { useEffect } from "react";
 import { RcbShowToastEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleShowToast = (event: RcbShowToastEvent) => {
       // handle the show toast event
@@ -324,6 +348,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when the chatbot starts streaming a message.
 
+#### Note
+Requires `settings.event.RcbStartStreamMessage` to be set to true.
+
 #### Data
 | Name      | Type      | Description                                                     |
 |-----------|-----------|-----------------------------------------------------------------|
@@ -334,7 +361,7 @@ Emitted when the chatbot starts streaming a message.
 import { useEffect } from "react";
 import { RcbStartStreamMessageEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleStartStreamMessage = (event: RcbStartStreamMessageEvent) => {
       // handle the start stream message event
@@ -357,6 +384,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when the chatbot stops streaming a message.
 
+#### Note
+Requires `settings.event.RcbStopStreamMessage` to be set to true.
+
 #### Data
 | Name      | Type      | Description                                                     |
 |-----------|-----------|-----------------------------------------------------------------|
@@ -367,7 +397,7 @@ Emitted when the chatbot stops streaming a message.
 import { useEffect } from "react";
 import { RcbStopStreamMessageEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleStopStreamMessage = (event: RcbStopStreamMessageEvent) => {
       // handle the stop stream message event
@@ -390,6 +420,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when the audio is toggled on or off.
 
+#### Note
+Requires `settings.event.RcbToggleAudio` to be set to true.
+
 #### Data
 | Name      | Type      | Description                                                           |
 |-----------|-----------|-----------------------------------------------------------------------|
@@ -401,7 +434,7 @@ Emitted when the audio is toggled on or off.
 import { useEffect } from "react";
 import { RcbToggleAudioEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleToggleAudio = (event: RcbToggleAudioEvent) => {
       // handle the toggle audio event
@@ -424,6 +457,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when the chat window is toggled open or closed.
 
+#### Note
+Requires `settings.event.RcbToggleChatWindow` to be set to true.
+
 #### Data
 | Name      | Type      | Description                                                           |
 |-----------|-----------|-----------------------------------------------------------------------|
@@ -435,7 +471,7 @@ Emitted when the chat window is toggled open or closed.
 import { useEffect } from "react";
 import { RcbToggleChatWindowEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleToggleChatWindow = (event: RcbToggleChatWindowEvent) => {
       // handle the toggle chat window event
@@ -458,6 +494,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when notifications are toggled on or off.
 
+#### Note
+Requires `settings.event.RcbToggleNotifications` to be set to true.
+
 #### Data
 | Name      | Type      | Description                                                                  |
 |-----------|-----------|------------------------------------------------------------------------------|
@@ -469,7 +508,7 @@ Emitted when notifications are toggled on or off.
 import { useEffect } from "react";
 import { RcbToggleNotificationsEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleToggleNotifications = (event: RcbToggleNotificationsEvent) => {
       // handle the toggle notifications event
@@ -492,6 +531,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when the voice feature is toggled on or off.
 
+#### Note
+Requires `settings.event.RcbToggleVoice` to be set to true.
+
 #### Data
 | Name      | Type      | Description                                                           |
 |-----------|-----------|-----------------------------------------------------------------------|
@@ -503,7 +545,7 @@ Emitted when the voice feature is toggled on or off.
 import { useEffect } from "react";
 import { RcbToggleVoiceEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleToggleVoice = (event: RcbToggleVoiceEvent) => {
       // handle the toggle voice event
@@ -526,6 +568,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when a user submits text in the chat.
 
+#### Note
+Requires `settings.event.RcbUserSubmitText` to be set to true.
+
 #### Data
 | Name      | Type      | Description                    |
 |-----------|-----------|--------------------------------|
@@ -536,7 +581,7 @@ Emitted when a user submits text in the chat.
 import { useEffect } from "react";
 import { RcbUserSubmitTextEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleUserSubmitText = (event: RcbUserSubmitTextEvent) => {
       // handle the user submit text event
@@ -559,6 +604,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when a user uploads a file.
 
+#### Note
+Requires `settings.event.RcbUserUploadFile` to be set to true.
+
 #### Data
 | Name      | Type       | Description                             |
 |-----------|------------|-----------------------------------------|
@@ -569,7 +617,7 @@ Emitted when a user uploads a file.
 import { useEffect } from "react";
 import { RcbUserUploadFileEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleUserUploadFile = (event: RcbUserUploadFileEvent) => {
       // handle the user upload file event
@@ -592,6 +640,9 @@ const MyNestedComponent = () => {
 #### Description
 Emitted when a user uploads a file.
 
+#### Note
+Requires `settings.event.RcbTextAreaChangeValue` to be set to true.
+
 #### Data
 | Name      | Type       | Description                                                       |
 |-----------|------------|-------------------------------------------------------------------|
@@ -603,7 +654,7 @@ Emitted when a user uploads a file.
 import { useEffect } from "react";
 import { RcbTextAreaChangeValueEvent } from "react-chatbotify";
 
-const MyNestedComponent = () => {
+const MyComponent = () => {
   useEffect(() => {
     const handleTextAreaChangeValue = (event: RcbTextAreaChangeValueEvent) => {
       // handle the text area change value event
