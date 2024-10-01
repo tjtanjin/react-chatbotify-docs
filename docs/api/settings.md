@@ -269,7 +269,7 @@ Properties here handle the UI/UX in the chat window. Note that it is recommended
 | showMessagePrompt          | `boolean`                         | true                                        | Specifies whether to show a message prompt when new messages are received while a user is scrolling the window.                                                      |
 | messagePromptText          | `string`                          | "New Messages ↓"                            | The text to be displayed on the message prompt shown.                                                                             |
 | messagePromptOffset        | `number`                          | 30                                          | The offset (in pixels) that the user must be from the bottom of the chat window to be considered scrolling and thus see the message prompt (recommended to keep at `30` or higher).                                                                  |
-| defaultOpen        | `boolean`                          | false                                          | Specifies whether the chat window should be open by default.                                                                  |
+| defaultOpen        | `boolean`                          | false                                          | Specifies whether the chat window should be open by default (ignored if chatbot is embedded).                                                                  |
 
 ### chatHistory
 

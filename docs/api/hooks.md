@@ -83,6 +83,7 @@ Below is a list of available hooks along with a brief description for each of th
 | Name                | Description                                                                             |
 | ------------------- | --------------------------------------------------------------------------------------- |
 | useAudio            | Manages audio functionalities, such as toggling audio on or off.                        |
+| useChatHistory      | Handles loading, retrieving and setting of chat history messages.                       |
 | useChatWindow       | Manages the state of the chatbot window (open/close).                                   |
 | useFirstInteraction | Detects and tracks the user's first interaction with the chatbot.                       |
 | useFlow             | Allows getting and restarting chatbot flow and tracks if flow has started.              |
@@ -121,6 +122,31 @@ const MyNestedComponent = () => {
 
   return (
     <button onClick={toggleAudio}></button>
+  )
+};
+```
+
+### useChatHistory
+
+#### Description
+The `useChatHistory` hook allows you to show, retrieve and set chat history messages.
+
+#### Return Values
+| Name                | Type       | Description                                                   |
+| ------------------- | ---------- | ------------------------------------------------------------- |
+| showChatHistory     | `function` | Shows the chat history messages on the chatbot.               |
+| getHistoryMessages  | `function` | Retrieves the chat history messages.                          |
+| setHistoryMessages  | `function` | Sets the chat history messages (note that this is permanent). |
+
+#### Code Example
+```jsx
+import { useChatHistory } from "react-chatbotify";
+
+const MyNestedComponent = () => {
+  const { showChatHistory } = useChatHistory();
+
+  return (
+    <button onClick={showChatHistory}></button>
   )
 };
 ```
