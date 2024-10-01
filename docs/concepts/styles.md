@@ -34,6 +34,7 @@ Within `styles`, you will find different **sections** corresponding to different
 - **loadingSpinnerStyle**: Styles for the loading spinner.
 - **notificationBadgeStyle**:	Styles for the chatbot notification badge.
 - **sendButtonHoveredStyle**:	Styles for the hovered send button.
+- **audioButtonDisabledStyle**: Styles for the disabled audio button.
 - **tooltipStyle**: Styles for the chatbot tooltip.
 
 For the full list of available sections, you may refer to the [**API documentation**](/docs/api/styles#sections).

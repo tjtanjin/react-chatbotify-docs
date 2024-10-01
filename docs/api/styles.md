@@ -45,6 +45,7 @@ export const DefaultStyles: Styles = {
 	chatHistoryButtonHoveredStyle: {},
 	sendButtonStyle: {},
 	sendButtonHoveredStyle: {},
+	sendButtonDisabledStyle: {},
 	audioButtonStyle: {},
 	audioButtonDisabledStyle: {},
 	closeChatButtonStyle: {},
@@ -115,6 +116,7 @@ If you wish to refine the appearance of the chatbot, these are the list of secti
 | headerStyle                       | `object`                          | {}      | Styles for the chatbot header.                                                                                                |
 | loadingSpinnerStyle               | `object`                          | {}      | Styles for the loading spinner.                                                                                               |
 | notificationBadgeStyle            | `object`                          | {}      | Styles for the chatbot notification badge.                                                                                    |
+| sendButtonDisabledStyle           | `object`                          | {}      | Styles for the disabled send button.                                                                                           |
 | sendButtonHoveredStyle            | `object`                          | {}      | Styles for the hovered send button.                                                                                           |
 | sendButtonStyle                   | `object`                          | {}      | Styles for the send button.                                                                                                   |
 | tooltipStyle                      | `object`                          | {}      | Styles for the chatbot tooltip.                                                                                               |
