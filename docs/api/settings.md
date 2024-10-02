@@ -181,6 +181,17 @@ const DefaultSettings: Settings = {
 		rcbUserSubmitText: false,
 		rcbUserUploadFile: false,
 		rcbTextAreaChangeValue: false,
+	},
+	ariaLabel: {
+		chatButton: "open chat",
+		audioButton: "toggle audio",
+		closeChatButton: "close chat",
+		emojiButton: "emoji picker",
+		fileAttachmentButton: "upload file",
+		notificationButton: "toggle notifications",
+		sendButton: "send message",
+		voiceButton: "toggle voice",
+		inputTextArea: "input text area",
 	}
 }
 ```
@@ -198,6 +209,7 @@ Below is a list of available sections along with a brief description for each of
 
 | Name                       | Type                            | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| ariaLabel                  | `object`                         | Configuration for chatbot accessibility.                                                                                               |
 | audio                      | `object`                         | Configuration for chatbot audio.                                                                                               |
 | botBubble                  | `object`                         | Configuration for bot chat bubbles.                                                                                            |
 | chatButton                 | `object`                         | Configuration for the chatbot button.                                                                                          |
@@ -222,6 +234,22 @@ Below is a list of available sections along with a brief description for each of
 Below is a detailed description of each section and the properties they contain.
 
 ---
+
+### ariaLabel
+
+Properties here provide accessible labels for various chatbot interface elements. These labels are used by screen readers to enhance accessibility for users.
+
+| Name                   | Type     | Default               | Description                                                                 |
+| ---------------------- | -------- | --------------------- | --------------------------------------------------------------------------- |
+| `chatButton`           | `string` | "open chat"           | Accessible label for the button that opens the chat window.                 |
+| `audioButton`          | `string` | "toggle audio"        | Accessible label for the button that toggles audio.                         |
+| `closeChatButton`      | `string` | "close chat"          | Accessible label for the button that closes the chat window.                |
+| `emojiButton`          | `string` | "emoji picker"        | Accessible label for the button that opens the emoji picker.                |
+| `fileAttachmentButton` | `string` | "upload file"         | Accessible label for the button that allows users to upload files.          |
+| `notificationButton`   | `string` | "toggle notifications"| Accessible label for the button that toggles notifications on or off.       |
+| `sendButton`           | `string` | "send message"        | Accessible label for the button that sends input message.                   |
+| `voiceButton`          | `string` | "toggle voice"        | Accessible label for the button that toggles voice.                         |
+| `inputTextArea`        | `string` | "input text area"     | Accessible label for the text area where users input their messages.        |
 
 ### audio
 
