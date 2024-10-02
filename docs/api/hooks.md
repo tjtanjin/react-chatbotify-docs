@@ -398,6 +398,7 @@ The `useTextArea` hook allows you to track and manage the chatbot's text area fi
 | toggleTextAreaDisabled       | `function`  | Toggles the text area disabled state.                    |
 | textAreaSensitiveMode        | `boolean`   | Indicates if the text area is in sensitive mode.         |
 | toggleTextAreaSensitiveMode  | `function`  | Toggles the text area sensitive mode.                    |
+| getTextAreaValue             | `function`  | Retrieves the string value inside the text area.         |
 | setTextAreaValue             | `function`  | Sets the value inside the text area, identical to `params.setTextAreaValue` detailed [**here**](/docs/api/params#settextareavalue).                     |
 | focusTextArea                | `function`  | Focuses on the text area.                                |
 
