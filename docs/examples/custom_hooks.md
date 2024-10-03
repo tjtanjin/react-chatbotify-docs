@@ -7,13 +7,13 @@ keywords: [react, chat, chatbot, chatbotify]
 
 # Custom Hooks
 
-The following is an example for using custom hooks, which allows you to interact with the chatbot functionalities **externally** (i.e. from your own components). The full list of hooks and the functionalities they expose can be found [**here**](/docs/api/hooks). For this example, we'll only be looking at a few hooks such as [**`useAudio`**](/docs/api/hooks#useaudio), [**`useFlow`**](/docs/api/hooks#useflow), [**`useToast`**](/docs/api/hooks#usetoast) and [**`useNotifications`**](/docs/api/hooks#usenotifications). The hooks are imported within the `MyChatBotWrapper` component which is nested under `ChatBotProvider`.
+The following is an example for using custom hooks, which allows you to interact with the chatbot functionalities **externally** (i.e. from your own components). The full list of hooks and the functionalities they expose can be found [**here**](/docs/api/hooks). For this example, we'll only be looking at a few hooks such as [**`useAudio`**](/docs/api/hooks#useaudio), [**`useFlow`**](/docs/api/hooks#useflow), [**`useToasts`**](/docs/api/hooks#usetoast) and [**`useNotifications`**](/docs/api/hooks#usenotifications). The hooks are imported within the `MyChatBotWrapper` component which is nested under `ChatBotProvider`.
 
 ```jsx live noInline title=MyChatBot.js
 const MyChatBotWrapper = () => {
     const { toggleAudio } = useAudio();
     const { restartFlow } = useFlow();
-    const { showToast } = useToast();
+    const { showToast } = useToasts();
     const { playNotificationSound } = useNotifications();
 
     const settings = {

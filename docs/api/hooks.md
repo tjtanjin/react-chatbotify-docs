@@ -93,7 +93,7 @@ Below is a list of available hooks along with a brief description for each of th
 | useSettings         | Accesses and modifies chatbot settings.                                                 |
 | useStyles           | Accesses and modifies chatbot styles.                                                   |
 | useTextArea         | Manages the text input area of the chatbot, including setting and clearing values.      |
-| useToast            | Manages toasts shown within the chatbot, such as showing or missing them.               |
+| useToasts            | Manages toasts shown within the chatbot, such as showing or missing them.               |
 | useVoice            | Manages voice functionality, such as toggling voice on or off                           |
 
 ## Hook Details
@@ -421,10 +421,10 @@ const MyNestedComponent = () => {
 };
 ```
 
-### useToast
+### useToasts
 
 #### Description
-The `useToast` hook allows you to track and manage the chatbot's toasts.
+The `useToasts` hook allows you to track and manage the chatbot's toasts.
 
 #### Return Values
 | Name                         | Type        | Description                                              |

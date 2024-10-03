@@ -186,7 +186,7 @@ Toasts are strictly speaking not essential for chatbot conversations. However, t
 
 :::info Info
 
-For manipulating toasts, it is recommended that you utilize `showToast` and `dismissToast` which are provided in [**params**](/docs/api/params#showtoast) or [**hooks**](/docs/api/hooks#useToast). If you are directly manipulating the `toasts` array (not recommended), which is possible via the [`useToast`](/docs/api/hooks#usetoast) hook, you need to specify **at least the 2 required fields** yourself.
+For manipulating toasts, it is recommended that you utilize `showToast` and `dismissToast` which are provided in [**params**](/docs/api/params#showtoast) or [**hooks**](/docs/api/hooks#useToasts). If you are directly manipulating the `toasts` array (not recommended), which is possible via the [`useToasts`](/docs/api/hooks#usetoast) hook, you need to specify **at least the 2 required fields** yourself.
 
 :::
 
