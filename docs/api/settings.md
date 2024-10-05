@@ -181,6 +181,8 @@ const DefaultSettings: Settings = {
 		rcbUserSubmitText: false,
 		rcbUserUploadFile: false,
 		rcbTextAreaChangeValue: false,
+		rcbPreInjectMessage: false,
+		rcbPostInjectMessage: false,
 	},
 	ariaLabel: {
 		chatButton: "open chat",

@@ -38,6 +38,8 @@ Below is a list of available events with a brief description for each one. You c
 | RcbUserSubmitTextEvent      | Emitted when a user submits text in the chat.                     |
 | RcbUserUploadFileEvent      | Emitted when a user uploads a file.                               |
 | RcbTextAreaChangeValueEvent | Emitted when the text area value is changed.                      |
+| RcbPostLoadChatBotEvent     | Emitted after the chatbot is loaded.                              |
+| RcbPreLoadChatBotEvent      | Emitted before the chatbot is loaded.                             |
 
 ## Event Details
 
@@ -61,7 +63,7 @@ Below is a detailed description of each event and how to use them.
 Emitted when the chatbot changes its conversation path.
 
 #### Note
-- Requires `settings.event.RcbChangePath` to be set to true.
+- Requires `settings.event.rcbChangePath` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -100,7 +102,7 @@ const MyComponent = () => {
 Emitted when a chunk of a streamed message is received.
 
 #### Note
-- Requires `settings.event.RcbChunkStreamMessage` to be set to true.
+- Requires `settings.event.rcbChunkStreamMessage` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -137,7 +139,7 @@ const MyComponent = () => {
 Emitted when a toast message is dismissed.
 
 #### Note
-- Requires `settings.event.RcbDismissToast` to be set to true.
+- Requires `settings.event.rcbDismissToast` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -174,7 +176,7 @@ const MyComponent = () => {
 Emitted when the chat history is loaded.
 
 #### Note
-- Requires `settings.event.RcbLoadChatHistory` to be set to true.
+- Requires `settings.event.rcbLoadChatHistory` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -209,7 +211,7 @@ const MyComponent = () => {
 Emitted after a message is injected into the chat.
 
 #### Note
-- Requires `settings.event.RcbPostInjectMessage` to be set to true.
+- Requires `settings.event.rcbPostInjectMessage` to be set to true.
 
 #### Data
 | Name      | Type      | Description                                                     |
@@ -245,7 +247,7 @@ const MyComponent = () => {
 Emitted before a message is injected into the chat.
 
 #### Note
-- Requires `settings.event.RcbPreInjectMessage` to be set to true.
+- Requires `settings.event.rcbPreInjectMessage` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -282,7 +284,7 @@ const MyComponent = () => {
 Emitted when a message is removed from the chat.
 
 #### Note
-- Requires `settings.event.RcbRemoveMessage` to be set to true.
+- Requires `settings.event.rcbRemoveMessage` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -319,7 +321,7 @@ const MyComponent = () => {
 Emitted when a toast message is displayed.
 
 #### Note
-- Requires `settings.event.RcbShowToast` to be set to true.
+- Requires `settings.event.rcbShowToast` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -356,7 +358,7 @@ const MyComponent = () => {
 Emitted when the chatbot starts streaming a message.
 
 #### Note
-- Requires `settings.event.RcbStartStreamMessage` to be set to true.
+- Requires `settings.event.rcbStartStreamMessage` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -393,7 +395,7 @@ const MyComponent = () => {
 Emitted when the chatbot stops streaming a message.
 
 #### Note
-- Requires `settings.event.RcbStopStreamMessage` to be set to true.
+- Requires `settings.event.rcbStopStreamMessage` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -430,7 +432,7 @@ const MyComponent = () => {
 Emitted when the audio is toggled on or off.
 
 #### Note
-- Requires `settings.event.RcbToggleAudio` to be set to true.
+- Requires `settings.event.rcbToggleAudio` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -468,7 +470,7 @@ const MyComponent = () => {
 Emitted when the chat window is toggled open or closed.
 
 #### Note
-- Requires `settings.event.RcbToggleChatWindow` to be set to true.
+- Requires `settings.event.rcbToggleChatWindow` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -506,7 +508,7 @@ const MyComponent = () => {
 Emitted when notifications are toggled on or off.
 
 #### Note
-- Requires `settings.event.RcbToggleNotifications` to be set to true.
+- Requires `settings.event.rcbToggleNotifications` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -544,7 +546,7 @@ const MyComponent = () => {
 Emitted when the voice feature is toggled on or off.
 
 #### Note
-- Requires `settings.event.RcbToggleVoice` to be set to true.
+- Requires `settings.event.rcbToggleVoice` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -582,7 +584,7 @@ const MyComponent = () => {
 Emitted when a user submits text in the chat.
 
 #### Note
-- Requires `settings.event.RcbUserSubmitText` to be set to true.
+- Requires `settings.event.rcbUserSubmitText` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -619,7 +621,7 @@ const MyComponent = () => {
 Emitted when a user uploads a file.
 
 #### Note
-- Requires `settings.event.RcbUserUploadFile` to be set to true.
+- Requires `settings.event.rcbUserUploadFile` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -656,7 +658,7 @@ const MyComponent = () => {
 Emitted when a user uploads a file.
 
 #### Note
-- Requires `settings.event.RcbTextAreaChangeValue` to be set to true.
+- Requires `settings.event.rcbTextAreaChangeValue` to be set to true.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
@@ -679,6 +681,87 @@ const MyComponent = () => {
     window.addEventListener("rcb-text-area-change-value", handleTextAreaChangeValue);
     return () => {
       window.removeEventListener("rcb-text-area-change-value", handleTextAreaChangeValue);
+    };
+  }, []);
+
+  return (
+    <ExampleComponent/>
+  );
+};
+```
+
+### RcbPostInjectMessageEvent
+
+#### Description
+Emitted after the chatbot is loaded.
+
+#### Note
+- Requires `settings.event.rcbPostLoadChatBot` to be set to true.
+
+#### Data
+| Name      | Type                    | Description                                                     |
+|-----------|-------------------------|-----------------------------------------------------------------|
+| flow      | `Flow`                  | The flow passed to the chatbot.                                 |
+| settings  | `Settings`              | The settings passed to the chatbot.                             |
+| styles    | `Styles`                | The styles passed to the chatbot.                               |
+| themes    | `Theme \| Array<Theme>` | The themes passed to the chatbot.                               |
+| plugins   | `Array<Plugins>`        | The plugins passed to the chatbot.                              |
+
+#### Code Example
+```jsx
+import { useEffect } from "react";
+import { RcbPostLoadChatBotEvent } from "react-chatbotify";
+
+const MyComponent = () => {
+  useEffect(() => {
+    const handlePostLoadChatBot = (event: RcbPostLoadChatBotEvent) => {
+      // handle the post load chatbot event
+    };
+
+    window.addEventListener("rcb-post-load-chatbot", handlePostLoadChatBot);
+    return () => {
+      window.removeEventListener("rcb-post-load-chatbot", handlePostLoadChatBot);
+    };
+  }, []);
+
+  return (
+    <ExampleComponent/>
+  );
+};
+```
+
+### RcbPreInjectMessageEvent
+
+#### Description
+Emitted before the chatbot is loaded.
+
+#### Note
+- Requires `settings.event.rcbPreLoadChatBot` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
+
+#### Data
+| Name      | Type                    | Description                                                     |
+|-----------|-------------------------|-----------------------------------------------------------------|
+| flow      | `Flow`                  | The flow passed to the chatbot.                                 |
+| settings  | `Settings`              | The settings passed to the chatbot.                             |
+| styles    | `Styles`                | The styles passed to the chatbot.                               |
+| themes    | `Theme \| Array<Theme>` | The themes passed to the chatbot.                               |
+| plugins   | `Array<Plugins>`        | The plugins passed to the chatbot.                              |
+
+#### Code Example
+```jsx
+import { useEffect } from "react";
+import { RcbPreLoadChatBotEvent } from "react-chatbotify";
+
+const MyComponent = () => {
+  useEffect(() => {
+    const handlePreLoadChatBot = (event: RcbPreLoadChatBotEvent) => {
+      // handle the pre load chatbot event
+    };
+
+    window.addEventListener("rcb-pre-load-chatbot", handlePreLoadChatBot);
+    return () => {
+      window.removeEventListener("rcb-pre-load-chatbot", handlePreLoadChatBot);
     };
   }, []);
 
