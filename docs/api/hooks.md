@@ -83,17 +83,18 @@ Below is a list of available hooks along with a brief description for each of th
 | Name                | Description                                                                             |
 | ------------------- | --------------------------------------------------------------------------------------- |
 | useAudio            | Manages audio functionalities, such as toggling audio on or off.                        |
+| useBotId            | Allows retrieving of bot id (mainly for plugin developers).                             |
 | useChatHistory      | Handles loading, retrieving and setting of chat history messages.                       |
 | useChatWindow       | Manages the state of the chatbot window (open/close).                                   |
 | useFirstInteraction | Detects and tracks the user's first interaction with the chatbot.                       |
-| useFlow             | Allows getting and restarting chatbot flow and tracks if flow has started.              |
+| useFlow             | Allows retrieving and restarting chatbot flow and tracks if flow has started.           |
 | useMessages         | Handles sending, clearing, and retrieving messages in the chatbot.                      |
 | useNotifications    | Manages chatbot notifications, such as toggling notifications on or off.                |
 | usePaths            | Manages chatbot conversation paths, such as navigation                                  |
 | useSettings         | Accesses and modifies chatbot settings.                                                 |
 | useStyles           | Accesses and modifies chatbot styles.                                                   |
 | useTextArea         | Manages the text input area of the chatbot, including setting and clearing values.      |
-| useToasts            | Manages toasts shown within the chatbot, such as showing or missing them.               |
+| useToasts            | Manages toasts shown within the chatbot, such as showing or missing them.              |
 | useVoice            | Manages voice functionality, such as toggling voice on or off                           |
 
 ## Hook Details
@@ -122,6 +123,29 @@ const MyNestedComponent = () => {
 
   return (
     <button onClick={toggleAudio}></button>
+  )
+};
+```
+
+### useBotId
+
+#### Description
+The `useBotId` hook allows you to retrieve the bot id (mainly for plugin developers).
+
+#### Return Values
+| Name           | Type        | Description                                            |
+| -------------- | ----------- | ------------------------------------------------------ |
+| getBotId       | `function ` | Retrieves the bot id.                                  |
+
+#### Code Example
+```jsx
+import { useBotId } from "react-chatbotify";
+
+const MyNestedComponent = () => {
+  const { getBotId } = useBotId();
+
+  return (
+    <button onClick={getBotId}></button>
   )
 };
 ```
@@ -191,11 +215,11 @@ import { useEffect } from "react";
 import { useFirstInteraction } from "react-chatbotify";
 
 const MyNestedComponent = () => {
-  const { hasFlowStarted } = useFirstInteraction();
+  const { hasInteractedPage } = useFirstInteraction();
 
   useEffect(() => {
-    // do something if flow has started
-  }, [hasFlowStarted])
+    // do something if has interacted
+  }, [hasInteractedPage])
 
   return (
     <ExampleComponent/>
