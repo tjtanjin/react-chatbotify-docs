@@ -45,7 +45,7 @@ Events emitted by the chatbot provide the following **details** accessible via `
 
 | Name      | Type     | Description                                                     |
 |-----------|----------|-----------------------------------------------------------------|
-| id        | `string` | Uniquely identifies the chatbot the event is emitted from.      |
+| botId     | `string` | Uniquely identifies the chatbot the event is emitted from.      |
 | currPath  | `string` | Represents the current path of the user.                        |
 | prevPath  | `string` | Represents the previous path of the user.                       |
 
@@ -61,7 +61,8 @@ Below is a detailed description of each event and how to use them.
 Emitted when the chatbot changes its conversation path.
 
 #### Note
-Requires `settings.event.RcbChangePath` to be set to true.
+- Requires `settings.event.RcbChangePath` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type     | Description                                                     |
@@ -99,7 +100,8 @@ const MyComponent = () => {
 Emitted when a chunk of a streamed message is received.
 
 #### Note
-Requires `settings.event.RcbChunkStreamMessage` to be set to true.
+- Requires `settings.event.RcbChunkStreamMessage` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type      | Description                                                     |
@@ -135,7 +137,8 @@ const MyComponent = () => {
 Emitted when a toast message is dismissed.
 
 #### Note
-Requires `settings.event.RcbDismissToast` to be set to true.
+- Requires `settings.event.RcbDismissToast` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type      | Description                                                     |
@@ -171,7 +174,8 @@ const MyComponent = () => {
 Emitted when the chat history is loaded.
 
 #### Note
-Requires `settings.event.RcbLoadChatHistory` to be set to true.
+- Requires `settings.event.RcbLoadChatHistory` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 None
@@ -205,7 +209,7 @@ const MyComponent = () => {
 Emitted after a message is injected into the chat.
 
 #### Note
-Requires `settings.event.RcbPostInjectMessage` to be set to true.
+- Requires `settings.event.RcbPostInjectMessage` to be set to true.
 
 #### Data
 | Name      | Type      | Description                                                     |
@@ -241,7 +245,8 @@ const MyComponent = () => {
 Emitted before a message is injected into the chat.
 
 #### Note
-Requires `settings.event.RcbPreInjectMessage` to be set to true.
+- Requires `settings.event.RcbPreInjectMessage` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type      | Description                                                     |
@@ -277,7 +282,8 @@ const MyComponent = () => {
 Emitted when a message is removed from the chat.
 
 #### Note
-Requires `settings.event.RcbRemoveMessage` to be set to true.
+- Requires `settings.event.RcbRemoveMessage` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type      | Description                                                     |
@@ -313,7 +319,8 @@ const MyComponent = () => {
 Emitted when a toast message is displayed.
 
 #### Note
-Requires `settings.event.RcbShowToast` to be set to true.
+- Requires `settings.event.RcbShowToast` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type      | Description                                                     |
@@ -349,7 +356,8 @@ const MyComponent = () => {
 Emitted when the chatbot starts streaming a message.
 
 #### Note
-Requires `settings.event.RcbStartStreamMessage` to be set to true.
+- Requires `settings.event.RcbStartStreamMessage` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type      | Description                                                     |
@@ -385,7 +393,8 @@ const MyComponent = () => {
 Emitted when the chatbot stops streaming a message.
 
 #### Note
-Requires `settings.event.RcbStopStreamMessage` to be set to true.
+- Requires `settings.event.RcbStopStreamMessage` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type      | Description                                                     |
@@ -421,7 +430,8 @@ const MyComponent = () => {
 Emitted when the audio is toggled on or off.
 
 #### Note
-Requires `settings.event.RcbToggleAudio` to be set to true.
+- Requires `settings.event.RcbToggleAudio` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type      | Description                                                           |
@@ -458,7 +468,8 @@ const MyComponent = () => {
 Emitted when the chat window is toggled open or closed.
 
 #### Note
-Requires `settings.event.RcbToggleChatWindow` to be set to true.
+- Requires `settings.event.RcbToggleChatWindow` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type      | Description                                                           |
@@ -495,7 +506,8 @@ const MyComponent = () => {
 Emitted when notifications are toggled on or off.
 
 #### Note
-Requires `settings.event.RcbToggleNotifications` to be set to true.
+- Requires `settings.event.RcbToggleNotifications` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type      | Description                                                                  |
@@ -532,7 +544,8 @@ const MyComponent = () => {
 Emitted when the voice feature is toggled on or off.
 
 #### Note
-Requires `settings.event.RcbToggleVoice` to be set to true.
+- Requires `settings.event.RcbToggleVoice` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type      | Description                                                           |
@@ -569,7 +582,8 @@ const MyComponent = () => {
 Emitted when a user submits text in the chat.
 
 #### Note
-Requires `settings.event.RcbUserSubmitText` to be set to true.
+- Requires `settings.event.RcbUserSubmitText` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type      | Description                    |
@@ -605,7 +619,8 @@ const MyComponent = () => {
 Emitted when a user uploads a file.
 
 #### Note
-Requires `settings.event.RcbUserUploadFile` to be set to true.
+- Requires `settings.event.RcbUserUploadFile` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type       | Description                             |
@@ -641,7 +656,8 @@ const MyComponent = () => {
 Emitted when a user uploads a file.
 
 #### Note
-Requires `settings.event.RcbTextAreaChangeValue` to be set to true.
+- Requires `settings.event.RcbTextAreaChangeValue` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
 
 #### Data
 | Name      | Type       | Description                                                       |
