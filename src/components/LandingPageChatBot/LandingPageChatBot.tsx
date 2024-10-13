@@ -137,7 +137,7 @@ const LandingPageChatBot = () => {
 		},
 	}
 	return (
-		<ChatBot flow={flow} settings={settings} styles={styles}></ChatBot>
+		<ChatBot id="landing-page-chat-bot" flow={flow} settings={settings} styles={styles}></ChatBot>
 	);
 };
 

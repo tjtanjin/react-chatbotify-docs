@@ -108,7 +108,7 @@ const FloatingChatBot = () => {
 		},
 	}
 	return (
-		<ChatBot flow={flow} settings={settings}></ChatBot>
+		<ChatBot id="floating-chat-bot" flow={flow} settings={settings}></ChatBot>
 	);
 };
 
