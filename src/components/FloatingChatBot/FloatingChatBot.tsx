@@ -19,25 +19,23 @@ const FloatingChatBot = () => {
 		}
 	};
 	const helpOptions = ["Quickstart", "API Docs", "Examples", "Github", "Discord", "CodeSandbox"];
-	
-	const settings = {}
 
-	// const settings = {
-	// 	voice: {disabled: false},
-	// 	audio: {disabled: false},
-	// 	general: {
-	// 		mobileEnabled: true,
-	// 	},
-	// 	botBubble: {
-	// 		simStream: true
-	// 	},
-	// 	chatHistory: {
-	// 		storageKey: "main_chatbot"
-	// 	},
-	// 	tooltip: {
-	// 		mode: isDesktop ? "CLOSE" : "NEVER",
-	// 	}
-	// }
+	const settings = {
+		voice: {disabled: false},
+		audio: {disabled: false},
+		general: {
+			mobileEnabled: true,
+		},
+		botBubble: {
+			simStream: true
+		},
+		chatHistory: {
+			storageKey: "floating_chatbot"
+		},
+		tooltip: {
+			mode: isDesktop ? "CLOSE" : "NEVER",
+		}
+	}
 
 	const flow = {
 		start: {

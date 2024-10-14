@@ -34,7 +34,7 @@ const DefaultSettings: Settings = {
 		text: "Talk to me! 😊",
 	},
 	chatButton: {
-		icon: chatIcon,
+		icon: ChatIcon,
 	},
 	header: {
 		title: (
@@ -47,13 +47,14 @@ const DefaultSettings: Settings = {
 		showAvatar: true,
 		avatar: botAvatar,
 		buttons: [Button.NOTIFICATION_BUTTON, Button.AUDIO_BUTTON, Button.CLOSE_CHAT_BUTTON],
-		closeChatIcon: closeChatIcon,
+		closeChatIcon: CloseChatIcon,
 	},
 	notification: {
 		disabled: false,
 		defaultToggledOn: true,
 		volume: 0.2,
-		icon: notificationIcon,
+		icon: NotificationIcon,
+		iconDisabled: NotificationIconDisabled,
 		sound: notificationSound,
 		showCount: true,
 	},
@@ -64,7 +65,8 @@ const DefaultSettings: Settings = {
 		voiceNames: ["Microsoft David - English (United States)", "Alex (English - United States)"],
 		rate: 1,
 		volume: 1,
-		icon: audioIcon,
+		icon: AudioIcon,
+		iconDisabled: AudioIconDisabled,
 	},
 	chatHistory: {
 		disabled: false,
@@ -82,7 +84,7 @@ const DefaultSettings: Settings = {
 		showCharacterCount: false,
 		characterLimit: -1,
 		botDelay: 1000,
-		sendButtonIcon: sendButtonIcon,
+		sendButtonIcon: SendButtonIcon,
 		blockSpam: true,
 		sendOptionOutput: true,
 		sendCheckboxOutput: true,
@@ -126,7 +128,8 @@ const DefaultSettings: Settings = {
 		autoSendDisabled: false,
 		autoSendPeriod: 1000,
 		sendAsAudio: false,
-		icon: voiceIcon,
+		icon: VoiceIcon,
+		iconDisabled: VoiceIconDisabled,
 	},
 	footer: {
 		text: (
@@ -134,12 +137,20 @@ const DefaultSettings: Settings = {
 				onClick={() => window.open("https://react-chatbotify.com")}
 			>
 				<span key={0}>Powered By </span>
-				<img key={1} style={{
-					borderRadius: "50%",
-					width: 14, height: 14, backgroundImage: `url(${chatIcon}),
-					linear-gradient(to right, #42b0c5, #491d8d)`
-				}}>
-				</img>
+				<div
+					key={1}
+					style={{
+						borderRadius: "50%",
+						width: 14,
+						height: 14,
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						background: "linear-gradient(to right, #42b0c5, #491d8d)",
+					}}
+				>
+					<ChatIcon style={{ width: "80%", height: "80%" }} />
+				</div>
 				<span key={2} style={{fontWeight: "bold"}}> React ChatBotify</span>
 			</div>
 		),
@@ -149,13 +160,15 @@ const DefaultSettings: Settings = {
 		disabled: false,
 		multiple: true,
 		accept: ".png",
-		icon: fileAttachmentIcon,
+		icon: FileAttachmentIcon,
+		iconDisabled: FileAttachmentIcon,
 		sendFileName: true,
 		showMediaDisplay: false,
 	},
 	emoji: {
 		disabled: false,
-		icon: emojiIcon,
+		icon: EmojiIcon,
+		iconDisabled: EmojiIcon,
 		list: ["😀", "😃", "😄", "😅", "😊", "😌", "😇", "🙃", "🤣", "😍", "🥰", "🥳", "🎉", "🎈", "🚀", "⭐️"]
 	},
 	toast: {
@@ -181,8 +194,8 @@ const DefaultSettings: Settings = {
 		rcbUserSubmitText: false,
 		rcbUserUploadFile: false,
 		rcbTextAreaChangeValue: false,
-		rcbPreInjectMessage: false,
-		rcbPostInjectMessage: false,
+		rcbPreLoadChatBot: false,
+		rcbPostLoadChatBot: false,
 	},
 	ariaLabel: {
 		chatButton: "open chat",
@@ -265,7 +278,8 @@ Properties here handle the playing of audio for messages sent by the bot. When t
 | voiceNames                  | `Array<string>`                          | "Google US English Male"                    | An array of voice names for the chatbot audio. Voices are based off what is provided in [**SpeechSynthesis**](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices) - you can provide as many voices as you wish (**the first voice matched will be used**).                                                                                              |
 | rate                       | `number`                          | 1                                           | The rate (between 0.1 to 10) at which chatbot audio is played.                                                                                     |
 | volume                       | `number`                          | 1                                           | The volume (between 0 to 1) at which chatbot audio is played.                                                                                     |
-| icon                 | `string`                          | -                                            | Image import or URL for the audio icon to be displayed in the chatbot interface.                                                     |
+| icon                 | `SVGElement` \| `string`                          | -                                            | SVG element import or image URL for the audio icon to be displayed in the chatbot interface.                                                     |
+| iconDisabled                 | `SVGElement` \| `string`                          | -                                            | SVG element import or image URL for the audio icon to be displayed in the chatbot interface **when it is disabled**.                                                     |
 
 ### botBubble
 
@@ -286,7 +300,7 @@ Properties here handle the chat button that is used to toggle chat window. Note 
 
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| icon            | `string`                          | -                                            | Image import or URL for the chatbot button.                                                                                          |
+| icon            | `SVGElement` \| `string`                         | -                                            | SVG element import or image URL for the chatbot button.                                                                                          |
 
 ### chatWindow
 
@@ -327,7 +341,7 @@ Properties here handle the chat input sent by the user. Note that when chatbot i
 | showCharacterCount         | `boolean`                         | false                                           | Specifies whether to show the character count and limit (note that this value is **ignored if** `characterLimit` **is not set to 0 or more**).                                                            |
 | characterLimit             | `number`                          | -1                                            | The maximum number of characters allowed in the chat input, defaults to -1 (no limit).                                                         |
 | botDelay                   | `number`                          | 1000                                        | The delay in milliseconds before chatbot responses are displayed (**minimum value of 500**).                                                             |
-| sendButtonIcon            | `string`                          | -                                            | Image import or URL for the send button to be displayed in the chat input.                                                           |
+| sendButtonIcon            | `SVGElement` \| `string`                          | -                                            | SVG element import or image URL for the send button to be displayed in the chat input.                                                           |
 | blockSpam                  | `boolean`                         | true                                        | Specifies whether user input should be blocked while the bot is processing its next action (highly recommended to keep this `true` as spamming messages can result in unexpected behaviors).                                     |
 | sendOptionOutput           | `boolean`                         | true                                        | Specifies whether to send user option as a message to the bot.                                                   |
 | sendCheckboxOutput         | `boolean`                         | true                                        | Specifies whether to send user selection(s) as a message to the bot.                                                 |
@@ -340,7 +354,8 @@ Properties here handle the emoji picker. Note that this feature will be disabled
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | disabled                   | `boolean`                         | false                                       | Specifies whether emoji picker is disabled.                                                                                 |
-| icon                       | `string`                          | -                                        | Image import or URL for the emoji icon to be displayed in the chatbot footer.                                                               |
+| icon                       | `SVGElement` \| `string`                          | -                                        | SVG element import or image URL for the emoji icon to be displayed in the chatbot footer.                                                               |
+| iconDisabled                       | `SVGElement` \| `string`                          | -                                        | SVG element import or image URL for the emoji icon to be displayed in the chatbot footer **when it is disabled**.                                                               |
 | list                       | `Array<string>`                        | ["😀", "😃", "😄", "😅", "😊", "😌", "😇", "🙃", "🤣", "😍", "🥰", "🥳", "🎉", "🎈", "🚀", "⭐️"] | An array of emojis available for selection in the emoji picker.                                                           |
 
 ### event
@@ -378,7 +393,8 @@ Properties here handle the file attachment button.
 | accept                     | `string`                          | *                                      | The accepted file types for file attachments (e.g. `".png, .jpg"` to restrict file types or `*` to accept all file types).                                                                                  |
 | sendFileName         | `boolean`                         | true                                        | Specifies whether to send a message with name(s) of file attachments as a message to the bot.                                                |
 | showMediaDisplay        | `boolean`                         | true                                            | Specifies whether file attachments that are either image, video or audio will be displayed (previewed).                                             |
-| icon        | `string`                          | -                                            | Image import or URL for the file attachment icon to be displayed in the chatbot footer.                                             |
+| icon        | `SVGElement` \| `string`                          | -                                            | SVG element import or image URL for the file attachment icon to be displayed in the chatbot footer.                                             |
+| iconDisabled        | `SVGElement` \| `string`                          | -                                            | SVG element import or image URL for the file attachment icon to be displayed in the chatbot footer **when it is disabled**.                                             |
 
 ### footer
 
@@ -416,7 +432,7 @@ Properties here handle the chat header.
 | title                      | `string \| JSX.Element`           | -                                            | The title to be displayed in the chatbot header.                                                                               |
 | showAvatar                 | `boolean`                         | true                                        | Specifies whether the avatar should be displayed in the chatbot header.                                                        |
 | avatar                | `string`                          | -                                            | Image import or URL for the avatar to be displayed in the chatbot header.                                                            |                                               |
-| closeChatIcon             | `string`                          | -                                            | Image import or URL for the close chat icon to be displayed in the chatbot header.                                                    |
+| closeChatIcon             | `SVGElement` \| `string`                          | -                                            | SVG element import or image URL for the close chat icon to be displayed in the chatbot header.                                                    |
 | buttons             | `Array<string \| JSX.Element>`                         | [Button.NOTIFICATION_BUTTON, Button.AUDIO_BUTTON, Button.CLOSE_CHAT_BUTTON]                                            | An ordered list of buttons to show in the header (supports both default buttons and custom components) - for the list of default buttons, import the `Button` constant from the library.                                                    |
 
 ### notification
@@ -429,7 +445,8 @@ Properties here handle the message notification sent to the user. When toggled o
 | defaultToggledOn           | `boolean`                         | true                                        | Specifies whether chatbot notifications are toggled on by default.                                                             |        
 | volume                       | `number`                          | 0.2                                           | The volume (between 0 to 1) at which notification sound is played.                                                                                     |                                                   |
 | notificationSound          | `string`                          | -                                            | The sound to be played for chatbot notifications.                                                                              |
-| icon          | `string`                          | -                                            | Image import or URL for the notification icon to be displayed in the chatbot header.
+| icon          | `SVGElement` \| `string`                          | -                                            | SVG element import or image URL for the notification icon to be displayed in the chatbot header.
+| iconDisabled          | `SVGElement` \| `string`                          | -                                    | SVG element import or image URL for the notification icon to be displayed in the chatbot header **when it is disabled**.
 | showCount                  | `boolean`                         | true                                       | Specifies whether unread message count is shown on the top right corner of the chatbot button (this option is ignored if notification is `disabled`).                                                                          |
 
 ### sensitiveInput
@@ -488,4 +505,5 @@ Properties here handle the voice to text feature (**feature is available only on
 | autoSendDisabled           | `boolean`                         | false                                       | Specifies whether auto-sending of voice messages into the chat is disabled.                                                                  |
 | autoSendPeriod             | `number`                          | 1000                                        | The period in milliseconds after which voice messages are automatically sent.                                                  |
 | sendAsAudio                 | `boolean`                         | false                                            | Specifies whether voice input will be sent as an audio file instead (note that `autoSend` features will not work if this is `true`).                                                     |
-| icon                 | `string`                          | -                                            | Image import or URL for the voice icon to be displayed in the chatbot interface.                                                     |
+| icon                 | `SVGElement` \| `string`                          | -                                            | SVG element import or image URL for the voice icon to be displayed in the chatbot interface.                                                     |
+| iconDisabled                 | `SVGElement` \| `string`                          | -                                            | SVG element import or image URL for the voice icon to be displayed in the chatbot interface **when it is disabled**.                                                     |

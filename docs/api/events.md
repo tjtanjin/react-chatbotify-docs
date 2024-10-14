@@ -690,7 +690,7 @@ const MyComponent = () => {
 };
 ```
 
-### RcbPostInjectMessageEvent
+### RcbPostLoadChatBotEvent
 
 #### Description
 Emitted after the chatbot is loaded.
@@ -730,7 +730,7 @@ const MyComponent = () => {
 };
 ```
 
-### RcbPreInjectMessageEvent
+### RcbPreLoadChatBotEvent
 
 #### Description
 Emitted before the chatbot is loaded.
