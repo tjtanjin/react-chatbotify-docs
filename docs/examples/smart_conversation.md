@@ -1,5 +1,5 @@
 ---
-sidebar_position: 14
+sidebar_position: 15
 title: Smart Conversation
 description: smart conversation chatbot example
 keywords: [react, chat, chatbot, chatbotify]

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 16
+sidebar_position: 17
 title: Markup Message
 description: markup message chatbot example
 keywords: [react, chat, chatbot, chatbotify]
