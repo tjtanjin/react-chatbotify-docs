@@ -270,7 +270,7 @@ The `useMessages` hook allows you to track and manage the chatbot's messages.
 | endStreamMessage    | `async function`  | A utility function used to indicate the end of an existing message stream, identical to `params.endMessageStream` detailed [**here**](/docs/api/params#endstreammessage).                   |
 | removeMessage       | `async function`  | A utility function used to remove a message from the chat, identical to `params.removeMessage` detailed [**here**](/docs/api/params#removemessage).                  |
 | messages            | `Array<Message>`     | Array containing all messages currently shown in the chatbot.                  |
-| setMessages         | `function`  | Setter for manipulating messages array directly, **not recommended** to use this so proceed with caution.                  |
+| replaceMessages       | `function`  | Directly replaces the current messages with provided messages.  |
 
 #### Code Example
 ```jsx
@@ -328,7 +328,7 @@ The `usePaths` hook allows you to track and manage the chatbot's paths.
 | getPrevPath         | `function`  | Retrieves the previous path of the user.                 |
 | goToPath            | `function`  | Sends the user to a specified path, identical to `params.goToPath` detailed [**here**](/docs/api/params#gotopath).                  |
 | paths               | `Array<string>`     | Array containing all paths the user has taken in order.      |
-| setPaths            | `function`  | Setter for manipulating paths array directly, **not recommended** to use this so proceed with caution.                 |
+| replacePaths        | `function`  | Directly replaces the current paths with provided paths (hardly a reason to do this, think twice).  |
 
 #### Code Example
 ```jsx
@@ -358,7 +358,8 @@ The `useSettings` hook allows you to track and manage the chatbot's settings.
 | Name                | Type        | Description                                              |
 | ------------------- | ----------- | -------------------------------------------------------- |
 | settings            | `Settings`  | Represents the current settings of the chatbot.          |
-| setSettings         | `function`  | Setter for manipulating bot settings.                    |
+| replaceSettings     | `function`  | Directly replaces the current settings with provided settings.  |
+| updateSettings      | `function`  | Modifies and merges the provided settings with existing settings. |
 
 #### Code Example
 ```jsx
@@ -366,11 +367,12 @@ import { useEffect } from "react";
 import { useSettings } from "react-chatbotify";
 
 const MyNestedComponent = () => {
-  const { settings } = useSettings();
+  const { settings, updateSettings } = useSettings();
 
   useEffect(() => {
     if (settings.general?.embedded) {
-      // do something if chatbot is embedded
+      // disable audio if chatbot is embedded
+      updateSettings({audio: {disabled: false}})
     }
   }, [])
 
@@ -389,7 +391,8 @@ The `useStyles` hook allows you to track and manage the chatbot's styles.
 | Name                | Type        | Description                                              |
 | ------------------- | ----------- | -------------------------------------------------------- |
 | styles              | `Styles`    | Represents the current styles of the chatbot.            |
-| setStyles           | `function`  | Setter for manipulating bot styles.                      |
+| replaceStyles       | `function`  | Directly replaces the current styles with provided styles.  |
+| updateStyles        | `function`  | Modifies and merges the provided styles with existing styles. |
 
 #### Code Example
 ```jsx
@@ -397,11 +400,11 @@ import { useEffect } from "react";
 import { useStyles } from "react-chatbotify";
 
 const MyNestedComponent = () => {
-  const { styles, setStyles } = useStyles();
+  const { updateStyles } = useStyles();
 
   useEffect(() => {
-    // set header style
-    setStyles({...styles, headerStyle: {background: "red"}})
+    // update header style
+    updateStyles({headerStyle: {background: "red"}})
   }, [])
 
   return (
@@ -456,7 +459,7 @@ The `useToasts` hook allows you to track and manage the chatbot's toasts.
 | showToast     | `function`  | Shows a toast in chat, identical to `params.showToast` detailed [**here**](/docs/api/params#showtoast).    |
 | dismissToast  | `function`  | Dismisses a toast from chat, identical to `params.dismissToast` detailed [**here**](/docs/api/params#dismisstoast).                  |
 | toasts        | `Array<Toast>`     | Array containing all toasts currently shown in the chatbot                 |
-| setToasts     | `function`  | Setter for manipulating toasts array directly, **not recommended** to use this so proceed with caution.                  |
+| replaceToasts | `function`  | Directly replaces the current toasts with provided toasts.  |
 
 #### Code Example
 ```jsx
