@@ -64,6 +64,9 @@ In version 1, the [**`theme`**](https://react-chatbotify.com/legacy/v1/docs/api/
 Changes Required:
 - Replace `theme` section with `general` section inside `settings` prop
 
+### Moved desktopEnabled and mobileEnabled properties to device section
+The `desktopEnabled` and `mobileEnabled` properties were previously under the `theme` (now `general`) section. These have been moved to a new `device` section for better clarity and extensibility.
+
 ### Renamed Render Attribute to Component Attribute
 The [**`render`**](https://react-chatbotify.com/legacy/v1/docs/api/attributes#pre-processing-attributes) is understandably poorly named and has been a source of confusion for some users who mistakenly tried using `component` instead. Indeed, the purpose of this attribute was to allow users to provide their own components. With that said, it felt appropriate to update the name of this attribute to [**`component`**](/docs/api/attributes#pre-processing-attributes).
 
@@ -172,6 +175,7 @@ For a quick upgrade, follow these succinct instructions:
 - Rename **BotOptions** to **Settings**, and adjust context and function names accordingly.
 - Utilize the new [**`styles`**](/docs/concepts/styles) prop and `getDefaultStyles`.
 - Rename `theme` section to `general` section under `settings` (previously `options`).
+- Move `desktopEnabled` and `mobileEnabled` properties from `theme` (now `general`) section to the new `device` section.
 - Rename `render` attribute in blocks to `component` attribute.
 - Rename `sendAttachmentOutput` to `sendFileName` **and** move it from `chatInput` section to `fileAttachment` section.
 - Rename `useAdvancedBotOptions` to `useAdvancedSettings` in `advance` section under `settings` (previously `options`).
