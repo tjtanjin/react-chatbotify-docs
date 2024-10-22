@@ -71,6 +71,7 @@ export const DefaultStyles: Styles = {
 	voiceIconDisabledStyle: {},
 	sendIconStyle: {},
 	sendIconDisabledStyle: {},
+	sendIconHoveredStyle: {},
 	rcbTypingIndicatorContainerStyle: {},
 	rcbTypingIndicatorDotStyle: {},
 	toastPromptContainerStyle: {},
@@ -147,6 +148,7 @@ If you wish to refine the appearance of the chatbot, these are the list of secti
 | voiceIconDisabledStyle            | `object`                          | {}      | Styles for the disabled voice icon.                                                                                           |
 | sendIconStyle                     | `object`                          | {}      | Styles for the send icon.                                                                                                     |
 | sendIconDisabledStyle                     | `object`                          | {}      | Styles for the disabled send icon.                                                                                                     |
+| sendIconHoveredStyle                     | `object`                          | {}      | Styles for the hovered send icon.                                                                                                     |
 | rcbTypingIndicatorContainerStyle                     | `object`                          | {}      | Styles for the typing indicator container.                                                                                                     |
 | rcbTypingIndicatorDotStyle                     | `object`                          | {}      | Styles for the typing indicator dot.                                                                                                     |
 | toastPromptContainerStyle                     | `object`                          | {}      | Styles for the toast prompt container.                                                                                                     |

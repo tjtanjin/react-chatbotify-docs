@@ -23,9 +23,6 @@ const FloatingChatBot = () => {
 	const settings = {
 		voice: {disabled: false},
 		audio: {disabled: false},
-		general: {
-			mobileEnabled: true,
-		},
 		botBubble: {
 			simStream: true
 		},

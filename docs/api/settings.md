@@ -25,8 +25,6 @@ const DefaultSettings: Settings = {
 		showInputRow: true,
 		actionDisabledIcon: actionDisabledIcon,
 		embedded: false,
-		desktopEnabled: true,
-		mobileEnabled: true,
 		flowStartTrigger: "ON_LOAD",
 	},
 	tooltip: {
@@ -207,6 +205,11 @@ const DefaultSettings: Settings = {
 		sendButton: "send message",
 		voiceButton: "toggle voice",
 		inputTextArea: "input text area",
+	},
+	device: {
+		desktopEnabled: true,
+		mobileEnabled: true,
+		applyMobileOptimizations: true,
 	}
 }
 ```
@@ -231,6 +234,7 @@ Below is a list of available sections along with a brief description for each of
 | chatWindow                 | `object`                         | Configuration for the chatbot window.                                                                                          |
 | chatHistory                | `object`                         | Configuration for chatbot chat history.                                                                                        |
 | chatInput                  | `object`                         | Configuration for chatbot input.                                                                                               |
+| device                     | `object`                         | Configuration for chatbot behavior on different devices.                                                                                              |
 | emoji                      | `object`                         | Configuration for chatbot emojis.                                                                                              |
 | event                      | `object`                         | Configuration for chatbot events.                                                                                              |
 | fileAttachment             | `object`                         | Configuration for chatbot file attachments.                                                                                    |
@@ -347,6 +351,16 @@ Properties here handle the chat input sent by the user. Note that when chatbot i
 | sendCheckboxOutput         | `boolean`                         | true                                        | Specifies whether to send user selection(s) as a message to the bot.                                                 |
 | buttons             | `Array<string \| JSX.Element>`                         | [Button.VOICE_MESSAGE_BUTTON, Button.SEND_MESSAGE_BUTTON]                                            | An ordered list of buttons to show in the chat input (supports both default buttons and custom components) - for the list of default buttons, import the `Button` constant from the library.                                                    |
 
+### device
+
+Properties here handle the chatbot behavior on different devices (e.g. desktop/mobile).
+
+| Name                       | Type                            | Default                                     | Description                                                                                                                    |
+| -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| desktopEnabled                   | `boolean`                         | true                                       | Specifies whether the chatbot is enabled for users on desktop.                                                             |
+| mobileEnabled                    | `boolean`                         | true                                       | Specifies whether the chatbot is enabled for users on mobile.                                                             |
+| applyMobileOptimizations         | `boolean`                         | true                                       | Specifies if optimizations should be applied on mobile (e.g. auto fullscreen for better viewing). This option is irrelevant if `mobileEnabled` is false.                                                             |
+
 ### emoji
 
 Properties here handle the emoji picker. Note that this feature will be disabled if chat input is disabled.
@@ -419,8 +433,6 @@ Properties here handle general configurations for the chatbot.
 | showInputRow        | `boolean`                          | true                                            | Specifies whether the chat input row should be shown in the chat window.                                                                        |
 | actionDisabledIcon        | `string`                          | -                                            | The cursor image to display when hovering over an action that is disabled.                                                                        |
 | embedded                   | `boolean`                         | false                                       | Specifies whether the chatbot is embedded in the webpage or accessed through a floating button. Note that notifications feature **will not work** for embedded chat windows.                                                             |
-| desktopEnabled                   | `boolean`                         | true                                       | Specifies whether the chatbot is enabled for users on desktop.                                                             |
-| mobileEnabled                    | `boolean`                         | true                                       | Specifies whether the chatbot is enabled for users on mobile.                                                             |
 | flowStartTrigger          | `string`                         | "ON_LOAD"                                      | The trigger for starting chatbot flow which includes: <ul><li>`ON_LOAD`:</li> Flow begins on chatbot load<li>`ON_CHATBOT_INTERACT`:</li> Flow begins when user interacts with chatbot<li>`ON_PAGE_INTERACT`:</li> Flow begins when user interacts with page</ul> 
 
 ### header
