@@ -22,12 +22,12 @@ For instructions on using plugins (both official or community-based), please ref
 
 :::tip Tip
 
-Most plugins tend to rely on chatbot [**events**](/docs/api/events) for their logic. As [**events**](/docs/api/events) are an opt-in feature, make sure you read the plugin's setup instructions in detail to understand which events are required to be enabled!
+Most plugins tend to rely on specific chatbot [**settings**](/docs/api/settings) for their logic (e.g. [**events**](/docs/api/events)). Ideally, plugin developers should provide auto-setup options out of the box. If not, make sure you read the plugin's setup instructions in detail to understand which settings are required to be enabled!
 
 :::
 
 ## Building Your Own Plugin
 
-In the ideal scenario, there is already an existing plugin out there to address your use case. At times however, it may be necessary to build your own custom plugins. The chatbot is currently **already capable** of supporting plugins. However, the documentation for instructions on creating your own plugins are still a work-in-progress. These will be provided soon, latest by the **v2** stable release which is aimed for **late October 2024**.
+In the ideal scenario, there is already an existing plugin out there to address your use case. At times however, it may be necessary to build your own custom plugins. To assist you with creating your own plugins, a **skeleton repository has been setup with a comprehensive README** to guide you in the process. Kindly refer to the [**react-chatbotify-plugin-template**](https://github.com/React-ChatBotify-Plugins/react-chatbotify-plugin-template) repository to get started.
 
-You may wish to join the [**discord**](https://discord.gg/6R4DK4G5Zh) to stay up to date with the latest information.
+If you're keen to dive into creating plugins, you are strongly encouraged to join the [**discord**](https://discord.gg/6R4DK4G5Zh) to stay up to date with the latest information and for ease of support.

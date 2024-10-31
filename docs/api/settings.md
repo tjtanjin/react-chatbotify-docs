@@ -70,6 +70,7 @@ const DefaultSettings: Settings = {
 		disabled: false,
 		maxEntries: 30,
 		storageKey: "rcb-history",
+		storageType: "LOCAL_STORAGE",
 		viewChatHistoryButtonText: "Load Chat History ⟳",
 		chatHistoryLineBreakText: "----- Previous Chat History -----",
 		autoLoad: false,
@@ -328,6 +329,7 @@ Properties here handle the viewing of chat history.
 | disabled                   | `boolean`                         | false                                       | Specifies whether chatbot chat history is disabled.                                                                            |
 | maxEntries                 | `number`                          | 30                                          | The maximum number of chat history entries to display.                                                                         |
 | storageKey                 | `string`                          | "rcb-history"                               | The key to use for storing chat history. Can be ignored if you only have a single instance of the chatbot on your website. Otherwise, if multiple chatbots share the same storage key, their chat history will overlap.                                                                                       |
+| storageType                | `string`                          | "LOCAL_STORAGE"                               | The type of storage to use for chat history which can either be `LOCAL_STORAGE` or `SESSION_STORAGE`.                                                                                       |
 | viewChatHistoryButtonText  | `string`                          | "Load Chat History"                         | The text to be displayed on the view chat history button.                                                                     |
 | chatHistoryLineBreakText   | `string`                          | "----- Previous Chat History -----"         | The text to be displayed as a line break in the chat history.                                                                  |
 | autoLoad                   | `boolean`                         | false                                       | Specifies whether to automatically load chat history on start (requires `disabled` to be set to `false` as well)                                                                     |
