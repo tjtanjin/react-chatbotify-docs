@@ -8,7 +8,7 @@ const darkCodeTheme = themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'React ChatBotify',
-  tagline: 'A modern React library for creating a flexible and extensible chatbot.',
+  tagline: 'A modern React library for creating flexible and extensible chatbots.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

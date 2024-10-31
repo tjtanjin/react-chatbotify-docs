@@ -21,7 +21,7 @@ function HomepageHeader() {
 						A modern React library for creating<br/> a flexible and extensible chatbot
 					</p>
 					<p className={`hero__subtitle ${styles.landingPageSubtitleThin}`}>
-						A modern React library for creating a flexible and extensible chatbot
+						A modern React library for creating flexible and extensible chatbots
 					</p>
 					<GitHubButtonsContainer/>
 					<div className={styles.buttonContainer}>
@@ -86,7 +86,7 @@ export default function Home(): JSX.Element {
 	return (
 		<Layout
 			title={`Hello from ${siteConfig.title}`}
-			description="A modern React library for creating a flexible and extensible chatbot.">
+			description="A modern React library for creating flexible and extensible chatbots.">
 			<HomepageHeader />
 			<main>
 				<HomepageFeatures />
