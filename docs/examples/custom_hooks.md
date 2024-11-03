@@ -20,7 +20,6 @@ const MyChatBotWrapper = () => {
     const settings = {
         general: {embedded: true},
         chatHistory: {storageKey: "example_custom_hooks"},
-        botBubble: {simStream: true},
         audio: {disabled: false}
     }
 
