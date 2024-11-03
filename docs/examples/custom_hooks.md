@@ -7,7 +7,7 @@ keywords: [react, chat, chatbot, chatbotify]
 
 # Custom Hooks
 
-The following is an example for using custom hooks, which allows you to interact with the chatbot functionalities **externally** (i.e. from your own components). The full list of hooks and the functionalities they expose can be found [**here**](/docs/api/hooks). For this example, we'll only be looking at a few hooks such as [**`useAudio`**](/docs/api/hooks#useaudio), [**`useFlow`**](/docs/api/hooks#useflow), [**`useToasts`**](/docs/api/hooks#usetoast) and [**`useNotifications`**](/docs/api/hooks#usenotifications). The hooks are imported within the `MyChatBotWrapper` component which is nested under `ChatBotProvider`.
+The following is an example for using custom hooks, which allows you to interact with the chatbot functionalities **externally** (i.e. from your own components). The full list of hooks and the functionalities they expose can be found [**here**](/docs/api/hooks). For this example, we'll only be looking at a few hooks such as [**`useAudio`**](/docs/api/hooks#useaudio), [**`useFlow`**](/docs/api/hooks#useflow), [**`useToasts`**](/docs/api/hooks#usetoast), [**`useNotifications`**](/docs/api/hooks#usenotifications) and [**`useMessages`**](/docs/api/hooks#usemessages). The hooks are imported within the `MyChatBotWrapper` component which is nested under `ChatBotProvider`.
 
 ```jsx live noInline title=MyChatBot.js
 const MyChatBotWrapper = () => {
@@ -15,6 +15,7 @@ const MyChatBotWrapper = () => {
     const { restartFlow } = useFlow();
     const { showToast } = useToasts();
     const { playNotificationSound } = useNotifications();
+    const { injectMessage } = useMessages();
 
     const settings = {
         general: {embedded: true},
@@ -40,6 +41,7 @@ const MyChatBotWrapper = () => {
           <ExampleButton onClick={restartFlow} text="Click me to reset the flow!"/>
           <ExampleButton onClick={() => showToast("Hello there!")} text="Click me to show a toast!"/>
           <ExampleButton onClick={playNotificationSound} text="Click me to play a notification sound!"/>
+          <ExampleButton onClick={() => injectMessage("Hello I'm an injected message!")} text="Click me to inject a message!"/>
           <ChatBot settings={settings} flow={flow}/>
         </>
     );
