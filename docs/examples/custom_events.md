@@ -21,7 +21,8 @@ const MyChatBot = () => {
 		},
 		event: {
 			// opt-in to rcb user submit text event
-			rcbUserSubmitText: true
+			rcbUserSubmitText: true,
+			rcbToggleNotifications: true
 		}
 	};
 
