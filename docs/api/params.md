@@ -18,20 +18,20 @@ The following table provides details about the parameters available for attribut
 | userInput       | `string`            | All Attributes    | Represents the user's input in the chat.                                                                                          |
 | currPath        | `string`            | All Attributes    | Represents the current path in the chat (can be null if conversation flow has not started).                                                 |
 | prevPath        | `string`            | All Attributes    | Represents the previous path in the chat (can be null if no previous path exists).                                                 |
-| goToPath        | `function`          | All Attributes    | A utility function for navigating to another block.                                                                                |
+| goToPath        | `async function`          | All Attributes    | A utility function for navigating to another block.                                                                                |
 | injectMessage   | `async function`    | All Attributes    | A utility function to inject a message into the chat.   |
 | streamMessage   | `async function`    | All Attributes    | Streams a message into the chat. You can refer to the [**Real-Time Streaming**](/docs/examples/real_time_stream) example.          |
 | endStreamMessage   | `async function`    | All Attributes    | Ends an existing message stream. You can refer to the [**Real-Time Streaming**](/docs/examples/real_time_stream) example.          |
 | removeMessage   | `async function`    | All Attributes    | Removes a message from the chat by message id.          |
-| setTextAreaValue| `function`          | All Attributes    | Sets a value directly within the text area.                                                                                        |
-| showToast       | `function`          | All Attributes    | Shows a toast that is dismissed after a duration or on user click.                                                                                                          |
-| dismissToast       | `function`          | All Attributes    | Dismisses a toast by toast id.                                                                                                          |
-| openChat        | `function`          | All Attributes    | Opens or closes the chat component.                                                                                               |
+| setTextAreaValue| `async function`          | All Attributes    | Sets a value directly within the text area.                                                                                        |
+| showToast       | `async function`          | All Attributes    | Shows a toast that is dismissed after a duration or on user click.                                                                                                          |
+| dismissToast       | `async function`          | All Attributes    | Dismisses a toast by toast id.                                                                                                          |
+| openChat        | `async function`          | All Attributes    | Opens or closes the chat component.                                                                                               |
 | files           | `FileList`          | Only `file` Attribute | Represents the files uploaded by the user.                                                                                        |
 
 :::caution Caution
 
-If you are using `params.injectMessage`, `params.streamMessage`, `params.endStreamMessage` or `params.removeMessage`, do remember that they are `async` and that without using `await`, behavior may be unexpected (e.g. multiple messages sent at once). This is a common pitfall!
+If you are using functions from `params`, do remember that they are `async` and that without using `await`, behaviors may be unexpected (e.g. multiple messages sent at once). This is a common pitfall!
 
 :::
 
@@ -216,7 +216,7 @@ start: {
 Sets a value inside the input text area.
 
 #### Type
-`function`
+`async function`
 
 #### Parameters
 - `value` (required): a `string` value to set inside the input text area.
@@ -224,8 +224,8 @@ Sets a value inside the input text area.
 #### Code Example
 ```jsx
 start: {
-  message: (params) => {
-    params.setTextAreaValue("This is the new input text area value!");
+  message: async (params) => {
+    await params.setTextAreaValue("This is the new input text area value!");
   }
 }
 ```
@@ -236,7 +236,7 @@ start: {
 Shows a toast that lasts for a duration (if specified).
 
 #### Type
-`function`
+`async function`
 
 #### Parameters
 - `content` (required): a `string` value representing the toast content to show.
@@ -245,8 +245,8 @@ Shows a toast that lasts for a duration (if specified).
 #### Code Example
 ```jsx
 start: {
-  message: (params) => {
-    params.showToast("Hello there, I last for 3 seconds!", 3000);
+  message: async (params) => {
+    await params.showToast("Hello there, I last for 3 seconds!", 3000);
   }
 }
 ```
@@ -257,7 +257,7 @@ start: {
 Dismisses a toast with the given toast id.
 
 #### Type
-`function`
+`async function`
 
 #### Parameters
 - `id` (required): a `string` value representing the id of the toast to remove.
@@ -265,8 +265,8 @@ Dismisses a toast with the given toast id.
 #### Code Example
 ```jsx
 start: {
-  message: (params) => {
-    params.dismissToast("fb8bf309-2a33-4683-955c-9e915768dadf");
+  message: async (params) => {
+    await params.dismissToast("fb8bf309-2a33-4683-955c-9e915768dadf");
   }
 }
 ```
@@ -277,7 +277,7 @@ start: {
 Sets the chat window to be open or close.
 
 #### Type
-`function`
+`async function`
 
 #### Parameters
 - `isOpen` (required): a `boolean` indicating if chat window should be set open.
@@ -285,8 +285,8 @@ Sets the chat window to be open or close.
 #### Code Example
 ```jsx
 start: {
-  message: (params) => {
-    params.openChat(true);
+  message: async (params) => {
+    await params.openChat(true);
   }
 }
 ```
@@ -305,8 +305,8 @@ List of files uploaded by the user (only present in the [**file attribute**](/do
 #### Code Example
 ```jsx
 start: {
-  message: (params) => {
-    params.openChat(true);
+  file: (params) => {
+    console.log(params.files);
   }
 }
 ```

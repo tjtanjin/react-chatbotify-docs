@@ -112,7 +112,7 @@ The `useAudio` hook allows you to track and manage the chatbot's audio functiona
 | Name           | Type       | Description                                            |
 | -------------- | ---------- | ------------------------------------------------------ |
 | audioToggledOn | `boolean ` | Indicates if the chatbot audio is currently on or off. |
-| toggleAudio    | `function` | Toggles the chatbot audio on or off.                   |
+| toggleAudio    | `async function` | Toggles the chatbot audio on or off.                   |
 
 #### Code Example
 ```jsx
@@ -184,7 +184,7 @@ The `useChatWindow` hook allows you to track and manage the chatbot's window sta
 | Name                | Type       | Description                                              |
 | ------------------- | ---------- | -------------------------------------------------------- |
 | isChatWindowOpen    | `boolean`  | Indicates if the chat window is currently open or close. |
-| toggleChatWindow    | `function` | Toggles the chat window open or close.                   |
+| toggleChatWindow    | `async function` | Toggles the chat window open or close.                   |
 
 #### Code Example
 ```jsx
@@ -300,7 +300,7 @@ The `useNotifications` hook allows you to track and manage the chatbot's notific
 | Name                   | Type       | Description                                                    |
 | ---------------------- | ---------- | -------------------------------------------------------------- |
 | notificationsToggledOn | `boolean ` | Indicates if the chatbot notifications is currently on or off. |
-| toggleNotifications    | `function` | Toggles the chatbot notifications on or off.                   |
+| toggleNotifications    | `async function` | Toggles the chatbot notifications on or off.                   |
 | playNotificationSound  | `function` | Plays the notification sound.                                  |
 
 #### Code Example
@@ -426,7 +426,7 @@ The `useTextArea` hook allows you to track and manage the chatbot's text area fi
 | textAreaSensitiveMode        | `boolean`   | Indicates if the text area is in sensitive mode.         |
 | toggleTextAreaSensitiveMode  | `function`  | Toggles the text area sensitive mode.                    |
 | getTextAreaValue             | `function`  | Retrieves the string value inside the text area.         |
-| setTextAreaValue             | `function`  | Sets the value inside the text area, identical to `params.setTextAreaValue` detailed [**here**](/docs/api/params#settextareavalue).                     |
+| setTextAreaValue             | `async function`  | Sets the value inside the text area, identical to `params.setTextAreaValue` detailed [**here**](/docs/api/params#settextareavalue).                     |
 | focusTextArea                | `function`  | Focuses on the text area.                                |
 
 #### Code Example
@@ -456,8 +456,8 @@ The `useToasts` hook allows you to track and manage the chatbot's toasts.
 #### Return Values
 | Name                         | Type        | Description                                              |
 | ---------------------------- | ----------- | -------------------------------------------------------- |
-| showToast     | `function`  | Shows a toast in chat, identical to `params.showToast` detailed [**here**](/docs/api/params#showtoast).    |
-| dismissToast  | `function`  | Dismisses a toast from chat, identical to `params.dismissToast` detailed [**here**](/docs/api/params#dismisstoast).                  |
+| showToast     | `async function`  | Shows a toast in chat, identical to `params.showToast` detailed [**here**](/docs/api/params#showtoast).    |
+| dismissToast  | `async function`  | Dismisses a toast from chat, identical to `params.dismissToast` detailed [**here**](/docs/api/params#dismisstoast).                  |
 | toasts        | `Array<Toast>`     | Array containing all toasts currently shown in the chatbot                 |
 | replaceToasts | `function`  | Directly replaces the current toasts with provided toasts.  |
 
@@ -489,7 +489,7 @@ The `useVoice` hook allows you to track and manage the chatbot's voice functiona
 | Name           | Type       | Description                                            |
 | -------------- | ---------- | ------------------------------------------------------ |
 | voiceToggledOn | `boolean ` | Indicates if the chatbot voice is currently on or off. |
-| toggleVoice    | `function` | Toggles the chatbot voice on or off.                   |
+| toggleVoice    | `async function` | Toggles the chatbot voice on or off.                   |
 
 #### Code Example
 ```jsx

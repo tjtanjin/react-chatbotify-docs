@@ -51,7 +51,9 @@ Events emitted by the chatbot provide the following **details** accessible via `
 | currPath  | `string` | Represents the current path of the user.                        |
 | prevPath  | `string` | Represents the previous path of the user.                       |
 
-In addition, all events also contain **event-specific data** that are accessible via `event.data`. You may manipulate the data directly which will be reflected in the result of the event (e.g. modifying the content of a `RcbPreMessageInjectEvent` will modify the message sent).
+In addition, chatbot events are also initialized with **an empty promises array**, accessible via `event.promises`. This caters for use cases where event handlers are **async and require promises to be resolved before proceeding** with the chatbot logic. Push promises into `event.promises` to preserve the chatbot flow logic.
+
+Lastly, all events also contain **event-specific data** that are accessible via `event.data`. You may manipulate the data directly which will be reflected in the result of the event (e.g. modifying the content of a `RcbPreMessageInjectEvent` will modify the message sent). For an example on how to use events, you may take a look at the [**custom events**](/docs/examples/custom_events) example.
 
 Below is a detailed description of each event and how to use them.
 

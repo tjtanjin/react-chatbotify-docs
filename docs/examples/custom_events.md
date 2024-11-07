@@ -26,15 +26,29 @@ const MyChatBot = () => {
 	};
 
 	React.useEffect(() => {
+		// synchronous function
 		const handleUserSubmitText = (event: RcbUserSubmitTextEvent) => {
 			if (event.data.inputText.toLowerCase().includes("hello")) {
 				event.preventDefault();
 			}
 		};
 
+		// asynchronous function
+		const handleToggleNotifications = async (event: RcbToggleNotificationsEvent) => {
+			// simulates an async call with a 1 second delay
+			const mockApiCall = new Promise((resolve) => setTimeout(() => {
+				resolve("Notifications toggled successfully!");
+			}, 1000));
+
+			// collect promises for eventual resolution before chatbot logic proceeds
+			event.promises.push(mockApiCall);
+		}
+
 		window.addEventListener("rcb-user-submit-text", handleUserSubmitText);
+		window.addEventListener("rcb-toggle-notifications", handleToggleNotifications);
 		return () => {
 			window.removeEventListener("rcb-user-submit-text", handleUserSubmitText);
+			window.removeEventListener("rcb-toggle-notifications", handleToggleNotifications);
 		};
 	}, []);
 
