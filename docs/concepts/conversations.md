@@ -178,7 +178,7 @@ For manipulating messages, it is recommended that you utilize `injectMessage` an
   </div>
 </div>
 
-Toasts are strictly speaking not essential for chatbot conversations. However, they are oftentime useful in providing feedback to users (as **outlined in red** on the image above). For example, the [**rcb-input-validator-plugin**](https://github.com/react-chatbotify-plugins/rcb-input-validator-plugin) uses toasts to inform users of any input validation errors. A toast comprises of **3 properties**:
+Toasts are strictly speaking not essential for chatbot conversations. However, they are oftentime useful in providing feedback to users (as **outlined in red** on the image above). For example, the [**input-validator**](https://github.com/react-chatbotify-plugins/input-validator) plugin uses toasts to inform users of any input validation errors. A toast comprises of **3 properties**:
 
 - id (required) - an auto-generated uuidv4 `string`, uniquely identifying a toast
 - content (required) - a `string` or `JSX.Element`, representing the content of the toast

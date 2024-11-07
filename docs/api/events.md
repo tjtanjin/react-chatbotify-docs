@@ -12,7 +12,7 @@ This page documents all available `events` emitted by the chatbot that may be li
 - You are using [**plugins**](/docs/concepts/plugins) that relies on events emitted by the chatbot (you should refer to the plugin documentation for what events are needed)
 
 :::tip Tip
-Before adding your own listeners with custom logic for events, it may be helpful to lookup existing [**plugins**](/docs/concepts/plugins) in case there's already a solution out there (e.g. [**rcb-input-validator-plugin**](https://github.com/react-chatbotify-plugins/rcb-input-validator-plugin)).
+Before adding your own listeners with custom logic for events, it may be helpful to lookup existing [**plugins**](/docs/concepts/plugins) in case there's already a solution out there (e.g. [**input-validator**](https://github.com/react-chatbotify-plugins/input-validator) plugin).
 :::
 
 ## Overview

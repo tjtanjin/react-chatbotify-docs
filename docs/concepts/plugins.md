@@ -13,16 +13,18 @@ A newly added feature in **v2** of the chatbot, the `plugins` prop provides user
 
 There is a small group of official plugins maintained, which provide useful functionalities in common use cases. As of the last update, the list of official plugins are as below:
 
-- [**rcb-input-validator-plugin**](https://github.com/react-chatbotify-plugins/rcb-input-validator-plugin) [Work-In-Progress]
-- [**rcb-message-transformer-plugin**](https://github.com/react-chatbotify-plugins/rcb-message-transformer-plugin) [Work-In-Progress]
+- [**Input Validator**](https://github.com/react-chatbotify-plugins/input-validator)
+- [**Markdown Parser**](https://github.com/react-chatbotify-plugins/markdown-parser)
+- [**llm-connector**](https://github.com/react-chatbotify-plugins/llm-connector) (WIP)
+- [**discord-live-chat**](https://github.com/react-chatbotify-plugins/discord-live-chat) (WIP)
 
-If you strongly believe that there are common use cases with no suitable plugins, you may feel free to make a suggestion for one on [**discord**](https://discord.gg/6R4DK4G5Zh).
+If you strongly believe that there are common use cases with no suitable plugins, you may feel free to make a suggestion for one on [**discord**](https://discord.gg/J6pA4v3AMW).
 
 For instructions on using plugins (both official or community-based), please refer to the plugin's documentation. Note that the maintenance of plugins are **separate** from the maintenance of the core React ChatBotify library.
 
 :::tip Tip
 
-Most plugins tend to rely on specific chatbot [**settings**](/docs/api/settings) for their logic (e.g. [**events**](/docs/api/events)). Ideally, plugin developers should provide auto-setup options out of the box. If not, make sure you read the plugin's setup instructions in detail to understand which settings are required to be enabled!
+Most plugins tend to rely on specific chatbot [**settings**](/docs/api/settings) for their logic (e.g. [**events**](/docs/api/events)). Ideally, plugin developers should provide auto-config options out of the box. If not, make sure you read the plugin's setup instructions in detail to understand which settings are required to be enabled!
 
 :::
 
