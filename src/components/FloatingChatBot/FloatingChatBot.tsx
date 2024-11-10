@@ -10,7 +10,11 @@ const FloatingChatBot = () => {
 	const history = useHistory();
 	const navigatePage = (page, params) => {
 		if (page.startsWith("https")) {
-			window.open(page);
+			if (isDesktop) {
+				window.open(page);
+			} else {
+				window.location.href = page;
+			}
 		} else {
 			if (!isDesktop) {
 				params.openChat(false);
@@ -48,7 +52,7 @@ const FloatingChatBot = () => {
 			path: "process_options"
 		},
 		prompt_again: {
-			message: "Do you need any other help?",
+			message: isDesktop ? "Do you need any other help?" : "",
 			options: helpOptions,
 			path: "process_options"
 		},
