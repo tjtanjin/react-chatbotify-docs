@@ -592,7 +592,7 @@ Emitted when a user submits text in the chat.
 #### Data
 | Name      | Type      | Description                    |
 |-----------|-----------|--------------------------------|
-| userInput | `string`  | The text input that user sent. |
+| inputText | `string`  | The text input that user sent. |
 
 #### Code Example
 ```jsx
