@@ -15,8 +15,8 @@ There is a small group of official plugins maintained, which provide useful func
 
 - [**Input Validator**](https://github.com/react-chatbotify-plugins/input-validator)
 - [**Markdown Parser**](https://github.com/react-chatbotify-plugins/markdown-parser)
-- [**llm-connector**](https://github.com/react-chatbotify-plugins/llm-connector) (WIP)
-- [**discord-live-chat**](https://github.com/react-chatbotify-plugins/discord-live-chat) (WIP)
+- [**LLM Connector**](https://github.com/react-chatbotify-plugins/llm-connector) (WIP)
+- [**Discord Live Chat**](https://github.com/react-chatbotify-plugins/discord-live-chat) (WIP)
 
 If you strongly believe that there are common use cases with no suitable plugins, you may feel free to make a suggestion for one on [**discord**](https://discord.gg/J6pA4v3AMW).
 
