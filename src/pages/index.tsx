@@ -18,7 +18,7 @@ function HomepageHeader() {
 				<div className={styles.leftContainer}>
 					<h1 className="hero__title">{siteConfig.title}</h1>
 					<p className={`hero__subtitle ${styles.landingPageSubtitleWide}`}>
-						A modern React library for creating<br/> a flexible and extensible chatbot
+						A modern React library for creating<br/> flexible and extensible chatbots
 					</p>
 					<p className={`hero__subtitle ${styles.landingPageSubtitleThin}`}>
 						A modern React library for creating flexible and extensible chatbots
