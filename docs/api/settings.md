@@ -91,6 +91,7 @@ const DefaultSettings: Settings = {
 	},
 	chatWindow: {
 		showScrollbar: false,
+		showTypingIndicator: true,
 		autoJumpToBottom: false,
 		showMessagePrompt: true,
 		messagePromptText: "New Messages ↓",
@@ -314,6 +315,7 @@ Properties here handle the UI/UX in the chat window. Note that it is recommended
 | Name                       | Type                            | Default                                     | Description                                                                                                                    |
 | -------------------------- | ------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | showScrollbar              | `boolean`                         | false                                       | Specifies whether scrollbar will be shown when chat messages overflow the window.                                                                            |
+| showTypingIndicator        | `boolean`                         | true                                       | Specifies whether typing indicator will be shown when a block is being processed.                                                                            |
 | autoJumpToBottom           | `boolean`                         | false                                       | Specifies whether new messages will always send the user to the bottom of the chat window (recommended to keep `false` as this can be disruptive).                    |
 | showMessagePrompt          | `boolean`                         | true                                        | Specifies whether to show a message prompt when new messages are received while a user is scrolling the window.                                                      |
 | messagePromptText          | `string`                          | "New Messages ↓"                            | The text to be displayed on the message prompt shown.                                                                             |
@@ -515,7 +517,7 @@ Properties here handle the voice to text feature (**feature is available only on
 | disabled                   | `boolean`                         | false                                       | Specifies whether chatbot voice is disabled.                                                                                   |
 | defaultToggledOn           | `boolean`                         | false                                       | Specifies whether chatbot voice is toggled on by default.                                                                      |
 | language                   | `string`                          | "en-US"                                     | The expected language from the user, set by a string representing a [**BCP 47 language tag**](https://www.techonthenet.com/js/language_tags.php).                                                                                                |
-| timeoutPeriod              | `number`                          | 10000                                       | The timeout period in milliseconds for chatbot voice before it automatically toggles off.                                                                          |
+| timeoutPeriod              | `number`                          | 10000                                       | The timeout period in milliseconds for chatbot voice before it automatically toggles off (set to `0` to disable automatic toggle off).                                                                          |
 | autoSendDisabled           | `boolean`                         | false                                       | Specifies whether auto-sending of voice messages into the chat is disabled.                                                                  |
 | autoSendPeriod             | `number`                          | 1000                                        | The period in milliseconds after which voice messages are automatically sent.                                                  |
 | sendAsAudio                 | `boolean`                         | false                                            | Specifies whether voice input will be sent as an audio file instead (note that `autoSend` features will not work if this is `true`).                                                     |

@@ -428,6 +428,7 @@ The `useTextArea` hook allows you to track and manage the chatbot's text area fi
 | getTextAreaValue             | `function`  | Retrieves the string value inside the text area.         |
 | setTextAreaValue             | `async function`  | Sets the value inside the text area, identical to `params.setTextAreaValue` detailed [**here**](/docs/api/params#settextareavalue).                     |
 | focusTextArea                | `function`  | Focuses on the text area.                                |
+| blurTextArea                 | `function`  | Blurs (lose focus of) the text area.                     |
 
 #### Code Example
 ```jsx
