@@ -5,6 +5,7 @@ import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
 let ChatBot = null;
 let InputValidator = null;
+let MarkdownRenderer = null;
 let reactChatbotify = {};
 
 if (ExecutionEnvironment.canUseDOM) {
@@ -16,6 +17,9 @@ if (ExecutionEnvironment.canUseDOM) {
 
 	// imports rcb plugin - input validator
 	InputValidator = require("@rcb-plugins/input-validator");
+
+	// imports rcb plugin - markdown renderer
+	MarkdownRenderer = require("@rcb-plugins/markdown-renderer");
 }
 
 const ReactLiveScope = {
@@ -23,6 +27,7 @@ const ReactLiveScope = {
 	ChatBot,
 	...reactChatbotify,
 	InputValidator,
+	MarkdownRenderer,
 	GoogleGenerativeAI,
 	OpenAI,
 };

@@ -160,6 +160,7 @@ Not to be confused with `message` from the section on [**Attributes**](/docs/con
 
 - id (required) - an auto-generated uuidv4 `string`, uniquely identifying a message
 - content (required) - a `string` or `JSX.Element`, representing the content of the message
+- contentWrapper (optional) - a react component that wraps the message content (received via children) to enable custom styling or layout (niche use-case)
 - sender (required) - a `string` representing message sender (can be `user`, `bot` or `system`)
 - type (required) - a `string` that specifies "string" (for plain text) or "object" (for JSX elements)
 - timestamp (required) - a `string` representing the time the message was sent in UTC

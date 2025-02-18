@@ -14,7 +14,7 @@ A newly added feature in **v2** of the chatbot, the `plugins` prop provides user
 There is a small group of official plugins maintained, which provide useful functionalities in common use cases. As of the last update, the list of official plugins are as below:
 
 - [**Input Validator**](https://github.com/react-chatbotify-plugins/input-validator)
-- [**Markdown Parser**](https://github.com/react-chatbotify-plugins/markdown-parser)
+- [**Markdown Renderer**](https://github.com/react-chatbotify-plugins/markdown-renderer)
 - [**LLM Connector**](https://github.com/react-chatbotify-plugins/llm-connector) (WIP)
 - [**Discord Live Chat**](https://github.com/react-chatbotify-plugins/discord-live-chat) (WIP)
 

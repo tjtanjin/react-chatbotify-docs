@@ -5,7 +5,7 @@ description: input validation chatbot example
 keywords: [react, chat, chatbot, chatbotify]
 ---
 
-# Custom Icon
+# Input Validation
 
 The following is an example for performing user input validation. It leverages on the [**Input Validator Plugin**](https://www.npmjs.com/package/@rcb-plugins/input-validator), which is maintained separately on the [**React ChatBotify Plugins**](https://github.com/orgs/React-ChatBotify-Plugins) organization. If you require support with the plugin, please reach out to support on the [**plugins discord**](https://discord.gg/J6pA4v3AMW) instead.
 
