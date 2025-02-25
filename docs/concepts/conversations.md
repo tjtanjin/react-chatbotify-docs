@@ -158,12 +158,13 @@ For details and usage on each of these parameters, you may consult the [**API do
 
 Not to be confused with `message` from the section on [**Attributes**](/docs/concepts/conversations#attributes), the `Message` component here represents the interactions between the user and the bot. Every element in the chatbot body (including custom components) are considered a Message (as **outlined in red** on the image above). Within a message you will find **5 properties**: 
 
-- id (required) - an auto-generated uuidv4 `string`, uniquely identifying a message
-- content (required) - a `string` or `JSX.Element`, representing the content of the message
-- contentWrapper (optional) - a react component that wraps the message content (received via children) to enable custom styling or layout (niche use-case)
-- sender (required) - a `string` representing message sender (can be `user`, `bot` or `system`)
-- type (required) - a `string` that specifies "string" (for plain text) or "object" (for JSX elements)
-- timestamp (required) - a `string` representing the time the message was sent in UTC
+- id **(required)** - an auto-generated uuidv4 `string`, uniquely identifying a message
+- content **(required)** - a `string` or `JSX.Element`, representing the content of the message
+- sender **(required)** - a `string` representing message sender (can be `user`, `bot` or `system`)
+- type **(required)** - a `string` that specifies "string" (for plain text) or "object" (for JSX elements)
+- timestamp **(required)** - a `string` representing the time the message was sent in UTC
+- contentWrapper **(optional)** - a react component that wraps the message content (received via children) to enable custom styling or layout (niche use-case)
+- tags **(optional)** - an array of strings, typically used by plugins to tag and identify messages that are processed
 
 :::info Info
 

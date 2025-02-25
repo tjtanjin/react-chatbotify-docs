@@ -9,6 +9,12 @@ keywords: [react, chat, chatbot, chatbotify]
 
 The following is an example for rendering markdown messages. It leverages on the [**Markdown Renderer Plugin**](https://www.npmjs.com/package/@rcb-plugins/markdown-renderer), which is maintained separately on the [**React ChatBotify Plugins**](https://github.com/orgs/React-ChatBotify-Plugins) organization. If you require support with the plugin, please reach out to support on the [**plugins discord**](https://discord.gg/J6pA4v3AMW) instead.
 
+:::tip
+
+If you're looking to render html markup messages, you may refer to the [**html render example**](/docs/examples/html_render.md) instead.
+
+:::
+
 ```jsx live noInline title=MyChatBot.js
 const MyChatBot = () => {
 	// loads markdown renderer plugin to be passed into chatbot

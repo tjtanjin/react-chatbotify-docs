@@ -156,11 +156,12 @@ const MyNestedComponent = () => {
 The `useChatHistory` hook allows you to show, retrieve and set chat history messages.
 
 #### Return Values
-| Name                | Type       | Description                                                   |
-| ------------------- | ---------- | ------------------------------------------------------------- |
-| showChatHistory     | `function` | Shows the chat history messages on the chatbot.               |
-| getHistoryMessages  | `function` | Retrieves the chat history messages.                          |
-| setHistoryMessages  | `function` | Sets the chat history messages (note that this is permanent). |
+| Name                 | Type       | Description                                                   |
+| -------------------- | ---------- | ------------------------------------------------------------- |
+| showChatHistory      | `function` | Shows the chat history messages on the chatbot.               |
+| getHistoryMessages   | `function` | Retrieves the chat history messages.                          |
+| setHistoryMessages   | `function` | Sets the chat history messages (note that this is permanent). |
+| hasChatHistoryLoaded | `boolean`  | Boolean indicating if chat history has been loaded.           |
 
 #### Code Example
 ```jsx

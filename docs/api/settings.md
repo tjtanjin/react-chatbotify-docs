@@ -110,7 +110,6 @@ const DefaultSettings: Settings = {
 		avatar: userAvatar,
 		simStream: false,
 		streamSpeed: 30,
-		dangerouslySetInnerHtml: false,
 	},
 	botBubble: {
 		animate: true,
@@ -118,7 +117,6 @@ const DefaultSettings: Settings = {
 		avatar: botAvatar,
 		simStream: false,
 		streamSpeed: 30,
-		dangerouslySetInnerHtml: false,
 	},
 	voice: {
 		disabled: true,
@@ -298,7 +296,6 @@ Properties here handle the chat bubble for messages sent by the bot.
 | avatar                | `string`                          | -                                            | Image import or URL for the avatar to be displayed for bot chat bubbles.                                                             |                                                                              |
 | simStream                 | `boolean`                         | false                                       | Specifies whether to simulate text messages from the bot as a stream.                                                         |
 | streamSpeed                | `number`                          | 30                                            | Specifies the interval in milliseconds between streaming each character (ignored if `simStream` is false).                                                             |                                                                              |
-| dangerouslySetInnerHtml    | `boolean`                         | false                                       | Specifies whether to allow setting of raw HTML content within a bot message bubble (if `true`, do sanitize input strings and use with caution).                                                         |
 
 ### chatButton
 
@@ -506,7 +503,6 @@ Properties here handle the chat bubble for messages sent by the user.
 | avatar                | `string`                          | -                                            | Image import or URL for the avatar to be displayed for user chat bubbles.                                                            |
 | simStream                 | `boolean`                         | false                                       | Specifies whether to simulate text messages from the user as a stream.                                                         |
 | streamSpeed                | `number`                          | 30                                            | Specifies the interval in milliseconds between streaming each character (ignored if `simStream` is false).                                                             |      
-| dangerouslySetInnerHtml    | `boolean`                         | false                                       | Specifies whether to allow setting of raw HTML content within a user message bubble (if `true`, do sanitize input strings and use with caution).                                                         |
 
 ### voice
 

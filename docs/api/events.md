@@ -31,6 +31,7 @@ Below is a list of available events with a brief description for each one. You c
 | RcbShowToastEvent           | Emitted when a toast message is displayed.                        |
 | RcbStartStreamMessageEvent  | Emitted when the chatbot starts streaming a message.              |
 | RcbStopStreamMessageEvent   | Emitted when the chatbot stops streaming a message.               |
+| RcbStartSpeakAudioEvent     | Emitted when a message is read out (audio starts to play)         |
 | RcbToggleAudioEvent         | Emitted when the audio is toggled on or off.                      |
 | RcbToggleChatWindowEvent    | Emitted when the chat window is toggled open or closed.           |
 | RcbToggleNotificationsEvent | Emitted when notifications are toggled on or off.                 |
@@ -253,9 +254,12 @@ Emitted before a message is injected into the chat.
 - Event is **preventable** with `event.preventDefault()`.
 
 #### Data
-| Name      | Type      | Description                                                     |
-|-----------|-----------|-----------------------------------------------------------------|
-| message   | `Message` | The message being sent into the chat.                           |
+| Name             | Type                 | Description                                                     |
+|------------------|----------------------|-----------------------------------------------------------------|
+| message          | `Message`            | The message being sent into the chat.                           |
+| simStreamChunker | `function` \| `null` | A custom function to parse messages for simulated streaming     |
+
+Note: The `simStreamChunker` function takes in a string and returns an array of strings. By default, this field is null and strings are split per-character. A custom function can be passed in to control how simulated streaming is carried out. For example, in the implementation of the [**HTML Renderer Plugin**](https://www.npmjs.com/package/@rcb-plugins/html-renderer), a custom function is passed in to skip over html tags when simulating message stream.
 
 #### Code Example
 ```jsx
@@ -419,6 +423,43 @@ const MyComponent = () => {
     window.addEventListener("rcb-stop-stream-message", handleStopStreamMessage);
     return () => {
       window.removeEventListener("rcb-stop-stream-message", handleStopStreamMessage);
+    };
+  }, []);
+
+  return (
+    <ExampleComponent/>
+  );
+};
+```
+
+### RcbStartSpeakAudioEvent
+
+#### Description
+Emitted when a message is read out (audio starts to play).
+
+#### Note
+- Requires `settings.event.rcbStartSpeakAudio` to be set to true.
+- Event is **preventable** with `event.preventDefault()`.
+
+#### Data
+| Name       | Type      | Description                                                           |
+|------------|-----------|-----------------------------------------------------------------------|
+| textToRead | `string`  | The message string that is to be read out.                            |
+
+#### Code Example
+```jsx
+import { useEffect } from "react";
+import { RcbStartSpeakAudioEvent } from "react-chatbotify";
+
+const MyComponent = () => {
+  useEffect(() => {
+    const handleStartSpeakAudio = (event: RcbStartSpeakAudioEvent) => {
+      // handle the start speak audio event
+    };
+
+    window.addEventListener("rcb-start-speak-audio", handleStartSpeakAudio);
+    return () => {
+      window.removeEventListener("rcb-start-speak-audio", handleStartSpeakAudio);
     };
   }, []);
 
