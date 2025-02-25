@@ -19,7 +19,7 @@ const MyChatBot = () => {
 		start: {
 			message: "Hey there, please enter your age!",
 			path: "try_again",
-			validateInput: (userInput: string) => {
+			validateTextInput: (userInput: string) => {
 				if (typeof userInput === "string" && !Number.isNaN(Number(userInput))) {
 					return {success: true};
 				}
